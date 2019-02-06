@@ -1,0 +1,13 @@
+The system should use Mahout.
+
+The server should use Java.
+
+The natural language component should be run of PHP in the server.
+
+Some machine-learning algorithms are needed for the development of classification functionalities.
+
+In addition, the machine-learning functionalities will be also about clustering.
+
+Elastic-search is needed in the server.
+
+The system should provide advanced search-engine functionalities.

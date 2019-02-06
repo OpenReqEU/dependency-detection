@@ -1,0 +1,18 @@
+OBU remains in the mode it was when stopping on the first section.
+
+
+The parameters for OBU must be given by RBC. Apats TND_1966.
+It is necessary to install track circuits for sections of CE installations.
+Track circuits need to be installed for the sections of CE installations. Apats TND_1596.
+Test run of power subsystem may be conducted before the interlocking system test run.
+Existing interlocking system must be rehabilitated.
+New interlocking systems must be based on the fail-safe principles.
+
+RBC 198 Shunting routes need not be recorded in the RBC.(LC)
+j) Main automatic block signals must be equipped with small rail balise. All requirements from item 3.7., are effective also for here planned small rail balise
+d. There will be a possibility to switch on and off the level crossing device through local switch placed near the crossing.
+RBC for ERTMS with ETCS level 2 (see also the requirements in Annex 29);
+CE 3. The existing centralization technology based on the relay technology that equips project stations and the related BLA distances of the Employer must be rehabilitated to be compatible with ERTMS with ETCS level 2.
+RBC 114 After starting to request a new MA, the OBU must continue to request it until it receives one. (LC)
+Entering the ETCS L2 area from L1/L0 or LSTM (INDUSI) for all possible running directions;
+RBC 69 Border signals shall be connected both at ETCS level 1 (LEU) and at ETCS level 2 (RBC), through the CE installation.(LC)

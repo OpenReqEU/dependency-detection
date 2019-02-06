@@ -1,0 +1,137 @@
+NOTE 3 Other elements that will be taken into account (I)\n\t- train coupling and decoupling shall be done by shunting. This is why the description of the related operations shall not be subject to this document;\n\t\t- no temporary shunting areas shall be used.
+NOTE 8. The transition from SRS 222 to SRS 230d is a minor and recent update of the software version used for the ETCS equipment (OBU, RBC, LEU, balises). Because the update is minor, the maturity of the solutions based on SRS 230d may include the maturity of the solutions based on SRS 222 and 230. Because the update is recent, at the time of the launch of this call for tenders, there are very few actual implementations of SRS 230d-based solutions. Therefore, for the assessment of the proposed solution, CFR accepts the inclusion of solutions based on SRS 222 and 230. (I)
+RBC 88 The revocation of an MA (from the OBU) must be executed by the RBC by means of an emergency stopping message sent by the RBC. When it receives an emergency stopping message, the OBU confirms whether the MA revocation has been executed. (LC)
+RBC 89 The emergency STOP message, as an independent command initiated by the controller for a specific train, shall be implemented (LC).
+NOTE 15 It must be possible to stop all the trains from a certain area (no smaller than a station or open line between two stations), with a single stop command executed in the electronic interlocking installation. (I\/LC-EI)
+a) if the train stops on the first section without switch (before the switch, in the running direction), the route shall be unlocked after 180 seconds.
+c) The shortening of the MA must be done in such a manner that:
+\t- OBU remains in the mode it was when stopping on the first section.
+\t- when the exit signal is set to “CLEAR”, because this command locks behind it the sections of the siding line, an MA (MA1) shall be issued from the signal behind, in order for the
+OBU to be able to reach the signal, as follows:
+RBC 120 If the OBU is on a route (in a station) and the TMCO activates the DFP for that route, the MA shall be immediately cancelled. (LC)
+The first block sector (IAD) represents the line block between the home signals,
+The second block sector, \"IIAD\", becomes occupied when:\nthe output route from station B is set (e.g., X2->TCY),  \nthe output route is totally locked,\nthe beginning section of the output route becomes occupied (e.g., section 2).
+Remark: In this case of direct dependency between stations, the EI installation must allow for red to red dependency if CFR requires this type of dependency.
+IABS in station A includes the following elements:\nIAD block sector (in this case, section 003),\nIIAD block sector (in this case, section 005),\nDistant signal Pr.X,\nInterface element.
+Block orientation can only be defined via the special commands \"SOBB\/COBB\".  
+If the block has no orientation, the setting of output routes must be rejected.
+After the \"COBB\/COBB\" command is given, the block is oriented in the requested direction (Fig. 13, direction A to B) and block signals may be cleared. The block signals in the direction opposite to the block must remain on the \"Stop\" indication.
+If the interface does not function, all block signals (clear signals) must be automatically set on the \"Stop\" indication.
+If an output route is set and the interface does not function, the departure signal must be automatically set on the \"Stop\" indication (the indicator covering the route is flashing green).
+The interface does not function when:\nThe physical connection between stations is interrupted,\nThe communication is stopped,\nThe media convertor is faulty,\nThe system is restarted.
+If the interface is faulty, the manual or automatic block orientation is not possible (it is rejected).
+If the interface is faulty, the \"DESV\" command must be rejected.
+If the block is oriented and the interface no longer functions, the block orientation is not lost. In this case, after the communication is restored (the interface functions), the block orientation must be the same as before the interface failure,  
+After the interface is restored, the stations must transmit to each other the last status of the block orientation direction.
+Additionally to the GSM-R dialling scenarios, due to the high security requirements in railway operations, GSM-R requires verified solutions, as required by a high-quality service, fast call initiation and other features needed to meet all operational requirements.
+The GSM-R system supplied for the project in Romania required a solution tested and validated according to MORANE and EIRENE specifications defined by UIC.
+This project must comply with all requirements included in the document\/appendix .\"Requirements of the Beneficiary CFR GSM-R\" ver 3. 4. 1. - 1 august 2011;
+Moreover, all requirements described below must be met.
+The railway radio system shall comply with EIRENE specifications (SRS version 15.0) and EIRENE functional requirements (FRS version 7.0).
+The GSM-R system shall be based on the most recent GSM-R technologies.
+Availability of the GSM-R system shall be clearly indicated due to its potential future usage in the Train Control Systems. The availability of every GSM-R subsystem shall be mentioned.
+Mean time between failures (MTBF) for all items and network equipment shall be mentioned in the project. A RAMS document is needed in order to prepare system performance.
+The list of works that must be carried out in accordance with a schedule to be established by the Contractor and approved by the Beneficiary:
+LED 62 The product execution shall comply with the execution documentation and technology.(LC)
+LED 64 The removable sub-assemblies shall be attached by anti-loosen screws and nuts, such as counternuts, grower washers or star washers.(LC)
+NOTE 1 The notes and general requirements of this document are marked as follows (I).:\nO\t- \"Mandatory\". The tender shall include proof of compliance with the requirements.\nLC - mandatory conformity requirement. The requirement shall be complied with until the commissioning of the systems. It is not mandatory to demonstrate the compliance with the requirement in the tender.\n1\t- Information
+LED 1 This document lays down the operational general, technical and security conditions for \"Light-emitting diodes (LED) for traffic and operation light signals\". (LC)
+NOTE 3 The light-emitting diodes (LED) described hereunder shall be used in the traffic and operation light signals of the electronic interlocking (EI) and Integrated Automated Block system (IABS) installations included in the new projects. The light units shall ensure an appropriate visibility for train traffic speeds of at least 160 km\/h. (I).
+LED 53 protection against mechanic action by the debris carried over by moving trains (sand, etc.), so as to prevent the blurring of the optical system light area and the resulting loss of optical performance. The tenderer shall present own protection measures. (M)
+The track platform will ensure train traffic at speeds of up to 160 km\/h. In order to maintain the characteristics of the track platform no subsequent interventions are allowed that might affect the continuity of its structure, such as crosswise and longitudinal diggings.
+works for clearing the site;
+installation of an IABS system incorporated in the EI system;
+the connections between EI in stations are made on a fibre optic two-cable network, each having 24 fibres, one of them laid underground and the other mounted on the contact line poles.\nThe connection to the national network shall be made according to the designed architecture;
+installation of the video surveillance system poles tunnel 3 in km 525+125
+installation of the GSM-R equipment (BTS1, IP\/MPLS equipment) on the position resulting from the measurement of the intensity of the radio signal in the area;
+a new 100 KVA generating set, with an automatic switch to start the set in case of breakdown of the supply from the national network or the contact line;
+performing the digging works along the route for the designed cable network, in station and in the open line;
+b.\tbar of privileged users (users supplied from the national network and from the generating set);
+dismantling of the cables and external and internal equipment of the old EDI installation. Transporting and storing the disassembled materials and installations in special locations and handing them over to CNCF \"CFR\" SA for retrofitting or dismantling according to the provisions of HG 162\/2002 \"Rules regarding storage and dismantling\".
+For such purpose, the following works are required on EI installations:
+performing the digging works along the route for the designed cable network;
+In the current Zam station the following works involving the systems will be performed:
+Dismantling of the signals, points and track circuits;
+The occupational safety and health activity will be based on an “Occupational Safety and Health Plan”.
+security agents shall be in charge with signal watch and warning.
+It shall have the following chapters:
+Section II: General measures of safety and health;
+Stability and resistance
+Emergency ways and exits
+Acceptance will be carried out in accordance with the provisions under the “Rules of acceptance of the mounting works of machinery, equipment, technological installation and commissioning of production capacities”, as approved by HG 273-1994, amended in 2006, in the final site of the work, considering the normal parameters of a correct operation.
+On the acceptance of the respective item, this program together with the concluded documents as well as the design are to be attached to the technical book of the construction.
+The technical verification and commissioning boards for the traffic safety installations that carry out their activity in accordance with the technical instructions in force with C.N.C.F. “C.F.R.” SA will have in view this program.
+\tThe automatic signaling unit, BAT type for railway level crossings is destined for automatic signaling of the same level intersection of the road with the railway.
+\tIn accordance to OMT no. 290\/2000, modified through OMT 2068\/2004 “Automatic signaling unit, BAT type, for railway level crossings” is in the risk class 1A. For this product the supplies must have rail supplier authorization and technical homologation certificate or rail technical agreement emitted by the Romanian Rail Authority – AFER, valid on the whole length of the contract.
+SR 1848 – 1: 2008 Road signaling. Signs and road signaling methods. Classification, symbols and placement.
+SR EN 22768 – 1:1995 General tolerances. Part 1: Tolerance for the line and angle dimensions without indicating individual tolerances.
+SR EN 60068 – 2 – 1: 2007 Environmental tests. Part 2-1: Tests. Test A: Cold
+The parts of the same type of the equipment must be interchangeable.
+ST – NO and LC – NO equipment will be given for agreement to the Romanian Rail Authority – AFER Bucharest.
+EA 105 The electric generator, coaxially coupled to a diesel engine operating at 1500 rpm (rotations per minute) shall have the following features (LC):
+• \tDegree of mechanical protection, not less than IP 44;
+• \tVoltage regulator with circuits to reduce radio noise interference and sensibility to   interference deriving from waveform distortion;
+EA 107 The switching apparatus containing the logic for the starting and operation of the\npower unit can be placed in the unit's panel or nearby. (LC)
+EA 108-1 Generator group must be connected automatically and to debit in\nthe system, in a maximum period of three minutes from the moment of disappearance of the base source.
+SR EN 50238 \tRail application – Compatibility between rolling stock and train detection systems.
+Logging function will also include:
+• Diagnosis of the situations involving failures;
+These objects control modules continuously monitor elements and indicates back to the system logic their status. This indication is transmitted automatically when the object state changes or upon request.
+A comprehensive maintenance manual will be included as a file call technical work station. A connection will be implemented between the electronic maintenance manual and the fault detected by the diagnosis system, so that a certain type of fault can automatically access the description in the maintenance manual.
+The current number, date and time of the maintenance indication;
+The MMI must be made ​​for an adequate number of workstations corresponding to traffic density resulting from the analysis of signal plans from this technical specification, in accordance with the required number of power units and equipment for electronic interfaces (the MMI number needed to be calculated for each station considering stations traffic density and work capacity of the operator).
+Bidder shall also provide all supplies, tools and fittings necessary for this implementation.
+Installation will be done by the Contractor and its authorized subcontractors. For on-site training, CFR will provide the Contractor with 5 engineers and signaling technicians (SCB) for all stations.
+• provide false attack signaling of switches. If the falsely attacked switch is included in a route, is the flank or switch protective coating covering signal that must pass automatically during the \"off\";
+White - current line is busy or engaged by an exit route, a white light also indicates the presence of voltage to reverse BLA or BLAS.
+CE 3. The existing centralization technology based on the relay technology that equips project stations and the related BLA distances of the Employer must be rehabilitated to be compatible with ERTMS with ETCS level 2.
+So, in order to improve the operational facilities of signaling, it has been decided to be equipped with new signaling equipment based on electronics and computer technology as well as a new field signaling equipment at these stations of the Employer and on the distances between these stations and on distances to adjacent stations.
+The bidder will consider in his offer both the indoor and outdoor equipment for these stations, the distances between these stations and the distances to the adjacent stations.  ( I)
+·\tTraining of operating, maintenance and commissioning staff for railway stations and BLA \/ BLAI adjacent to each of these project stations. (I)
+CE 9. The Bidder \/ Contractor will deliver to the Employer all necessary documents defined in these Requirements.  ( LC)
+·\tfile and memo protection.
+The bidder will take into account that the outdoor equipment can be installed in the 27 kV \/ 50 Hz contact line influence zone.    (O)
+"CE 78. Containers shall be provided with fire detection systems (including smoke detectors) and fire extinguishers operating on the principle of inert gas use.  They must ensure that the amount of oxygen is reduced \/ eliminated, with no negative influence on equipment or wiring inside the container.
+CE 157. Field light signals must be displayed in the central control station with light symbols. The required indications are described below:
+Red    \t\tdefault indication;\nyellow or green    \twhen the signal shows a permissive indication;\nblinking red     \t\twhen the red fire LED unit is defective;\nWhite\twhen the signal shows a permissive indication of maneuver or call.
+·\tvariables related to the relative operational values ​​for each controlled unit (operating \/ stop times, stop \/ start number, etc.) and maintenance data (replacement).
+RBC 115 When it receives a request from an MA from a train, the RBC must request the CE installation to prepare a route for that train.(LC)
+RBC 217 The RBC must ensure that keys are kept securely and confidentially. It must be impossible to retrieve the secret keys installed in the RBC (for unauthorized persons).(LC)
+RBC 218 The RBC must ensure the use of transport keys for the protection of the authentication keys (KMAC).(LC)
+RBC 301 The RBC must be able to display the fact that a train has received an emergency stop message (when the OBU sends this acknowledgment to the RBC).(LC).
+RBC 336 The Contractor shall present all the values used for the rest of the variables defined in chapter 7.5 of SUBSET 026.(LC)
+GEN 51 Location of containers. In the station, the location of the containers will be on the Beneficiary’s land, as close as possible to the station building, at a distance of no more than 100 m. (LC)"
+GEN 68 All final documentation and that during the project (drawings, documents, charts, drawings, graphics, schemes etc.) must also be submitted in electronic format. (LC)
+Works on the project of reconstructing the existing and constructing the second track on the section Dugo Selo – Križevci (subsections Dugo Selo – Vrbovec and Vrbovec – Križevci) must be completed in entirety within four (4) years from the day of the Beginning of Works.
+The supervisory centre for PS2+2Bv Dugo Selo is situated in Zagreb. The computer of the KKU is connected to the central computer system at the Remote Control Centre.
+The system for detecting and reporting fire (fire-alarm system) must encompass all areas within the facility which could be in danger of fire. Analog addressable fire-alarm system is foreseen with automatic, optical and thermical fire notifiers, and on evacuation ways manual fire notifiers have been  placed.
+Within the scope of the project, at the subject railway station the construction of new auxiliary roads and relocation of the existing ones is planned.
+Parallelly with the construction of the superstructure of the rail the foundations for the noise protection walls should be built. The walls’ heights on the subject section are 3.0 to 5.0 m, The walls are positioned at a distance of 4.0-5.5 m from the exterior track axis. Within the railway station Dugo Selo barriers are adjusted to the facilities formation (platforms, pedestrian ways, channels, cables).
+On the left side of the rail total 964 m of wall should be built and on the right side approx. 300m.
+The reconstruction of the railway station Dugo Selo requires the construction of the rail on deviation M103 Dugo Selo – Novska to Ostrna. New railway station Dugo Selo is constructed  in a way to extend the route towards east. On the east side of the railway station a two-track rail on the route Dugo Selo – Križevci is planned and  two-track rail on the route Dugo Selo – Novska.
+In this phase on the route M103 Dugo Selo – Novska to Ostrna one track should be built (1N) and a planum for the other track of total length approx. 1400m. Towards Novska the existing rail is retained as a main rail for the purposes of commercial areas. From this rail the industrial rail to Dalekovod is separated.
+On the rail deviation the reinforced embankment is 30-50 cm thick. Due to bad characteristics of the ground, along with the geotextile and geonetwork which are placed onto adapted foundation, another layer of geonetwork onto the reinforced embankment should be put.
+Culverts’ construction works should be performed during dry periods (periods of low waters).
+The rail on the deviation passes over drainage channels under small angle and therefore the melioration channel MK1 134 m long and the lateral channel LK1 237 m long should be regulated. The existing profile of the channels is retained.
+Steel parts of brackets are protected from corrosion by hot corrugation and the fixings are cast of aluminium bronze and the screws of stainless steel.
+Drive conduits are firmly and automatically strained.
+Two PP40 (NYCY) type cables have been laid to reach each disconnector’s power engine unit. The cables are laid in one piece, as feasible (technological, production length of cables is up to 1000 m). If the cables are extended, both cables shall be extended at the same point.
+e)\tFor purposes of making a part of the Time Plan related to the performance of Works, Contractor shall take into account the requirements referred to in item 3.2. Priorities in performance of works, performance dynamics and limitations, as well as demands and limitations referred to in item 3.1.3. Right to Access
+i.\tComments on the progress made in the previous month, including any deviations from scheduled activities,
+h)\tIn order to realize the requested dynamics and the request for uninterrupted flow of railway traffic, and limitations referred in item 3.1.3 Right to access, Contractor shall provide all necessary Means, Materials and Plants. This must be considered when making the Time Plan.
+c)\tFor the duration of these works (works outside traffic flow zone), the existing APB device (including level crossings) must be in function and train traffic must flow freely according to the planned schedule of the infrastructure manager, without introducing limitations.
+a.\tElectrification of the line Belgrade-Nis was completed in 1974 within the framework of\nprogramme for modernization of JZ main lines. The electrification system of the line is\nsingle- phase 25 kV, 50 Hz.
+e.\tOn the part of single-track line, from junction to PS “Cuprija”, a bridging feeder which\nentends the electric connection of the left track is placed.
+d)\tComplete renovation of Power Supply Equipment
+The device and equipment must have a permit for use on the Serbian Railways network issued by the authorized body or a certificate issued by an UIC railway in which case atemporary use permit shall be obtained from the competent body prior to signing of the Contract( see TS 2. Standards for equipment and materials )..
+Station signaling-safety device should be performed by principle of electronic signaling-safety device (ESSU) providing signalling train routing according to the dependence table. Except conditions stated in item 8.0, electronic interlocking device should satisfy also the conditions from the following reference documents:
+a)   Types of isolated sections were processed in the typical project ŽO.060.11.
+Control desk is designed to be electronic control - monitoring system MMI, which present electronic interface between train dispatcher and station signaling-safety   device.
+x)    Controlling the L3-L1 voltage output\n•\tControls the output blink voltage frequency.\n•\tControl the level of output voltage. Remote signaling
+b)\tAt the same time blocks the appointe route and is not possible to give new commands. It is only possible to cancel the allow driving in the station, forced to set signal aspect in stop position, using button TPC and this command register.
+b)\tAll elements of blocking sections contained in typical projects: Typical project of blocking sections ŽO.060.11., Typical project of rail bondings ŽO.060.12., Typical project of the termination boxes ŽO.060.13. and Typical project of the catalog isolation ŽO.060.16 and Typical project overvoltage fuse ŽO.060.15 .
+For control incoming – outgoing tracks, points, station sections in station Ćuprija and block sections should be controlled by the axle-counter system.
+2)\tSensor device should be of electronic type
+15)\tSupplier should provide repair in the country of ordered.
+16)\tStandard hardware configuration for evaluation is the fail-safe configuration »2 of 2«. Connection between numerical systems should be performed over serial data transfer (cable length less then 15m) or by modem, serial interface provides double direction transfer of specific information, for example as block information, between evaluation computers.
+h)   The training shall consist of theoretical run-throughs and practical exercises.

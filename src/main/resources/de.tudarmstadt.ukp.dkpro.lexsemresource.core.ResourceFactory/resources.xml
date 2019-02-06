@@ -1,0 +1,21 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+	
+	<bean
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+	</bean>
+	
+	<bean id="wordnet-en" lazy-init="true"
+		class="de.tudarmstadt.ukp.dkpro.lexsemresource.wordnet.WordNetResource">
+		<constructor-arg value="C:/Users/Ricard/Documents/Git/dependency-detection/\src/main/resources/LexSemResources/wordnet/wordnet_properties.xml"/>
+	</bean>
+	
+	<!--<bean id="wiktionary-en" lazy-init="true"
+		class="de.tudarmstadt.ukp.dkpro.lexsemresource.wiktionary.WiktionaryResource">
+		<constructor-arg value="ENGLISH"/>
+		<constructor-arg value="${DKPRO_HOME}/LexSemResources/Wiktionary/jwktl_0.15.2_en20100403"/>
+	</bean>-->
+	
+</beans>
+

@@ -1,0 +1,33 @@
+RBC 6 The tenderer must present in its tender the principles used for calculating MTBF and MTTR (M).
+#
+RBC 14 Environment-2 All equipment must function in ambient temperatures:\n\ta) -40°C to +70°C for outdoor equipment\n\tb) -10°C to +50°C for outdoor equipment. Air conditioning systems may be used, in accordance with the standards in force, for situations where the equipment in the tender does not meet the specified limits. In this case, the availability indicated for the assembly formed of electronic equipment and air conditioning system must be higher than or equal to the availability indicated for the electronic equipment.
+#
+RBC 7 The Tenderer must show in its tender how the RBC complies with the above MTBSF and MTTR values (LC).
+#
+RBC 16 The RBC and the interfaces with the EI and GSM-R installations must be mounted in containers. It is allowed to install the ETCS equipment in the same container as the one intended for the EI installations. (LC)
+#
+RBC 13 Environment-1 All the equipment must meet the relative humidity requirement: maximum 85% without condensation. (LC)
+#
+NOTE 1. The notes containing requirements shall also be considered to be “LC” for implementation of the systems within the project. They are labelled “NOTE” because they do not refer strictly to RBC (I)
+#
+RBC 1 If the Contractor intends to introduce new functions and/or to propose improved solutions compared to those proposed in this document, they must be approved by CFR. (LC)
+#
+NOTE 2. The RBC notes and requirements in this document are rated as follows: (I)\nM – mandatory; the fulfilment of the conformity requirement must be proven in the tender;\nLC –mandatory conformity requirement; the requirement must be fulfilled until system commissioning; it is not required to be proven in the tender;\nI – Informative. The notes are generally provided for information purposes;\n\t\tI\/LC-EI – informative for RBC and LC for the EI installation;\n\t\tLC\/LC-EI – LC for RBC and LC for the EI installation.
+#
+RBC 2 This document shall be the basis for the preparation of the RBC CRS final version. (LC)
+#
+RBC 9 The values above must be valid throughout the entire service life of the equipment (25 years). (LC)
+#
+RBC 8 Availability. An availability of at least 99,955% must be provided for RBC (including interfaces with the electronic interlocking installations and GSM-R) (M). The tender must include relevant documents Relevant documents proving this value must be presented in the offer.
+#
+NOTE 8. The transition from SRS 222 to SRS 230d is a minor and recent update of the software version used for the ETCS equipment (OBU, RBC, LEU, balises). Because the update is minor, the maturity of the solutions based on SRS 230d may include the maturity of the solutions based on SRS 222 and 230. Because the update is recent, at the time of the launch of this call for tenders, there are very few actual implementations of SRS 230d-based solutions. Therefore, for the assessment of the proposed solution, CFR accepts the inclusion of solutions based on SRS 222 and 230. (I)
+#
+NOTE 5. Availability shall be calculated using the formula:
+#
+RBC 15 The outdoor equipment must be protected by means of safety measures against: (LC)\ntheft, vandalism and sabotage\nvibrations\nwater infiltrations\ndust infiltration\nFor this purpose, the containers, cabinets, pickets and outdoor equipment cases must be provided with:\nan appropriate protection system against humidity\nan efficient locking system\nfor containers and cabinets -doors with contacts, which signal their opening at the central post, water-sensitive equipment must be placed at least 1 meter above ground.
+#
+RBC 3 If several RBCs are to be installed, each of them must meet the following values. (LC)
+#
+RBC 4 MTBSF. For total failure, MTBSF for RBC (including the interfaces with the electronic interlocking installations and GSM-R) must be of at least 760,000 hours (M). The tender must include relevant documents proving this value. These documents must be drafted by independent bodies (e.g. EBA, Certifier, etc.)
+#
+RBC 12The RBC tender must comply with ENV 50129, paragraph B.2.6 „Fulfilment of specific environmental conditions” and with Appendix B4 „Operation under external influence conditions”. For B.4.6., the tenderer must submit its proposal. (LC)
