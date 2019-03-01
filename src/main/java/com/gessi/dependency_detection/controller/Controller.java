@@ -45,7 +45,7 @@ import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/upc/dependency-detection")
 @Api(value = "ControllerAPI", produces = MediaType.APPLICATION_JSON_VALUE)
 public class Controller {
 
