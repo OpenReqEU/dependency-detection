@@ -116,7 +116,7 @@ mvn clean install package
 
 ### How to use it
 
-You can take a look at the Swagger documentation [here](http://217.172.12.199:9407/swagger-ui.html#/), which includes specific, technical details of the REST API to communicate to the service.
+You can take a look at the Swagger documentation [here](https://api.openreq.eu/dependency-detection/swagger-ui.html), which includes specific, technical details of the REST API to communicate to the service.
 
 ### Notes for developers
 
