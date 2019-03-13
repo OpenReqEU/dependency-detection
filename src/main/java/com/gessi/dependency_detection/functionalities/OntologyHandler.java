@@ -521,6 +521,7 @@ public class OntologyHandler {
 
 		// Requirement instantiation within the ontology
 		for (OntClass cls : classes) {
+			System.out.println(requirement + "/" + reqId + "/" + cls.getLocalName());
 			Individual individual = this.model.createIndividual(this.source + ":" + reqId + "_" + cls.getLocalName(),
 					cls);
 			DatatypeProperty req = this.model.getDatatypeProperty(this.source + "#requirement");
@@ -528,7 +529,6 @@ public class OntologyHandler {
 			DatatypeProperty id = this.model.getDatatypeProperty(this.source + "#id");
 			individual.setPropertyValue(id, this.model.createTypedLiteral(reqId));
 			DatatypeProperty className = this.model.getDatatypeProperty(this.source + "#class");
-			System.out.println(requirement + "/" + reqId + "/" + cls.getLocalName());
 			individual.setPropertyValue(className, this.model.createTypedLiteral(cls.getLocalName()));
 		}
 	}
