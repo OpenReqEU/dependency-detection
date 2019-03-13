@@ -528,6 +528,7 @@ public class OntologyHandler {
 			DatatypeProperty id = this.model.getDatatypeProperty(this.source + "#id");
 			individual.setPropertyValue(id, this.model.createTypedLiteral(reqId));
 			DatatypeProperty className = this.model.getDatatypeProperty(this.source + "#class");
+			System.out.println(requirement + "/" + reqId + "/" + cls.getLocalName());
 			individual.setPropertyValue(className, this.model.createTypedLiteral(cls.getLocalName()));
 		}
 	}
