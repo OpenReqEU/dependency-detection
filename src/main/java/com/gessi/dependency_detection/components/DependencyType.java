@@ -13,6 +13,7 @@ public enum DependencyType {
     SIMILAR, @JsonProperty("duplicates")
     DUPLICATES, @JsonProperty("replaces")
     REPLACES, @JsonProperty("cross-reference")
+	CONFLICTS, @JsonProperty("conflicts")
     CROSS_REFERENCE;
 
     public DependencyType find(String elem) {
@@ -37,6 +38,8 @@ public enum DependencyType {
 	    return DependencyType.REPLACES;
 	case "CROSS_REFERENCE":
 	    return DependencyType.CROSS_REFERENCE;
+	case "CONFLICTS":
+		return DependencyType.CONFLICTS;
 	}
 	return null;
     }
