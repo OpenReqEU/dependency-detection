@@ -1,0 +1,60 @@
+{
+  "projects" : [ {
+    "id" : "ABC",
+    "name" : "ABCExample",
+    "specifiedRequirements" : [ "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M"]
+  } ],
+  "requirements" : [ {
+    "id" : "A",
+    "name" : "a",
+    "text" : "The project of reconstructing the second track of the railway line Dugo Selo – Križevci is a constituent part of the Operational programme 'Traffic' 2007 - 2013"
+  }, {
+    "id" : "B",
+    "name" : "b",
+    "text" : "Span structure of the bridge is made from steel plate girders"
+  }, {
+    "id" : "C",
+    "name" : "c",
+    "text" : "Bridge abutments are made of concrete with parallel wing walls"
+  }, {
+    "id" : "D",
+    "name" : "d",
+    "text" : "Abutments are made from concrete with small angled wing walls"
+  }, {
+    "id" : "E",
+    "name" : "e",
+    "text" : "Track thresholds are supported by two secondary longitudinal structure I-34 girders"
+  }, {
+    "id" : "F",
+    "name" : "f",
+    "text" : "The thickness of the bridge slab is from 40 cm on bearings"
+  }, {
+    "id" : "G",
+    "name" : "g",
+    "text" : "Secondary longitudinal plate girders are positioned in respective distance of 1,8 m"
+  }, {
+    "id" : "H",
+    "name" : "h",
+    "text" : "Project of reconstructing th track must be completed in entirety within four years from the day of the Beginning of Works"
+  }, {
+    "id" : "I",
+    "name" : "i",
+    "text" : "Within the performance dynamics, the priority is assigned to the subsection Vrbovec–Križevci"
+  }, {
+    "id" : "J",
+    "name" : "j",
+    "text" : "The subsection Vrbovec–Križevci has to be constructed within two years from the day of the Beginning of Works"
+  }, {
+    "id" : "K",
+    "name" : "k",
+    "text" : "The priority in performance dynamics is also assigned to roadway crossings outside the level (overpasses/underpass)"
+  }, {
+    "id" : "L",
+    "name" : "l",
+    "text" : "The roadway crossings outside the level has to be completed within three years from the day of the Beginning of Works"
+  }, {
+    "id" : "M",
+    "name" : "m",
+    "text" : "Additionally, all crossings on the specific subsection must be constructed before the elimination of the protections on railway road crossings"
+  } ]
+}
