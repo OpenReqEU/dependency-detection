@@ -1,38 +1,61 @@
 package com.gessi.dependency_detection;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.junit.FixMethodOrder;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.MethodSorters;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.mock.web.MockMultipartFile;
+import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
-/**
- * Unit test for simple App.
- */
-public class AppTest 
-    extends TestCase
-{
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest( String testName )
-    {
-        super( testName );
-    }
+import java.io.*;
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( AppTest.class );
-    }
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
+@RunWith(SpringRunner.class)
+@SpringBootTest
+@AutoConfigureMockMvc
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
+public class AppTest {
+
+    @Autowired
+    private MockMvc mockMvc;
+
+    @Test
+    public void testA() throws Exception {
+
+        StringBuilder ontologyFile = new StringBuilder();
+        StringBuilder jsonFile = new StringBuilder();
+        String line;
+
+        BufferedReader ontologyReader = new BufferedReader(new FileReader("src/test/java/com/gessi/dependency_detection/openreq-rail-small.owl"));
+        while ((line = ontologyReader.readLine()) != null) {
+            ontologyFile.append(line + "\n");
+        }
+
+        BufferedReader jsonReader = new BufferedReader(new FileReader("src/test/java/com/gessi/dependency_detection/test_dependencyDetection.json"));
+        while ((line = jsonReader.readLine()) != null) {
+            jsonFile.append(line + "\n");
+        }
+
+        MockMultipartFile ontology = new MockMultipartFile("ontology",
+                "openreq-rail-small.owl",
+                "text/plain",
+                ontologyFile.toString().getBytes());
+
+        MockMultipartFile json = new MockMultipartFile("json",
+                "test_dependencyDetection.json",
+                "application/json",
+                jsonFile.toString().getBytes());
+
+        this.mockMvc.perform(MockMvcRequestBuilders.fileUpload("/upc/dependency-detection/json/ontology/ABC/true/0.1")
+                .file(ontology)
+                .file(json))
+                .andExpect(status().isOk());
     }
 }
