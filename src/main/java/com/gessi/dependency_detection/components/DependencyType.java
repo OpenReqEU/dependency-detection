@@ -13,8 +13,8 @@ public enum DependencyType {
     SIMILAR, @JsonProperty("duplicates")
     DUPLICATES, @JsonProperty("replaces")
     REPLACES, @JsonProperty("cross-reference")
-	CONFLICTS, @JsonProperty("conflicts")
-    CROSS_REFERENCE;
+    CROSS_REFERENCE, @JsonProperty("conflicts")
+    CONFLICTS;
 
     public DependencyType find(String elem) {
 	switch (elem.toUpperCase()) {
