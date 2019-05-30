@@ -94,9 +94,7 @@ Finally, each pair of classes that are linked with a dependency relation are ana
 
 * Swagger (&rarr; [https://swagger.io/](https://swagger.io/) )
 * Maven (&rarr; [https://maven.apache.org/](https://maven.apache.org/) )
-* DKPro Similarity framework (&rarr; [https://dkpro.github.io/dkpro-
-similarity/](https://dkpro.github.io/dkpro-
-similarity/) )
+* DKPro Similarity framework (&rarr; [https://dkpro.github.io/dkpro-similarity/](https://dkpro.github.io/dkpro-similarity/) )
 * Apache OpenNLP Toolkit (&rarr; [http://opennlp.apache.org](http://opennlp.apache.org) )
 * NLP Toolkit for JVM Languages (NLP4J) (&rarr; [https://emorynlp.github.io/nlp4j/](https://emorynlp.github.io/nlp4j/) )
 
