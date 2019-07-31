@@ -5,7 +5,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -33,7 +32,7 @@ public class DependencyService {
 	private final Path rootLocation;
 	private final Path ontLocation;
 	private final Path docLocation;
-	private final String errorMessage = "Could not initialize storage";
+	private static final String errorMessage = "Could not initialize storage";
 	private NLPAnalyser analizer;
 	private String jsonName;
 

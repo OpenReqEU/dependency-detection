@@ -75,7 +75,7 @@ public class Controller {
 			@ApiResponse(code = 403, message = "Forbidden: The server understood the request but refuses to authorize it."),
 			@ApiResponse(code = 404, message = "Not Found: The server could not find what was requested by the client."),
 			@ApiResponse(code = 500, message = "Internal Server Error. For more information see ‘message’ in the Response Body.") })
-	public ResponseEntity<?> uploadJSONFile(
+	public ResponseEntity uploadJSONFile(
 			@ApiParam(value = "The Ontology file to upload (RDF/XML lang.)", required = true) @RequestPart("ontology") @Valid @NotNull @NotBlank MultipartFile ontology,
 			@ApiParam(value = "The JSON file to upload", required = true) @RequestPart("json") @Valid String json,
 			@ApiParam(value = "Id of the project where the requirements to analize are.", required = true) @PathVariable("projectId") String projectId,
@@ -126,14 +126,7 @@ public class Controller {
 			result.put("exception", e.toString());
 			result.put("message", "NLP Error");
 			return new ResponseEntity<>(result, HttpStatus.INTERNAL_SERVER_ERROR);
-		} catch (SimilarityException e) {
-			LinkedHashMap<String, String> result = new LinkedHashMap<>();
-			result.put("status", "500");
-			result.put("error", "Internal Server Error");
-			result.put("exception", e.toString());
-			result.put("message", "Similarity Error");
-			return new ResponseEntity<>(result, HttpStatus.INTERNAL_SERVER_ERROR);
-		} catch (LexicalSemanticResourceException e) {
+		} catch (SimilarityException | LexicalSemanticResourceException e) {
 			LinkedHashMap<String, String> result = new LinkedHashMap<>();
 			result.put("status", "500");
 			result.put("error", "Internal Server Error");

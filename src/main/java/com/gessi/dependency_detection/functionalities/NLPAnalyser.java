@@ -10,6 +10,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import com.gessi.dependency_detection.util.Control;
+import dkpro.similarity.algorithms.api.SimilarityException;
 import org.apache.uima.UIMAException;
 import org.apache.uima.analysis_engine.AnalysisEngine;
 import org.apache.uima.analysis_engine.AnalysisEngineDescription;
@@ -71,7 +73,7 @@ public class NLPAnalyser {
 			wordnet.setIsCaseSensitive(false);
 		} catch (ResourceLoaderException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			Control.getInstance().showInfoMessage(e.getMessage());
 		}
 	}
 
@@ -118,7 +120,7 @@ public class NLPAnalyser {
 							synResult.addAll(ie.applyIE());
 						}
 					} catch (NullPointerException e) {
-						System.out.println("[ERROR] The grammar of the sentence is not correct!");
+						Control.getInstance().showErrorMessage("[ERROR] The grammar of the sentence is not correct!");
 					}
 				}
 			}
@@ -211,13 +213,13 @@ public class NLPAnalyser {
 			// Detecting the sentence
 			sentences = sentenceDetector.sentDetect(sentence);
 		} catch (IOException e) {
-			e.printStackTrace();
+			Control.getInstance().showInfoMessage(e.getMessage());
 		} finally {
 			if (inputStream != null) {
 				try {
 					inputStream.close();
 				} catch (IOException e) {
-					e.printStackTrace();
+					Control.getInstance().showInfoMessage(e.getMessage());
 				}
 			}
 		}
@@ -366,11 +368,11 @@ public class NLPAnalyser {
 	 * @param term1
 	 * @param term2
 	 * @return
-	 * @throws dkpro.similarity.algorithms.api.SimilarityException
+	 * @throws SimilarityException
 	 * @throws LexicalSemanticResourceException
 	 */
 	public double semanticSimilarity(String term1, String term2)
-			throws dkpro.similarity.algorithms.api.SimilarityException, LexicalSemanticResourceException {
+			throws SimilarityException, LexicalSemanticResourceException {
 
 		if (comparatorWN == null)
 			comparatorWN = new WuPalmerComparator(wordnet, wordnet.getRoot());
@@ -386,12 +388,9 @@ public class NLPAnalyser {
 	 */
 	public List<String> readFile(String path) {
 		ArrayList<String> fileLines = new ArrayList<>();
-		BufferedReader br = null;
-		FileReader fr = null;
 
-		try {
-			fr = new FileReader(path);
-			br = new BufferedReader(fr);
+		try(FileReader fr = new FileReader(path);
+			BufferedReader br = new BufferedReader(fr)) {
 
 			String sCurrentLine;
 
@@ -400,19 +399,7 @@ public class NLPAnalyser {
 			}
 
 		} catch (IOException e) {
-			e.printStackTrace();
-
-		} finally {
-			try {
-				if (br != null)
-					br.close();
-				if (fr != null)
-					fr.close();
-
-			} catch (IOException ex) {
-				ex.printStackTrace();
-
-			}
+			Control.getInstance().showInfoMessage(e.getMessage());
 		}
 		return fileLines;
 	}

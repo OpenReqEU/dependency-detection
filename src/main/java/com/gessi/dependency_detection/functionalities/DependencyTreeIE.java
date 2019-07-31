@@ -44,7 +44,7 @@ public class DependencyTreeIE {
 	 * 
 	 * @return
 	 */
-	public ArrayList<Node> applyIE() {
+	public List<Node> applyIE() {
 		ArrayList<Node> topNodes = analyzeSon(root);
 		if (root.getPosTag().matches("\\w*NN\\w*")) {
 			topNodes.add(root);

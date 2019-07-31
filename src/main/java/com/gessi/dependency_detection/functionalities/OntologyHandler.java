@@ -133,12 +133,11 @@ public class OntologyHandler {
 	 * @param lemma
 	 * @param ontWord
 	 * @param ontLemma
-	 * @param analizer
 	 * @return
 	 * @throws SimilarityException
 	 * @throws LexicalSemanticResourceException
 	 */
-	private boolean isSameTerm(String term, String lemma, String ontWord, String ontLemma, NLPAnalyser analizer)
+	private boolean isSameTerm(String term, String lemma, String ontWord, String ontLemma)
 			throws SimilarityException, LexicalSemanticResourceException {
 
 		if (term.equalsIgnoreCase(ontWord))
@@ -191,7 +190,7 @@ public class OntologyHandler {
 			int j = 0;
 			while (j < words.length && !find) {
 				if (!idxOntLemmaAnalized.contains(j)
-						&& isSameTerm(ngramTerm.get(i), ngramLemma.get(i), words[j], lemmas[j], analizer)) {
+						&& isSameTerm(ngramTerm.get(i), ngramLemma.get(i), words[j], lemmas[j])) {
 					find = true;
 					idxReqLemmaAnalized.add(i);
 					idxOntLemmaAnalized.add(j);
