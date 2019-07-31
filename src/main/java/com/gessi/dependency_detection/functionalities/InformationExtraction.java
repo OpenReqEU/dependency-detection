@@ -1,10 +1,6 @@
 package com.gessi.dependency_detection.functionalities;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 import opennlp.tools.parser.Parse;
 
@@ -25,9 +21,10 @@ public class InformationExtraction {
 	applyInfoExtraction(parse);
     }
 
-    public ArrayList<String> applyInfoExtraction(Parse parse) {
+    public List<String> applyInfoExtraction(Parse parse) {
 	ArrayList<String> infoExtracted = new ArrayList<>();
-	String NP, obj = "";
+	String np = "";
+	String obj = "";
 	ArrayList<Parse> verb = null;
 	if (parse.getType().equals("S")) {
 		
@@ -40,39 +37,31 @@ public class InformationExtraction {
 	    Parse[] children = parse.getChildren();
 	    for (Parse child : children) {
 		if (child.getType().equals("NP")) {
-		    NP = extractSubject(child);
-		    infoExtracted.add(NP);
-//		    System.out.println("Subject : " + NP);
+		    np = extractSubject(child);
+		    infoExtracted.add(np);
 		} else if (child.getType().equals("VP")) {
-		    HashMap<Integer, ArrayList<Parse>> VP = extractPredicate(child.getChildren(), 0);
-		    int key = findMax(VP.keySet());
-		    verb = VP.get(key);
-
-//		    System.out.print("Relation : ");
-		    String VPs = "";
+		    Map<Integer, ArrayList<Parse>> vp = extractPredicate(child.getChildren(), 0);
+		    int key = findMax(vp.keySet());
+		    verb = vp.get(key);
+		    String vps = "";
 		    for (Parse p : verb) {
-//			System.out.print(p.getCoveredText().replaceAll(",|;|:", "") +"_"+ p.getType() + " ");
-			VPs = VPs + p.getCoveredText().replaceAll(",|;|:", "") +"_"+ p.getType() + "," ;
+			vps = vps.concat(p.getCoveredText().replaceAll(",|;|:", "") +"_"+ p.getType() + ",");
 
-			VPs = VPs + extractVerbAtributes(verb.get(0).getParent().getChildren());
-			obj = obj + extractObject(verb.get(0).getParent().getChildren());
+			vps = vps.concat(extractVerbAtributes(verb.get(0).getParent().getChildren()));
+			obj = obj.concat(extractObject(verb.get(0).getParent().getChildren()));
 		    }
-		    infoExtracted.add(VPs);
+		    infoExtracted.add(vps);
 		    infoExtracted.add(obj);
-//		    System.out.println("\nObject : " + obj);
 		}
 	    }
 	}
 	return infoExtracted;
-//	 System.out.println("\nNP=" + NP + "\tVP=" + VP);
-
     }
 
     private Integer findMax(Set<Integer> values) {
 	int max = -999;
 	for (int d : values) {
-	    if (d > max)
-		max = d;
+	    if (d > max) max = d;
 	}
 
 	return max;
@@ -104,32 +93,27 @@ public class InformationExtraction {
 	for (String tag : tags) {
 	    node = extractFirstTag(parse, tag);
 	    if (node != null) {
-		siblings = extractSibling(node, tag);
-		for (Parse s : siblings) {
-		    subject = subject + s.getCoveredText().replaceAll(",|;|:", "") +"_"+ s.getType() + "," ;
-		}
-		/* Find the PP NN attributes of the noun */
-		Parse parent = null;
-		if (node.getType().matches("\\w*V\\w*")) {
-		    parent = findParent(node, "VP");
-		    if (parent.getType().equals("S"))
-			parent = findParent(node, "NP");
-		    siblings = extractSibling(parent, "PP");
-		    // siblings.addAll(extractSibling(node, "NP"));
-		} else if (node.getType().matches("\\w*NN\\w*")) {
-		    parent = findParent(node, "NP");
-		    siblings = extractSibling(parent, "PP");
-		}
 
-		for (Parse child : siblings) {
-		    if (child.getType().equals("PP")) {
-			subject = subject + extractSubject(child) + "," ;
-		    } else if (child.getType().equals("NP") && !child.equals(node)) {
-			subject = subject + extractSubject(child) + "," ;
-		    }
-		}
+			siblings = extractSibling(node, tag);
+			for (Parse s : siblings) {
+				subject = subject.concat(s.getCoveredText().replaceAll(",|;|:", "") +"_"+ s.getType() + ",");
+			}
+
+			/* Find the PP NN attributes of the noun */
+			Parse parent = null;
+			if (node.getType().matches("\\w*V\\w*")) {
+				parent = findParent(node, "VP");
+				if (parent.getType().equals("S")) parent = findParent(node, "NP");
+				siblings = extractSibling(parent, "PP");
+			} else if (node.getType().matches("\\w*NN\\w*")) {
+				parent = findParent(node, "NP");
+				siblings = extractSibling(parent, "PP");
+			}
+
+			for (Parse child : siblings) {
+				if (child.getType().equals("PP") || (child.getType().equals("NP") && !child.equals(node))) subject = subject.concat(extractSubject(child) + ",");
+			}
 	    }
-
 	}
 
 	return subject;
@@ -169,7 +153,7 @@ public class InformationExtraction {
 	return noun;
     }
 
-    public ArrayList<Parse> extractChildrenTag(Parse parse, String tag) {
+    public List<Parse> extractChildrenTag(Parse parse, String tag) {
 	ArrayList<Parse> noun = new ArrayList<>();
 	Parse[] children = parse.getChildren();
 
@@ -184,8 +168,8 @@ public class InformationExtraction {
 	return noun;
     }
 
-    public HashMap<Integer, ArrayList<Parse>> extractPredicate(Parse[] parse, int lebel) {
-	HashMap<Integer, ArrayList<Parse>> verbs = new HashMap<Integer, ArrayList<Parse>>();
+    public Map<Integer, ArrayList<Parse>> extractPredicate(Parse[] parse, int lebel) {
+	HashMap<Integer, ArrayList<Parse>> verbs = new HashMap<>();
 	int i = 0;
 	while (i < parse.length) {
 
@@ -215,11 +199,11 @@ public class InformationExtraction {
 	String obj = "";
 	for (Parse child : parse) {
 	    if (child.getType().equals("NP") || child.getType().equals("PP")) {
-		obj = obj + extractSubject(child);
+		obj = obj.concat(extractSubject(child));
 	    } else {
 		Parse node = extractFirstTag(child, "JJ");
 		if (node != null)
-		    obj = obj + node.getCoveredText().replaceAll(",|;|:", "") +"_"+ node.getType() + "," ;
+		    obj = obj.concat(node.getCoveredText().replaceAll(",|;|:", "") +"_"+ node.getType() + ",");
 	    }
 	}
 
@@ -233,10 +217,10 @@ public class InformationExtraction {
 	    if (child.getType().equals("ADVP")) {
 		Parse node = extractFirstTag(child, "IN");
 		if (node != null)
-		    obj = obj + node.getCoveredText().replaceAll(",|;|:", "") +"_"+ node.getType() + "," ;
+		    obj = obj.concat(node.getCoveredText().replaceAll(",|;|:", "") +"_"+ node.getType() + ",");
 		node = extractFirstTag(child, "RB");
 		if (node != null)
-		    obj = obj + node.getCoveredText().replaceAll(",|;|:", "") +"_"+ node.getType() + "," ;
+		    obj = obj.concat(node.getCoveredText().replaceAll(",|;|:", "") +"_"+ node.getType() + ",");
 	    }
 	}
 

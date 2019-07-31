@@ -27,8 +27,8 @@ public class SwaggerConfig extends WebMvcConfigurerAdapter {
     private static final String	SWAGGER_API_VERSION = "1.0";
     private static final String	LICENSE_TEXT	    = "EPL-v1.0";
     private static final String	LICENSE_URL	    = "https://www.eclipse.org/legal/epl-v10.html";
-    private static final String	title		    = "Dependency detection RESTful API";
-    private static final String	description	    = "A REST API used to identify dependencies from requirements. "
+    private static final String	TITLE		    = "Dependency detection RESTful API";
+    private static final String	DESCRIPTION	    = "A REST API used to identify dependencies from requirements. "
 	    + "Requirements are stored in a JSON file. The dependencies are detailed in an input ontology, which is used to support the detection.";
 
     /**
@@ -37,16 +37,8 @@ public class SwaggerConfig extends WebMvcConfigurerAdapter {
      * @return
      */
     @Bean
-    public Docket api() {
-//	 return new Docket(DocumentationType.SWAGGER_2).host("localhost:9407")
-	return new Docket(DocumentationType.SWAGGER_2).host("217.172.12.199:9407")
-		// .pathProvider(new RelativePathProvider(servletContext))// {
-		// @Override
-		// public String getApplicationBasePath() {
-		// return "/myapi";
-		// }})
+    public Docket api() { return new Docket(DocumentationType.SWAGGER_2).host("217.172.12.199:9407")
 		.apiInfo(apiInfo()).pathMapping("/").select()
-		// .paths(PathSelectors.regex("/cross-reference-detection.*"))
 		.apis(RequestHandlerSelectors.basePackage("com.gessi.dependency_detection.controller"))
 		.paths(PathSelectors.any()).build()
 		.tags(new Tag("Cross-reference detection Service", "API related to cross-reference detection"));
@@ -58,7 +50,7 @@ public class SwaggerConfig extends WebMvcConfigurerAdapter {
      * @return
      */
     private ApiInfo apiInfo() {
-	return new ApiInfoBuilder().title(title).description(description).license(LICENSE_TEXT).licenseUrl(LICENSE_URL)
+	return new ApiInfoBuilder().title(TITLE).description(DESCRIPTION).license(LICENSE_TEXT).licenseUrl(LICENSE_URL)
 		.version(SWAGGER_API_VERSION).contact(new Contact("UPC-GESSI (OPENReq)", "http://openreq.eu/", ""))
 		.build();
     }

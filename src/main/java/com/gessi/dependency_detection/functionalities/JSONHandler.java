@@ -1,25 +1,17 @@
 package com.gessi.dependency_detection.functionalities;
 
-import java.awt.List;
-import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 
-import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.core.JsonToken;
-import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.ObjectWriter;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.gessi.dependency_detection.components.Dependency;
-import com.gessi.dependency_detection.components.Requirement;
 
 public class JSONHandler {
 
@@ -40,12 +32,9 @@ public class JSONHandler {
 	 * @throws JsonProcessingException
 	 * @throws IOException
 	 */
-	public HashMap<String, String> readRequirement(String jsonData, String projectId)
+	public Map<String, String> readRequirement(String jsonData, String projectId)
 			throws JsonProcessingException, IOException {
 		HashMap<String, String> requirms = new HashMap<>();
-
-		// read json file data to String
-		// byte[] jsonData = Files.readAllBytes(Paths.get(path));
 
 		// create ObjectMapper instance
 		ObjectMapper objectMapper = new ObjectMapper();
@@ -63,31 +52,21 @@ public class JSONHandler {
 			}
 		}
 		JsonNode reqNode = rootNode.get("requirements");
-		int i = 0;
-		int j = 0;
 		for (JsonNode child : reqNode) {
 			String id = child.get("id").asText();
 			if (reqIds.contains(id)) {
 				String text = "";
-				j++;
 				if (child.has("requirement_type")) {
-					if (child.get("requirement_type").asText().toLowerCase().equals("def")) {
+					if (child.get("requirement_type").asText().equalsIgnoreCase("def")) {
 						text = child.get("text").asText();
 						requirms.put(id, text);
-						i++;
 					}
 				} else {
 					text = child.get("text").asText();
 					requirms.put(id, text);
-					i++;
 				}
 			}
-//	    if(i>2) 
-//	    	break;
 		}
-//	System.out.println("num requirements: " + i);
-//	System.out.println("num non-requirements: " + (j-i));
-//	System.out.println("Total clauses: " + j);
 		return requirms;
 
 	}
@@ -100,11 +79,8 @@ public class JSONHandler {
 	 * @throws JsonProcessingException
 	 * @throws IOException
 	 */
-	public ArrayList<ArrayList<Object>> readDependency(String jsonData) throws JsonProcessingException, IOException {
+	public List<ArrayList<Object>> readDependency(String jsonData) throws JsonProcessingException, IOException {
 		ArrayList<ArrayList<Object>> deps = new ArrayList<>();
-
-		// read json file data to String
-		// byte[] jsonData = Files.readAllBytes(Paths.get(path));
 
 		// create ObjectMapper instance
 		ObjectMapper objectMapper = new ObjectMapper();
@@ -113,21 +89,18 @@ public class JSONHandler {
 		JsonNode depNode = rootNode.get("dependencies");
 		if (depNode != null) {
 			for (JsonNode child : depNode) {
-				String dependency_type = child.get("dependency_type").asText();
+				String dependencyType = child.get("dependency_type").asText();
 				String status = child.get("status").asText();
 				String from = child.get("fromid").asText();
 				String to = child.get("toid").asText();
 				JsonNode description = child.get("description");
 
-				ArrayList<Object> dependency = new ArrayList<Object>() {
-					{
-						add(dependency_type);
-						add(status);
-						add(from);
-						add(to);
-						add(description);
-					}
-				};
+				ArrayList<Object> dependency = new ArrayList<>();
+				dependency.add(dependencyType);
+				dependency.add(status);
+				dependency.add(from);
+				dependency.add(to);
+				dependency.add(description);
 
 				deps.add(dependency);
 			}
@@ -144,8 +117,8 @@ public class JSONHandler {
 	 * @return
 	 * @throws IOException
 	 */
-	public ObjectNode storeDependencies(String jsonData, ArrayList<Dependency> newDeps) throws IOException {
-		ArrayList<ArrayList<Object>> deps = new ArrayList<>();
+	public ObjectNode storeDependencies(String jsonData, List<Dependency> newDeps) throws IOException {
+		List<ArrayList<Object>> deps = new ArrayList<>();
 		ArrayList<ObjectNode> oldDeps = new ArrayList<>();
 		// Read previous dependencies if any
 		if (!jsonData.equals("")) {

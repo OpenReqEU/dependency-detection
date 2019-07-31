@@ -100,11 +100,11 @@ public class DependencyTreeIE {
 
 		for (int i = 0; i < sonPred.size(); i++) {
 			if (sonPred.get(i).getParentId() == node.getId()/* && sonPred.get(i).getId()!=-1 */) {
-				ngram = ngram + " " + sonPred.get(i).getTerm();
+				ngram = ngram.concat(" " + sonPred.get(i).getTerm());
 				if (!sonPred.get(i).getLemma().matches("\\d+"))
-					lemmaNgram = lemmaNgram + " " + sonPred.get(i).getLemma();
+					lemmaNgram = lemmaNgram.concat(" " + sonPred.get(i).getLemma());
 				else
-					lemmaNgram = lemmaNgram + " " + sonPred.get(i).getTerm();
+					lemmaNgram = lemmaNgram.concat(" " + sonPred.get(i).getTerm());
 				idxToRemove.add(i);
 				directSon = true;
 			} 
