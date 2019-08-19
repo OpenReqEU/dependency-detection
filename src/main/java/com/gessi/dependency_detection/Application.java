@@ -9,7 +9,6 @@ import com.gessi.dependency_detection.service.DependencyService;
 import com.gessi.dependency_detection.service.StorageProperties;
 
 @SpringBootApplication
-//@PropertySource({"classpath:application.properties"})
 @EnableConfigurationProperties(StorageProperties.class)
 public class Application {
     public static void main(String[] args) throws Exception {

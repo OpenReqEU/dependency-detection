@@ -10,7 +10,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.mock.web.MockMultipartFile;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 import java.io.*;
@@ -26,7 +25,7 @@ public class AppTest {
     @Autowired
     private MockMvc mockMvc;
 
-    /*@Test
+    @Test
     public void testA() throws Exception {
 
         StringBuilder ontologyFile = new StringBuilder();
@@ -57,7 +56,7 @@ public class AppTest {
                 .file(ontology)
                 .file(json))
                 .andExpect(status().isOk());
-    }*/
+    }
 
     @Test
     public void dummyTest() throws Exception {
