@@ -403,19 +403,4 @@ public class NLPAnalyser {
 		}
 		return fileLines;
 	}
-
-	/**
-	 * Debug
-	 * Utility to write a file
-	 * @param textLines
-	 * @param path
-	 * @throws IOException
-	 */
-	public void writeFile(List<Object> textLines, String path) throws IOException {
-		try (BufferedWriter writer = new BufferedWriter(new FileWriter(path))) {
-			for (Object str : textLines) {
-				writer.write(str + "\n");
-			}
-		}
-	}
 }

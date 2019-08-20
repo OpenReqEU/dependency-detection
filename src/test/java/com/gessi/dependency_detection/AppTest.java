@@ -26,7 +26,7 @@ public class AppTest {
     private MockMvc mockMvc;
 
     @Test
-    public void testA() throws Exception {
+    public void Success() throws Exception {
 
         StringBuilder ontologyFile = new StringBuilder();
         StringBuilder jsonFile = new StringBuilder();
@@ -59,7 +59,35 @@ public class AppTest {
     }
 
     @Test
-    public void dummyTest() throws Exception {
-        //empty
+    public void FileFormatException() throws Exception {
+
+        StringBuilder ontologyFile = new StringBuilder();
+        StringBuilder jsonFile = new StringBuilder();
+        String line;
+
+        BufferedReader ontologyReader = new BufferedReader(new FileReader("src/test/java/com/gessi/dependency_detection/openreq-rail-small.owl"));
+        while ((line = ontologyReader.readLine()) != null) {
+            ontologyFile.append(line + "\n");
+        }
+
+        BufferedReader jsonReader = new BufferedReader(new FileReader("src/test/java/com/gessi/dependency_detection/test_dependencyDetection.json"));
+        while ((line = jsonReader.readLine()) != null) {
+            jsonFile.append(line + "\n");
+        }
+
+        MockMultipartFile ontology = new MockMultipartFile("ontology",
+                "test_dependencyDetection.json",
+                "text/plain",
+                ontologyFile.toString().getBytes());
+
+        MockMultipartFile json = new MockMultipartFile("json",
+                "test_dependencyDetection.json",
+                "application/json",
+                jsonFile.toString().getBytes());
+
+        this.mockMvc.perform(MockMvcRequestBuilders.fileUpload("/upc/dependency-detection/json/ontology/ABC/true/0.1")
+                .file(ontology)
+                .file(json))
+                .andExpect(status().isInternalServerError());
     }
 }

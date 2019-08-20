@@ -12,11 +12,7 @@ public class Control {
     }
 
     private Control() {
-        Handler consoleHandler = new ConsoleHandler();
-        SimpleFormatter simpleFormatter = new SimpleFormatter();
-        consoleHandler.setFormatter(simpleFormatter);
-        consoleHandler.setLevel(Level.ALL);
-        log.addHandler(consoleHandler);
+        log.setLevel(Level.ALL);
     }
 
     public void showInfoMessage(String text) {
@@ -26,8 +22,4 @@ public class Control {
     public void showErrorMessage(String text) {
         log.log(Level.SEVERE, text);
     }
-
-
-
-
 }

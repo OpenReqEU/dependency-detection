@@ -6,6 +6,7 @@ import java.util.LinkedHashMap;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
+import com.gessi.dependency_detection.util.Control;
 import org.apache.uima.UIMAException;
 import org.apache.uima.resource.ResourceInitializationException;
 import org.hibernate.validator.constraints.NotBlank;
@@ -82,6 +83,7 @@ public class Controller {
 			@ApiParam(value = "Apply Semantic Similarity (Synonymy) detcetion (Type: Boolean).", required = true) @PathVariable("synonymy") String synonymy,
 			@ApiParam(value = "Threshold of semantic similarity to detect synonyms (included).", required = true) @PathVariable("threshold") String threshold)
 			throws IOException, InterruptedException {
+		Control.getInstance().showInfoMessage("Start computing");
 		ObjectNode onjN = null;
 		try {
 			if (!ontology.getOriginalFilename().contains("owl") && !ontology.getOriginalFilename().contains("rdf")) {
