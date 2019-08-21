@@ -49,8 +49,4 @@ public class Dependency {
 	return dependencyType;
     }
 
-    public void setDependencyType(DependencyType dependencyType) {
-	this.dependencyType = dependencyType;
-    }
-
 }

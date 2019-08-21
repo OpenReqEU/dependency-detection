@@ -108,35 +108,24 @@ public class Controller {
 			/* Delete the uploaded file */
 			depService.deleteAll();
 		} catch (FileFormatException e) {
-			LinkedHashMap<String, String> result = new LinkedHashMap<>();
-			result.put("status", "500");
-			result.put("error", "Internal Server Error");
-			result.put("exception", e.toString());
-			result.put("message", "The format file must be txt.");
-			return new ResponseEntity<>(result, HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<>(createException(e.toString(),"The format file must be txt."), HttpStatus.INTERNAL_SERVER_ERROR);
 		} catch (ResourceInitializationException e) {
-			LinkedHashMap<String, String> result = new LinkedHashMap<>();
-			result.put("status", "500");
-			result.put("error", "Internal Server Error");
-			result.put("exception", e.toString());
-			result.put("message", "Parser Error");
-			return new ResponseEntity<>(result, HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<>(createException(e.toString(),"Parser Error"), HttpStatus.INTERNAL_SERVER_ERROR);
 		} catch (UIMAException e) {
-			LinkedHashMap<String, String> result = new LinkedHashMap<>();
-			result.put("status", "500");
-			result.put("error", "Internal Server Error");
-			result.put("exception", e.toString());
-			result.put("message", "NLP Error");
-			return new ResponseEntity<>(result, HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<>(createException(e.toString(),"NLP Error"), HttpStatus.INTERNAL_SERVER_ERROR);
 		} catch (SimilarityException | LexicalSemanticResourceException e) {
-			LinkedHashMap<String, String> result = new LinkedHashMap<>();
-			result.put("status", "500");
-			result.put("error", "Internal Server Error");
-			result.put("exception", e.toString());
-			result.put("message", "Similarity Error");
-			return new ResponseEntity<>(result, HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<>(createException(e.toString(),"Similarity Error"), HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 		return new ResponseEntity<>(onjN, HttpStatus.OK);
+	}
+
+	private LinkedHashMap<String, String> createException(String exception, String message) {
+		LinkedHashMap<String, String> result = new LinkedHashMap<>();
+		result.put("status", "500");
+		result.put("error", "Internal Server Error");
+		result.put("exception", exception);
+		result.put("message", message);
+		return result;
 	}
 
 }

@@ -2,7 +2,7 @@
   "projects" : [ {
     "id" : "ABC",
     "name" : "ABCExample",
-    "specifiedRequirements" : [ "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "O", "P"]
+    "specifiedRequirements" : [ "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "O", "P", "Q"]
   } ],
   "dependencies" : [
     {
@@ -24,27 +24,27 @@
   }, {
     "id" : "C",
     "name" : "c",
-    "text" : "Bridge abutments are made of concrete with parallel wing walls, projects workers similarities line structures similarity"
+    "text" : "Bridge abutments are made of concrete with parallel wing walls, projects workers similarities line structures similarity;"
   }, {
     "id" : "D",
     "name" : "d",
-    "text" : "Abutments are made from concrete with small angled wing walls"
+    "text" : "Abutments are made from concrete with small angled wing walls,"
   }, {
     "id" : "E",
     "name" : "e",
-    "text" : "Track thresholds are supported by two secondary longitudinal structure I-34 girders"
+    "text" : "Track thresholds are supported by two secondary longitudinal structure I-34 girders:"
   }, {
     "id" : "F",
     "name" : "f",
-    "text" : "The thickness of the bridge slab is from 40 cm on bearings"
+    "text" : "The thickness of the bridge slab is from 40 cm on bearings 0.0001"
   }, {
     "id" : "G",
     "name" : "g",
-    "text" : "Secondary longitudinal plate girders are positioned in respective distance of 1,8 m"
+    "text" : "Secondary longitudinal plate girders are positioned in respective. distance of 1,8 m"
   }, {
     "id" : "H",
     "name" : "h",
-    "text" : "Project of reconstructing th track must be completed in entirety within four years from the day of the Beginning of Works"
+    "text" : "Project of reconstructing th track must be completed; in entirety within four years from the day, of the Beginning of Works"
   }, {
     "id" : "I",
     "name" : "i",
@@ -75,6 +75,12 @@
     {
       "id" : "P",
       "name" : "We are just equal or similar",
-      "text" : "We are just equal or similar"
+      "text" : "We are just equal or similar",
+    },
+    {
+      "id" : "Q",
+      "name" : "We are just equal or similar",
+      "text" : "We are just equal or similar",
+      "requirement_type" : "something"
     }]
 }

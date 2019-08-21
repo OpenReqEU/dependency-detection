@@ -69,20 +69,6 @@ public class DependencyService {
 	}
 
 	/**
-	 * Function to delete the ontLocation path and all its files.
-	 */
-	public void deleteAllOnt() {
-		FileSystemUtils.deleteRecursively(ontLocation.toFile());
-	}
-
-	/**
-	 * Function to delete the docLocation path and all its files.
-	 */
-	public void deleteAllDoc() {
-		FileSystemUtils.deleteRecursively(docLocation.toFile());
-	}
-
-	/**
 	 * Function to create the rootLocation path.
 	 */
 	public void init() {

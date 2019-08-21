@@ -23,13 +23,6 @@ public class DependencyTreeIE {
 	/**
 	 * Constructor
 	 */
-	public DependencyTreeIE() {
-		super();
-	}
-
-	/**
-	 * Constructor
-	 */
 	public DependencyTreeIE(Node root) {
 		super();
 		this.root = root;

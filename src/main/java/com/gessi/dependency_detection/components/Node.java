@@ -46,24 +46,12 @@ public class Node {
 		return parentId;
 	}
 
-	public void setParentId(int parentId) {
-		this.parentId = parentId;
-	}
-
-	public Node getParentNode() {
-		return parentNode;
-	}
-
 	public void setParentNode(Node parentNode) {
 		this.parentNode = parentNode;
 	}
 	
 	public List<Node> getSonNodes() {
 		return sonNodes;
-	}
-
-	public void setSonNodes(List<Node> sonNodes) {
-		this.sonNodes = sonNodes;
 	}
 	
 	public void addSonNodes(Node son) {
@@ -74,16 +62,8 @@ public class Node {
 		return posTag;
 	}
 
-	public void setPosTag(String posTag) {
-		this.posTag = posTag;
-	}
-
 	public String getDependencyType() {
 		return dependencyType;
-	}
-
-	public void setDependencyType(String dependencyType) {
-		this.dependencyType = dependencyType;
 	}
 
 	public String getTerm() {
