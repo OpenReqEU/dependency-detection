@@ -95,7 +95,7 @@ public class Controller {
 			depService.initOnt();
 
 			// save the ontology
-			depService.store(ontology, 1);
+			depService.store(ontology);
 
 			// Ontology loader
 			depService.loadOntology();

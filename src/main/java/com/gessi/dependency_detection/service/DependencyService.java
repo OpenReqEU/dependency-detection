@@ -120,47 +120,18 @@ public class DependencyService {
 	 * 
 	 * @param file
 	 */
-	public void store(MultipartFile file, int option) {
-		String filename = "";
-		if (option == 0 || option == 2) {
-			filename = StringUtils.cleanPath(file.getOriginalFilename());
-			this.jsonName = filename;
-		} else if (option == 1) {
-			filename = StringUtils.cleanPath(file.getOriginalFilename());
-			this.ontologyName = filename;
-		} else {
-			filename = StringUtils.cleanPath(file.getOriginalFilename());
-			throw new StorageException("Failed to store file " + filename);
-		}
+	public void store(MultipartFile file) {
+		String filename = StringUtils.cleanPath(file.getOriginalFilename());
+		this.ontologyName = filename;
+
 		try {
 			if (file.isEmpty()) {
 				throw new StorageException("Failed to store empty file " + filename);
 			}
-			if (((option == 0 || option == 2) && this.jsonName.contains("..")) || (option == 1 && this.ontologyName.contains(".."))) {
-				// This is a security check
-				throw new StorageException(
-						"Cannot store file with relative path outside current directory " + filename);
-			}
-			switch (option) {
-			case 0:
-				Files.copy(file.getInputStream(), this.rootLocation.resolve(filename),
-						StandardCopyOption.REPLACE_EXISTING);
-				break;
-			case 1:
-				Files.copy(file.getInputStream(), this.ontLocation.resolve(filename),
-						StandardCopyOption.REPLACE_EXISTING);
-				break;
-			case 2:
-				Files.copy(file.getInputStream(), this.docLocation.resolve(filename),
-						StandardCopyOption.REPLACE_EXISTING);
-				break;
-			default:
-				//not possible
-				break;
-			}
-
-		} catch (IOException e) {
-			throw new StorageException("Failed to store file " + filename, e);
+			Files.copy(file.getInputStream(), this.ontLocation.resolve(filename),
+					StandardCopyOption.REPLACE_EXISTING);
+			} catch (IOException e) {
+				throw new StorageException("Failed to store file " + filename, e);
 		}
 	}
 
