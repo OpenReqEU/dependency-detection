@@ -30,16 +30,4 @@ public class StorageProperties {
 	return userDir.resolve(docLocation).toString();
     }
 
-    public void setOntLocation(String ontLocation) {
-	this.ontLocation = ontLocation;
-    }
-
-    public void setDocLocation(String docLocation) {
-	this.docLocation = docLocation;
-    }
-
-    public void setRootLocation(String rootLocation) {
-	this.rootLocation = rootLocation;
-    }
-
 }

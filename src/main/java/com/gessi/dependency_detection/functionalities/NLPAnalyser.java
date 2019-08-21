@@ -3,9 +3,7 @@ package com.gessi.dependency_detection.functionalities;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -73,7 +71,7 @@ public class NLPAnalyser {
 			wordnet.setIsCaseSensitive(false);
 		} catch (ResourceLoaderException e) {
 			// TODO Auto-generated catch block
-			Control.getInstance().showInfoMessage(e.getMessage());
+			Control.getInstance().showErrorMessage(e.getMessage());
 		}
 	}
 
@@ -213,13 +211,13 @@ public class NLPAnalyser {
 			// Detecting the sentence
 			sentences = sentenceDetector.sentDetect(sentence);
 		} catch (IOException e) {
-			Control.getInstance().showInfoMessage(e.getMessage());
+			Control.getInstance().showErrorMessage(e.getMessage());
 		} finally {
 			if (inputStream != null) {
 				try {
 					inputStream.close();
 				} catch (IOException e) {
-					Control.getInstance().showInfoMessage(e.getMessage());
+					Control.getInstance().showErrorMessage(e.getMessage());
 				}
 			}
 		}
@@ -399,7 +397,7 @@ public class NLPAnalyser {
 			}
 
 		} catch (IOException e) {
-			Control.getInstance().showInfoMessage(e.getMessage());
+			Control.getInstance().showErrorMessage(e.getMessage());
 		}
 		return fileLines;
 	}

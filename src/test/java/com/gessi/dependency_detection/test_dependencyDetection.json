@@ -2,8 +2,17 @@
   "projects" : [ {
     "id" : "ABC",
     "name" : "ABCExample",
-    "specifiedRequirements" : [ "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M"]
+    "specifiedRequirements" : [ "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "O", "P"]
   } ],
+  "dependencies" : [
+    {
+      "dependency_type" : "similar",
+      "status" : "accepted",
+      "fromid" : "D",
+      "toid" : "E",
+      "description" : "example"
+    }
+  ],
   "requirements" : [ {
     "id" : "A",
     "name" : "a",
@@ -43,18 +52,29 @@
   }, {
     "id" : "J",
     "name" : "j",
-    "text" : "The subsection Vrbovec–Križevci has to be constructed within two years from the day of the Beginning of Works"
+    "text" : "The subsection Vrbovec–Križevci has to be constructed within two years from the day of the Beginning of Works",
+    "requirement_type" : "def"
   }, {
     "id" : "K",
     "name" : "k",
-    "text" : "The priority in performance dynamics is also assigned to roadway crossings outside the level (overpasses/underpass)"
+    "text" : ""
   }, {
     "id" : "L",
     "name" : "l",
-    "text" : "The roadway crossings outside the level has to be completed within three years from the day of the Beginning of Works"
+    "text" : "a"
   }, {
     "id" : "M",
     "name" : "m",
-    "text" : "Additionally, all crossings on the specific subsection must be constructed before the elimination of the protections on railway road crossings"
-  } ]
+    "text" : "a"
+  },
+    {
+      "id" : "O",
+      "name" : "We are just equal or similar",
+      "text" : "We are just equal or similar"
+    },
+    {
+      "id" : "P",
+      "name" : "We are just equal or similar",
+      "text" : "We are just equal or similar"
+    }]
 }
