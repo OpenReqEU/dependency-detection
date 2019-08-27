@@ -40,8 +40,9 @@ public enum DependencyType {
 	    return DependencyType.CROSS_REFERENCE;
 	case "CONFLICTS":
 		return DependencyType.CONFLICTS;
+	default:
+		return null;
 	}
-	return null;
     }
 
 }

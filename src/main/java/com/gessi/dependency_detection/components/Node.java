@@ -1,6 +1,7 @@
 package com.gessi.dependency_detection.components;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency;
 
@@ -13,7 +14,7 @@ public class Node {
 	private int id;
 	private int parentId;
 	private Node parentNode;
-	private ArrayList<Node> sonNodes;
+	private List<Node> sonNodes;
 	private String posTag;
 	private String dependencyType;
 	private String term;
@@ -45,36 +46,12 @@ public class Node {
 		return parentId;
 	}
 
-	public void setParentId(int parentId) {
-		this.parentId = parentId;
-	}
-
-	public Node getParentNode() {
-		return parentNode;
-	}
-
 	public void setParentNode(Node parentNode) {
 		this.parentNode = parentNode;
 	}
-
-//	public ArrayList<Integer> getSonIds() {
-//		return sonIds;
-//	}
-//
-//	public void setSonIds(ArrayList<Integer> sonIds) {
-//		this.sonIds = sonIds;
-//	}
-//
-//	public void addSonIds(int son) {
-//		this.sonIds.add(son);
-//	}
 	
-	public ArrayList<Node> getSonNodes() {
+	public List<Node> getSonNodes() {
 		return sonNodes;
-	}
-
-	public void setSonNodes(ArrayList<Node> sonNodes) {
-		this.sonNodes = sonNodes;
 	}
 	
 	public void addSonNodes(Node son) {
@@ -85,16 +62,8 @@ public class Node {
 		return posTag;
 	}
 
-	public void setPosTag(String posTag) {
-		this.posTag = posTag;
-	}
-
 	public String getDependencyType() {
 		return dependencyType;
-	}
-
-	public void setDependencyType(String dependencyType) {
-		this.dependencyType = dependencyType;
 	}
 
 	public String getTerm() {

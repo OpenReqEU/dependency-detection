@@ -1,6 +1,6 @@
 package com.gessi.dependency_detection.components;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -17,7 +17,7 @@ public class Requirement {
 	this.id = id;
     }
 
-    public Requirement(ArrayList<String> components) {
+    public Requirement(List<String> components) {
 	this.id = Integer.parseInt(components.get(0));
 	this.text = components.get(1);
     }

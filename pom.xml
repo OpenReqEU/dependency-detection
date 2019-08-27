@@ -126,12 +126,6 @@
 		</dependency>
 
 		<!-- WordNet -->
-		<!-- <dependency> <groupId>org.apache.lucene</groupId> <artifactId>lucene-wordnet</artifactId> 
-			<version>3.3.0</version> </dependency> <dependency> <groupId>net.sf.extjwnl</groupId> 
-			<artifactId>extjwnl</artifactId> <version>1.9.4</version> </dependency> <dependency> 
-			<groupId>net.sf.extjwnl</groupId> <artifactId>extjwnl-data-wn31</artifactId> 
-			<version>1.2</version> </dependency> -->
-
 
 		<!-- Apache commons -->
 		<dependency>
@@ -219,11 +213,6 @@
 			<version>2.3.0</version>
 		</dependency>
 
-		<!-- <dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-api</artifactId>
-			<version>1.7.5</version>
-		</dependency> -->
 		<!-- Jackson -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
@@ -235,6 +224,16 @@
             <artifactId>junit</artifactId>
             <scope>test</scope>
         </dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.0.1</version>
+		</dependency>
     </dependencies>
 
 	<build>
@@ -248,11 +247,6 @@
 				<artifactId>maven-jar-plugin</artifactId>
 				<version>3.1.0</version>
 			</plugin>
-			<!-- <plugin> <groupId>org.asciidoctor</groupId> <artifactId>asciidoctor-maven-plugin</artifactId> 
-				<executions> <execution> <id>generate-docs</id> <phase>prepare-package</phase> 
-				<goals> <goal>process-asciidoc</goal> </goals> <configuration> <sourceDocumentName>index.adoc</sourceDocumentName> 
-				<backend>html</backend> <attributes> <snippets>${project.build.directory}/snippets</snippets> 
-				</attributes> </configuration> </execution> </executions> </plugin> -->
 			<plugin>
 				<groupId>org.apache.tomcat.maven</groupId>
 				<artifactId>tomcat7-maven-plugin</artifactId>
@@ -270,6 +264,26 @@
 						<goals>
 							<goal>integration-test</goal>
 							<goal>verify</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>0.8.0</version>
+				<executions>
+					<execution>
+						<id>default-prepare-agent</id>
+						<goals>
+							<goal>prepare-agent</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>default-report</id>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>report</goal>
 						</goals>
 					</execution>
 				</executions>

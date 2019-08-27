@@ -106,11 +106,16 @@ First of all it is necessary to download the following external files and depend
 - [WordNet ESA](https://docs.google.com/uc?export=download&id=1I6oQqIeZva1CwLA96OkHFSZKiBfUgWLe)
 - [WordNet LexSemResources](https://docs.google.com/uc?export=download&id=1TeYlsHbcCtxbsVVoBvttdVsvbKFHPbZn)
 
+Then is necessary to configure the DKPRO_HOME variable with the resources directory path:
+
+- export DKPRO_HOME=/path/dependency-detection/src/main/resources
+
 Once this resources are in the resources project directory, build the maven project:
 
 ```
 mvn clean install package
 ```
+
 
 ### How to use it
 
