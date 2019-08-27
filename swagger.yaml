@@ -9,7 +9,7 @@ info:
   license:
     name: EPL-v1.0
     url: 'https://www.eclipse.org/legal/epl-v10.html'
-host: '217.172.12.199:9407'
+host: 'https://api.openreq.eu/dependency-detection'
 basePath: /
 tags:
   - name: Cross-reference detection Service
@@ -73,4 +73,3 @@ paths:
           description: 'Not Found: The server could not find what was requested by the client.'
         '500':
           description: Internal Server Error. For more information see ‘message’ in the Response Body.
-
