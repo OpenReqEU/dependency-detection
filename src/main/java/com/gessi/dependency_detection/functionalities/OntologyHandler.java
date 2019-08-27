@@ -521,7 +521,7 @@ public class OntologyHandler {
 
 		// Requirement instantiation within the ontology
 		for (OntClass cls : classes) {
-			System.out.println(requirement + "/" + reqId + "/" + cls.getLocalName());
+			//System.out.println(requirement + "/" + reqId + "/" + cls.getLocalName());
 			Individual individual = this.model.createIndividual(this.source + ":" + reqId + "_" + cls.getLocalName(),
 					cls);
 			DatatypeProperty req = this.model.getDatatypeProperty(this.source + "#requirement");

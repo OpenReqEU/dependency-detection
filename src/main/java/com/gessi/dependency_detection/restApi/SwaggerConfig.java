@@ -59,7 +59,7 @@ public class SwaggerConfig extends WebMvcConfigurerAdapter {
      */
     private ApiInfo apiInfo() {
 	return new ApiInfoBuilder().title(title).description(description).license(LICENSE_TEXT).licenseUrl(LICENSE_URL)
-		.version(SWAGGER_API_VERSION).contact(new Contact("UPC-GESSI (OPENReq)", "http://openreq.eu/", ""))
+		.version(SWAGGER_API_VERSION).contact(new Contact("UPC-GESSI (OpenReq)", "http://openreq.eu/", ""))
 		.build();
     }
 }

@@ -9,6 +9,7 @@ import java.util.LinkedHashMap;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
+import javax.ws.rs.QueryParam;
 
 import org.apache.uima.UIMAException;
 import org.apache.uima.resource.ResourceInitializationException;
@@ -139,7 +140,7 @@ public class Controller {
 	 * @throws IOException
 	 * @throws InterruptedException
 	 */
-	@PostMapping("/json/ontology/{projectId}/{synonymy}/{threshold}")
+	@PostMapping("/json/ontology/{projectId}")
 	@ApiOperation(value = "Uploads JSON and Ontology files to detect dependencies", notes = "Uploads an ontology (in RDF/XML language) and a JSON Object to the server, extracts the dependencies of all the project's requirements stored in JSON by the support of the ontology and finally removes the uploaded files.", response = String.class)
 	@ApiResponses(value = { @ApiResponse(code = 0, message = "Non content: There is no content to submit."),
 			@ApiResponse(code = 200, message = "OK: The request has succeeded."),
@@ -152,8 +153,8 @@ public class Controller {
 			@ApiParam(value = "The Ontology file to upload (RDF/XML lang.)", required = true) @RequestPart("ontology") @Valid @NotNull @NotBlank MultipartFile ontology,
 			@ApiParam(value = "The JSON file to upload", required = true) @RequestPart("json") @Valid String json,
 			@ApiParam(value = "Id of the project where the requirements to analize are.", required = true) @PathVariable("projectId") String projectId,
-			@ApiParam(value = "Apply Semantic Similarity (Synonymy) detcetion (Type: Boolean).", required = true) @PathVariable("synonymy") String synonymy,
-			@ApiParam(value = "Threshold of semantic similarity to detect synonyms (included).", required = true) @PathVariable("threshold") String threshold)
+			@ApiParam(value = "If true, semantic similarity (synonymy) detection is applied to improve the detection algorithm.", required = true) @RequestParam(value = "synonymy", required = true) Boolean synonymy,
+			@ApiParam(value = "Threshold of semantic similarity to detect synonyms (included).", required = false) @RequestParam(value = "threshold", required = false) Double threshold)
 			throws IOException, InterruptedException {
 
 		Instant start = Instant.now();
@@ -177,9 +178,10 @@ public class Controller {
 			depService.loadOntology();
 
 			depService.storeJson(json);
-			// apply the dependency detection    
-			onjN = depService.conflictDependencyDetection(projectId, Boolean.valueOf(synonymy),
-					Double.parseDouble(threshold));
+			// apply the dependency detection
+
+			onjN = depService.conflictDependencyDetection(projectId, synonymy,
+					threshold);
 
 			/* Delete the uploaded file */
 			depService.deleteAll();

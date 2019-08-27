@@ -48,7 +48,7 @@
             <!--<param name="cache_use_count" value="true"/>-->
             
             <!-- Change the following path to point to your WordNet installation -->
-            <param name="dictionary_path" value="C:/Users/Ricard/Documents/Git/dependency-detection/src/main/resources/LexSemResources/wordnet/dict"/>
+            <param name="dictionary_path" value="/home/quim/OpenReq/github/dependency-detection/src/main/resources/LexSemResources/wordnet/dict"/>
 
         </param>
     </dictionary>

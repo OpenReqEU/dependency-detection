@@ -4,56 +4,57 @@ info:
   version: '1.0'
   title: Dependency detection RESTful API
   contact:
-    name: UPC-GESSI (OPENReq)
+    name: UPC-GESSI (OpenReq)
     url: 'http://openreq.eu/'
   license:
     name: EPL-v1.0
     url: 'https://www.eclipse.org/legal/epl-v10.html'
-host: '217.172.12.199:9407'
+host: 'https://api.openreq.eu/dependency-detection'
 basePath: /
 tags:
-  - name: Cross-reference detection Service
-    description: API related to cross-reference detection
-  - name: controller
-    description: Controller
+- name: Cross-reference detection Service
+  description: API related to cross-reference detection
+- name: controller
+  description: Controller
 paths:
-  '/upc/dependency-detection/json/ontology/{projectId}/{synonymy}/{threshold}':
+  '/upc/dependency-detection/json/ontology/{projectId}':
     post:
       tags:
-        - controller
+      - controller
       summary: Uploads JSON and Ontology files to detect dependencies
       description: 'Uploads an ontology (in RDF/XML language) and a JSON Object to the server, extracts the dependencies of all the project''s requirements stored in JSON by the support of the ontology and finally removes the uploaded files.'
       operationId: uploadJSONFileUsingPOST
       consumes:
-        - multipart/form-data
+      - multipart/form-data
       produces:
-        - '*/*'
+      - '*/*'
       parameters:
-        - name: ontology
-          in: formData
-          description: The Ontology file to upload (RDF/XML lang.)
-          required: true
-          type: file
-        - name: json
-          in: formData
-          description: The JSON file to upload
-          required: true
-          type: string
-        - name: projectId
-          in: path
-          description: Id of the project where the requirements to analize are.
-          required: true
-          type: string
-        - name: synonymy
-          in: path
-          description: 'Apply Semantic Similarity (Synonymy) detcetion (Type: Boolean).'
-          required: true
-          type: string
-        - name: threshold
-          in: path
-          description: Threshold of semantic similarity to detect synonyms (included).
-          required: true
-          type: string
+      - name: ontology
+        in: formData
+        description: The Ontology file to upload (RDF/XML lang.)
+        required: true
+        type: file
+      - name: json
+        in: formData
+        description: The JSON file to upload
+        required: true
+        type: string
+      - name: projectId
+        in: path
+        description: Id of the project where the requirements to analize are.
+        required: true
+        type: string
+      - name: synonymy
+        in: query
+        description: 'If true, semantic similarity (synonymy) detection is applied to improve the detection algorithm.'
+        required: true
+        type: boolean
+      - name: threshold
+        in: query
+        description: Threshold of semantic similarity to detect synonyms (included).
+        required: false
+        type: number
+        format: double
       responses:
         '0':
           description: 'Non content: There is no content to submit.'
@@ -73,4 +74,3 @@ paths:
           description: 'Not Found: The server could not find what was requested by the client.'
         '500':
           description: Internal Server Error. For more information see ‘message’ in the Response Body.
-
