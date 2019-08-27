@@ -52,7 +52,7 @@ public class AppTest {
                 "application/json",
                 jsonFile.toString().getBytes());
 
-        this.mockMvc.perform(MockMvcRequestBuilders.fileUpload("/upc/dependency-detection/json/ontology/ABC/true/0.1")
+        this.mockMvc.perform(MockMvcRequestBuilders.fileUpload("/upc/dependency-detection/json/ontology/ABC?synonymy=true&threshold=0.1")
                 .file(ontology)
                 .file(json))
                 .andExpect(status().isOk());
@@ -85,7 +85,7 @@ public class AppTest {
                 "application/json",
                 jsonFile.toString().getBytes());
 
-        this.mockMvc.perform(MockMvcRequestBuilders.fileUpload("/upc/dependency-detection/json/ontology/ABC/true/0.1")
+        this.mockMvc.perform(MockMvcRequestBuilders.fileUpload("/upc/dependency-detection/json/ontology/ABC?synonymy=true&threshold=0.1")
                 .file(ontology)
                 .file(json))
                 .andExpect(status().isInternalServerError());
