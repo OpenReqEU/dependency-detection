@@ -34,7 +34,6 @@ public class DependencyService {
 	private final Path docLocation;
 	private static final String errorMessage = "Could not initialize storage";
 	private NLPAnalyser analizer;
-	private String jsonName;
 
 	private String json;
 	private String ontologyName;
@@ -128,7 +127,6 @@ public class DependencyService {
 	 */
 	public void storeJson(String json) {
 		this.json = json;
-		this.jsonName = "json-file";
 	}
 
 	/**

@@ -64,7 +64,7 @@ public class NLPAnalyser {
 	 * Constructor
 	 * @throws IOException
 	 */
-	public NLPAnalyser() throws IOException {
+	public NLPAnalyser() {
 		super();
 		try {
 			wordnet = ResourceFactory.getInstance().get("wordnet", "en");
