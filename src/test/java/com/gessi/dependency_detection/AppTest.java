@@ -1,5 +1,10 @@
 package com.gessi.dependency_detection;
 
+import com.gessi.dependency_detection.components.Dependency;
+import com.gessi.dependency_detection.components.DependencyType;
+import com.gessi.dependency_detection.components.Requirement;
+import com.gessi.dependency_detection.components.Status;
+import org.junit.Assert;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -13,6 +18,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 import java.io.*;
+import java.util.Arrays;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -89,5 +95,29 @@ public class AppTest {
                 .file(ontology)
                 .file(json))
                 .andExpect(status().isInternalServerError());
+    }
+
+    @Test
+    public void EntityData() {
+        final String from = "from";
+        final String to = "to";
+        Dependency dependency = new Dependency(from, to, Status.PROPOSED, DependencyType.CONFLICTS);
+        Assert.assertEquals(dependency.getFrom(), from);
+        Assert.assertEquals(dependency.getTo(), to);
+        Assert.assertEquals(dependency.getStatus(), Status.PROPOSED);
+        Assert.assertEquals(dependency.getDependencyType(), DependencyType.CONFLICTS);
+
+        String clause = "Clause";
+        int id = 123;
+        Requirement requirement1 = new Requirement(id, clause);
+        Requirement requirement2 = new Requirement(Arrays.asList(Integer.toString(id), clause));
+        Assert.assertEquals(clause, requirement1.getClause());
+        Assert.assertEquals(clause, requirement2.getClause());
+        Assert.assertEquals(Integer.toString(id), requirement1.getId());
+        Assert.assertEquals(Integer.toString(id), requirement1.getId());
+
+
+
+
     }
 }

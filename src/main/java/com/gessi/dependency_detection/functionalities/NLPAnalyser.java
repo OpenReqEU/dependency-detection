@@ -325,12 +325,10 @@ public class NLPAnalyser {
 		for (Node n : tree) {
 			if (n.getParentId() > n.getId()) {
 				int pIdx = findParent(tree, n.getParentId(), tree.indexOf(n) + 1, n.getParentId() > n.getId());
-				n.setParentNode(tree.get(pIdx));
 				tree.get(pIdx).addSonNodes(n);
 
 			} else if (n.getParentId() < n.getId()) {
 				int pIdx = findParent(tree, n.getParentId(), tree.indexOf(n) - 1, n.getParentId() > n.getId());
-				n.setParentNode(tree.get(pIdx));
 				tree.get(pIdx).addSonNodes(n);
 			} else {
 				root = n;

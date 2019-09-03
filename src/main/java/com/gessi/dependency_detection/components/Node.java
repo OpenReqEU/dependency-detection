@@ -13,7 +13,6 @@ import de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency;
 public class Node {
 	private int id;
 	private int parentId;
-	private Node parentNode;
 	private List<Node> sonNodes;
 	private String posTag;
 	private String dependencyType;
@@ -46,10 +45,6 @@ public class Node {
 		return parentId;
 	}
 
-	public void setParentNode(Node parentNode) {
-		this.parentNode = parentNode;
-	}
-	
 	public List<Node> getSonNodes() {
 		return sonNodes;
 	}
