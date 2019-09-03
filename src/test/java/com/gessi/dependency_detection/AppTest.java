@@ -113,8 +113,8 @@ public class AppTest {
         Requirement requirement2 = new Requirement(Arrays.asList(Integer.toString(id), clause));
         Assert.assertEquals(clause, requirement1.getClause());
         Assert.assertEquals(clause, requirement2.getClause());
-        Assert.assertEquals(Integer.toString(id), requirement1.getId());
-        Assert.assertEquals(Integer.toString(id), requirement1.getId());
+        Assert.assertEquals(id, requirement1.getId());
+        Assert.assertEquals(id, requirement1.getId());
 
 
 
