@@ -8,6 +8,7 @@ import java.nio.file.StandardCopyOption;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.concurrent.ExecutionException;
 
 import org.apache.uima.UIMAException;
 import org.apache.uima.resource.ResourceInitializationException;
@@ -181,31 +182,25 @@ public class DependencyService {
 	 * @throws IOException
 	 * @throws ResourceInitializationException
 	 * @throws UIMAException
-	 * @throws                                  dkpro.similarity.algorithms.api.SimilarityException
+	 * @throws dkpro.similarity.algorithms.api.SimilarityException
 	 * @throws LexicalSemanticResourceException
 	 */
 	public ObjectNode conflictDependencyDetection(String projectId, boolean syny, double thr)
 			throws IOException, ResourceInitializationException, UIMAException,
-			dkpro.similarity.algorithms.api.SimilarityException, LexicalSemanticResourceException {
+			dkpro.similarity.algorithms.api.SimilarityException, LexicalSemanticResourceException, ExecutionException, InterruptedException {
 
 		// analyse the ontology classes
-		ontHandler.searchClasses(analizer);
+		int maxSize=ontHandler.searchClasses(analizer);
 		// read the requirements from JSON
 		Map<String, String> requirements = jsonHandler.readRequirement(json, projectId);
 		// foreach requirement
+		Map<String,List<String>> syntxResutls=analizer.prepareRequirements(requirements,maxSize);
 		for (Entry<String, String> entry : requirements.entrySet()) {
-			String key = entry.getKey();
-			String value = entry.getValue();
-			if (key != null && value != null && !value.equals("")) {
-				// Apply NLP methods (syntactic approach)
-				List<Node> syntxResutls = analizer.requirementAnalysis(value);
-				
-				// Matching of extracted terms with the ontology, it is also applied the semantic appraoch
-				ontHandler.matching(syntxResutls, key, value, analizer, syny, thr);
-			}
+			ontHandler.matching(syntxResutls.get(entry.getKey()), entry.getKey(), entry.getValue(), syny);
 		}
 		// Extract dependencies from the ontology
 		List<Dependency> deps = ontHandler.ontConflictDetection();
+		System.out.println(deps.size());
 		return jsonHandler.storeDependencies(json, deps);
 	}
 }

@@ -53,6 +53,26 @@
 			<artifactId>spring-boot-starter-log4j2</artifactId>
 		</dependency>
 
+		<!-- Keyword analysis -->
+		<dependency>
+			<groupId>org.apache.lucene</groupId>
+			<artifactId>lucene-analyzers-common</artifactId>
+			<version>7.7.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.lucene</groupId>
+			<artifactId>lucene-core</artifactId>
+			<version>7.7.1</version>
+		</dependency>
+		<dependency>
+			<groupId>linguistic</groupId>
+			<artifactId>rake</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/libs/linguistic/rake/1.0/rake-1.0.jar</systemPath>
+		</dependency>
+
+
 
 		<!-- API dependencies (Spring boot) -->
 		<dependency>

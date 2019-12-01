@@ -2,6 +2,7 @@ package com.gessi.dependency_detection.controller;
 
 import java.io.IOException;
 import java.util.LinkedHashMap;
+import java.util.concurrent.ExecutionException;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
@@ -113,6 +114,8 @@ public class Controller {
 			return new ResponseEntity<>(createException(e.toString(),"NLP Error"), HttpStatus.INTERNAL_SERVER_ERROR);
 		} catch (SimilarityException | LexicalSemanticResourceException e) {
 			return new ResponseEntity<>(createException(e.toString(),"Similarity Error"), HttpStatus.INTERNAL_SERVER_ERROR);
+		} catch (ExecutionException e) {
+			e.printStackTrace();
 		}
 		return new ResponseEntity<>(onjN, HttpStatus.OK);
 	}

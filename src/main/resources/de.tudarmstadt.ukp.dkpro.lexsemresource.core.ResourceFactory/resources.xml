@@ -8,7 +8,7 @@
 	
 	<bean id="wordnet-en" lazy-init="true"
 		class="de.tudarmstadt.ukp.dkpro.lexsemresource.wordnet.WordNetResource">
-		<constructor-arg value="./src/main/resources/LexSemResources/wordnet/wordnet_properties.xml"/>
+		<constructor-arg value="/home/jenkins/workspace/dependency-detection/LexSemResources/wordnet/wordnet_properties.xml"/>
 	</bean>
 	
 	<!--<bean id="wiktionary-en" lazy-init="true"

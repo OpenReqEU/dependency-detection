@@ -3,12 +3,12 @@ package com.gessi.dependency_detection.functionalities;
 import java.io.IOException;
 import java.util.*;
 
+import de.tudarmstadt.ukp.dkpro.core.api.syntax.type.constituent.S;
 import org.apache.log4j.varia.NullAppender;
 import org.apache.uima.UIMAException;
 
 import com.gessi.dependency_detection.components.Dependency;
 import com.gessi.dependency_detection.components.DependencyType;
-import com.gessi.dependency_detection.components.Node;
 import com.gessi.dependency_detection.components.Status;
 import com.hp.hpl.jena.ontology.DatatypeProperty;
 import com.hp.hpl.jena.ontology.Individual;
@@ -60,11 +60,13 @@ public class OntologyHandler {
 	 * @param analizer
 	 * @throws IOException
 	 * @throws UIMAException
+	 * @return
 	 */
-	public void searchClasses(NLPAnalyser analizer) throws IOException, UIMAException {
+	public int searchClasses(NLPAnalyser analizer) throws IOException, UIMAException {
 		ontClasses = new ArrayList<>();
 		classesWords = new ArrayList<>();
 		classesLemmas = new ArrayList<>();
+		int max=1;
 		ExtendedIterator<?> rootClasses = this.model.listClasses();
 		while (rootClasses.hasNext()) {
 			OntClass thisClass = (OntClass) rootClasses.next();
@@ -82,10 +84,10 @@ public class OntologyHandler {
 						ontTerm = words[i];
 					}
 				}
-				String[] lemmas = extractLemmas(ontTerm, analizer);
-
+				String[] lemmas = extractLemmas(ontTerm);
 				ontClasses.add(thisClass);
 				classesWords.add(words);
+				if (words.length>max) max=words.length;
 				classesLemmas.add(lemmas);
 				for (int i = 0; i < lemmas.length; i++) {
 					synonyms.put(lemmas[i], new ArrayList<>());
@@ -93,6 +95,13 @@ public class OntologyHandler {
 				}
 			}
 		}
+		return max;
+	}
+
+	private String[] extractLemmas(String ontTerm) throws IOException {
+		TextPreprocessing textPreprocessing=new TextPreprocessing();
+		String l=textPreprocessing.text_preprocess(ontTerm);
+		return l.split(" ");
 	}
 
 	/**
@@ -188,7 +197,7 @@ public class OntologyHandler {
 			}
 			find = false;
 			int j = 0;
-			while (j < words.length && !find) {
+			while (j< lemmas.length && j < words.length && !find) {
 				if (!idxOntLemmaAnalized.contains(j)
 						&& isSameTerm(ngramTerm.get(i), ngramLemma.get(i), words[j], lemmas[j])) {
 					find = true;
@@ -200,7 +209,7 @@ public class OntologyHandler {
 		}
 
 		// of it is not detected, check the synonymy
-		if (!find && syny) {
+		/*if (!find && syny) {
 
 			for (int i = 0; i < ngramLemma.size(); i++) {
 				if (!idxReqLemmaAnalized.contains(i)) {
@@ -219,7 +228,7 @@ public class OntologyHandler {
 					}
 				} else find = true;
 			}
-		}
+		}*/
 		return find;
 	}
 
@@ -266,24 +275,39 @@ public class OntologyHandler {
 	 * ontology.
 	 * 
 	 * @param node
-	 * @param words
 	 * @param lemmas
-	 * @param analizer
 	 * @param syny
-	 * @param thr
 	 * @return
 	 * @throws SimilarityException
 	 * @throws LexicalSemanticResourceException
 	 */
-	private boolean extractNGram(Node node, String[] words, String[] lemmas, NLPAnalyser analizer, boolean syny,
-			double thr) throws SimilarityException, LexicalSemanticResourceException {
-		String[] termsNode = node.getTerm().split(" ");
-		String[] lemmasNode = node.getLemma().split(" ");
-		int n = words.length;
-		Stack<String> ngramTerm = new Stack<>();
-		Stack<String> ngramLemma = new Stack<>();
+	private boolean extractNGram(String node, String[] lemmas, boolean syny) throws SimilarityException, LexicalSemanticResourceException {
+		String[] lemmasNode = node.split(" ");
+		int n = lemmas.length;
+		System.out.println("LEMMAS");
+		for (String o:lemmas) {
+			System.out.println(o);
+		}
+		System.out.println("NODE LEMMAS");
+		for (String o:lemmasNode) {
+			System.out.println(o);
+		}
 
-		return findPotentialNgram(0, 1, n, termsNode, lemmasNode, ngramTerm, ngramLemma, words, lemmas, analizer, syny, thr);
+		if (!syny) {
+			for (int i = 0; i < n; ++i) {
+				if (!lemmas[i].equals(lemmasNode[i])) return false;
+			}
+		}
+		else {
+			for (int i = 0; i < n; ++i) {
+				if (!isSynonym(lemmas[i],lemmasNode[i])) return false;
+			}
+		}
+		return true;
+	}
+
+	private boolean isSynonym(String lemma, String s) {
+		return false;
 	}
 
 	/**
@@ -291,31 +315,27 @@ public class OntologyHandler {
 	 * concepts), and store the requirement within the related ontology class if
 	 * they matches with a concept of the ontology.
 	 * 
-	 * @param topNodes
+	 * @param ngrams
 	 * @param reqId
 	 * @param requirement
-	 * @param analizer
 	 * @param syny
-	 * @param thr
 	 * @throws IOException
 	 * @throws SimilarityException
 	 * @throws LexicalSemanticResourceException
 	 */
-	public void matching(List<Node> topNodes, String reqId, String requirement, NLPAnalyser analizer, boolean syny,
-						 double thr) throws IOException, SimilarityException, LexicalSemanticResourceException {
+	public void matching(List<String> ngrams, String reqId, String requirement, boolean syny) throws IOException, SimilarityException, LexicalSemanticResourceException {
 		ArrayList<OntClass> classes = new ArrayList<>();
-		String[] words;
 		String[] lemmas;
-		for (int i = 0; i < topNodes.size(); i++) {
+		for (int i = 0; i < ngrams.size(); i++) {
 			for (int j = 0; j < ontClasses.size(); j++) {
-				words = classesWords.get(j);
 				lemmas = classesLemmas.get(j);
-				if (topNodes.get(i).getTerm().split(" ").length >= words.length && extractNGram(topNodes.get(i), words, lemmas, analizer, syny, thr)) classes.add(ontClasses.get(j));
+				if (ngrams.get(i).split(" ").length == lemmas.length && extractNGram(ngrams.get(i), lemmas, syny)) classes.add(ontClasses.get(j));
 			}
 		}
 
 		// Requirement instantiation within the ontology
 		for (OntClass cls : classes) {
+			System.out.println(cls.getLocalName());
 			Individual individual = this.model.createIndividual(this.source + ":" + reqId + "_" + cls.getLocalName(),
 					cls);
 			DatatypeProperty req = this.model.getDatatypeProperty(this.source + "#requirement");
@@ -328,20 +348,7 @@ public class OntologyHandler {
 	}
 
 	/**
-	 * Extract lemmas from ontology classes
-	 * @param words
-	 * @param analizer
-	 * @return
-	 * @throws IOException
-	 * @throws UIMAException
-	 */
-	private String[] extractLemmas(String words, NLPAnalyser analizer) throws IOException, UIMAException {
-		String ontLemma = analizer.lemmatization(words);
-		return ontLemma.split(" ");
-	}
-
-	/**
-	 * Analyze the ontology and extract dependncies
+	 * Analyze the ontology and extract dependencies
 	 * @return
 	 */
 	public List<Dependency> ontConflictDetection() {
