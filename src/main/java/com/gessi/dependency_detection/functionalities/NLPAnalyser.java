@@ -101,7 +101,8 @@ public class NLPAnalyser {
 		List<String> result=new ArrayList<>();
 		for (int i=0;i<ordered.size();++i) {
 			String cumulative="";
-			for (int j=i;j<maxSize && j<ordered.size();++j) {
+			//for (int j=i;j<maxSize && j<ordered.size();++j) {
+			for (int j = i; (j-i) < maxSize && j < ordered.size(); ++j) {
 				if (cumulative.equals("")) cumulative=ordered.get(j);
 				else cumulative=cumulative+" "+ordered.get(j);
 				result.add(cumulative);
