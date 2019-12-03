@@ -8,6 +8,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.ws.rs.QueryParam;
 
+import com.gessi.dependency_detection.domain.KeywordTool;
 import com.gessi.dependency_detection.util.Control;
 import org.apache.uima.UIMAException;
 import org.apache.uima.resource.ResourceInitializationException;
@@ -79,7 +80,9 @@ public class Controller {
 			@ApiParam(value = "The JSON file to upload", required = true) @RequestPart("json") @Valid String json,
 			@ApiParam(value = "Id of the project where the requirements to analize are.", required = true) @PathVariable("projectId") String projectId,
 			@ApiParam(value = "If true, semantic similarity (synonymy) detection is applied to improve the detection algorithm.", required = true) @RequestParam(value = "synonymy", required = true) Boolean synonymy,
-			@ApiParam(value = "Threshold of semantic similarity to detect synonyms (included).", required = false) @RequestParam(value = "threshold", required = false) Double threshold)
+			@ApiParam(value = "Threshold of semantic similarity to detect synonyms (included).", required = false) @RequestParam(value = "threshold", required = false) Double threshold,
+			@ApiParam(value = "Keyword extraction tool (RULE_BASED or TFIDF_BASED)", required = false) @RequestParam(value = "keywordTool", required = false,
+					defaultValue = "RULE_BASED") KeywordTool keywordTool)
 			throws IOException, InterruptedException {
 		Control.getInstance().showInfoMessage("Start computing");
 		ObjectNode onjN = null;
@@ -102,7 +105,7 @@ public class Controller {
 			// apply the dependency detection
 
 			onjN = depService.conflictDependencyDetection(projectId, synonymy,
-					threshold);
+					threshold, keywordTool);
 
 			/* Delete the uploaded file */
 			depService.deleteAll();

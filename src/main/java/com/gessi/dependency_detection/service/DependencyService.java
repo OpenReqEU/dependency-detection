@@ -5,12 +5,14 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.concurrent.ExecutionException;
 
 import com.gessi.dependency_detection.WordEmbedding;
+import com.gessi.dependency_detection.domain.KeywordTool;
 import org.apache.uima.UIMAException;
 import org.apache.uima.resource.ResourceInitializationException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -186,7 +188,7 @@ public class DependencyService {
 	 * @throws dkpro.similarity.algorithms.api.SimilarityException
 	 * @throws LexicalSemanticResourceException
 	 */
-	public ObjectNode conflictDependencyDetection(String projectId, boolean syny, double thr)
+	public ObjectNode conflictDependencyDetection(String projectId, boolean syny, double thr, KeywordTool keywordTool)
 			throws IOException, ResourceInitializationException, UIMAException,
 			dkpro.similarity.algorithms.api.SimilarityException, LexicalSemanticResourceException, ExecutionException, InterruptedException {
 
@@ -195,13 +197,23 @@ public class DependencyService {
 		// read the requirements from JSON
 		Map<String, String> requirements = jsonHandler.readRequirement(json, projectId);
 		// foreach requirement
-		Map<String,String> syntxResutls=analizer.prepareRequirements(requirements,maxSize);
-		WordEmbedding wordEmbedding=new WordEmbedding();// Declared here so it won't initialize every time
-		for (Entry<String, String> entry : requirements.entrySet()) {
-			ontHandler.matching(syntxResutls.get(entry.getKey()), entry.getKey(), entry.getValue(), syny,thr,wordEmbedding);
+
+		List<Dependency> deps = new ArrayList<>();
+
+		if (keywordTool.equals(KeywordTool.TFIDF_BASED)) {
+			Map<String, String> syntxResutls = analizer.prepareRequirements(requirements, maxSize);
+			WordEmbedding wordEmbedding = new WordEmbedding();// Declared here so it won't initialize every time
+			for (Entry<String, String> entry : requirements.entrySet()) {
+				ontHandler.matching(syntxResutls.get(entry.getKey()), entry.getKey(), entry.getValue(), syny, thr, wordEmbedding);
+			}
+			// Extract dependencies from the ontology
+			deps = ontHandler.ontConflictDetection();
 		}
-		// Extract dependencies from the ontology
-		List<Dependency> deps = ontHandler.ontConflictDetection();
+
+		else if (keywordTool.equals(KeywordTool.RULE_BASED)) {
+			//TODO old method
+		}
+
 		System.out.println(deps.size());
 		return jsonHandler.storeDependencies(json, deps);
 	}
