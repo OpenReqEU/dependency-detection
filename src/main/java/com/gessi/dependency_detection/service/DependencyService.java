@@ -10,6 +10,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.concurrent.ExecutionException;
 
+import com.gessi.dependency_detection.WordEmbedding;
 import org.apache.uima.UIMAException;
 import org.apache.uima.resource.ResourceInitializationException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -194,9 +195,10 @@ public class DependencyService {
 		// read the requirements from JSON
 		Map<String, String> requirements = jsonHandler.readRequirement(json, projectId);
 		// foreach requirement
-		Map<String,List<String>> syntxResutls=analizer.prepareRequirements(requirements,maxSize);
+		Map<String,String> syntxResutls=analizer.prepareRequirements(requirements,maxSize);
+		WordEmbedding wordEmbedding=new WordEmbedding();// Declared here so it won't initialize every time
 		for (Entry<String, String> entry : requirements.entrySet()) {
-			ontHandler.matching(syntxResutls.get(entry.getKey()), entry.getKey(), entry.getValue(), syny);
+			ontHandler.matching(syntxResutls.get(entry.getKey()), entry.getKey(), entry.getValue(), syny,thr,wordEmbedding);
 		}
 		// Extract dependencies from the ontology
 		List<Dependency> deps = ontHandler.ontConflictDetection();

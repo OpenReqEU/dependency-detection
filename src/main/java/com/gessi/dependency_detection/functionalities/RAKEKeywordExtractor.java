@@ -122,7 +122,7 @@ public class RAKEKeywordExtractor {
      * @param text Text to clean
      * @return Returns a cleaned list of strings
      */
-    List<String> RAKEanalyzeNoStopword(String text) throws IOException {
+    public List<String> RAKEanalyzeNoStopword(String text) throws IOException {
         Analyzer analyzer = CustomAnalyzer.builder()
                 .withTokenizer("standard")
                 .addTokenFilter("lowercase")

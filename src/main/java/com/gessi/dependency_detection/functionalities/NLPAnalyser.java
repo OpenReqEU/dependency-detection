@@ -56,7 +56,7 @@ public class NLPAnalyser {
 
 	}
 
-	public Map<String,List<String>> prepareRequirements(Map<String, String> requirements, int maxSize) throws InterruptedException, ExecutionException, IOException {
+	public Map<String,String> prepareRequirements(Map<String, String> requirements, int maxSize) throws InterruptedException, ExecutionException, IOException {
 		List<com.gessi.dependency_detection.domain.Requirement> recs=new ArrayList<>();
 		for (String s:requirements.keySet()) {
 			recs.add(new com.gessi.dependency_detection.domain.Requirement(s,requirements.get(s)));
@@ -66,36 +66,14 @@ public class NLPAnalyser {
 		if (requirements.keySet().size()>100) {
 			TFIDFKeywordExtractor extractor=new TFIDFKeywordExtractor();
 			 keywords=extractor.computeTFIDF(recs);
-			 wordOrder=extractor.getWordOrder();
 		}
 		else {
 			RAKEKeywordExtractor extractor=new RAKEKeywordExtractor();
 			keywords=extractor.computeRake(recs);
-			wordOrder=extractor.getWordOrder();
 		}
-		return getNgrams(keywords,wordOrder,maxSize);
+		return keywords;
 	}
 
-	private Map<String, List<String>> getNgrams(Map<String, String> keywords, Map<String, Map<String, List<Integer>>> wordOrder, int maxSize) {
-		Map<String,List<String>> result=new HashMap<>();
-		for (String s:keywords.keySet()) {
-			TreeMap<Integer,String> orderedKeywords=new TreeMap<>();
-			for (String k:keywords.get(s).split(" ")) {
-				if (wordOrder.get(s).containsKey(k)) {
-					for (Integer i : wordOrder.get(s).get(k)) {
-						orderedKeywords.put(i, k);
-					}
-				}
-			}
-			List<String> ordered=new ArrayList<>();
-			for (String o:orderedKeywords.values()) {
-				ordered.add(o);
-			}
-			List<String> ngrams=ngrams(ordered,maxSize);
-			result.put(s,ngrams);
-		}
-		return result;
-	}
 
 	private List<String> ngrams(List<String> ordered, int maxSize) {
 		List<String> result=new ArrayList<>();

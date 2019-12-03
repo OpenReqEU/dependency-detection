@@ -718,7 +718,6 @@ every
 ere
 each
 et
-etc
 elsewhere
 else
 ex

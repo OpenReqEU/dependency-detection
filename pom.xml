@@ -73,6 +73,13 @@
 		</dependency>
 
 
+		<!--Word embedding for similarity -->
+		<dependency>
+			<groupId>de.jungblut.glove</groupId>
+			<artifactId>glove</artifactId>
+			<version>0.3</version>
+		</dependency>
+
 
 		<!-- API dependencies (Spring boot) -->
 		<dependency>
