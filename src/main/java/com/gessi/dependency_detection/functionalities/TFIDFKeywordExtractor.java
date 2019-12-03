@@ -16,7 +16,6 @@ public class TFIDFKeywordExtractor {
     private Double cutoffParameter=4.0; //This can be set to different values for different selectivity (more or less keywords)
     private HashMap<String, Integer> corpusFrequency = new HashMap<>();
     private TextPreprocessing text_preprocess = new TextPreprocessing();
-    private Map<String,Map<String,List<Integer>>> wordOrder=new HashMap<>();
 
 
     /**
@@ -137,20 +136,7 @@ public class TFIDFKeywordExtractor {
                 text = text + " " + m.group().toUpperCase();
             }
         }
-        int index=0;
-        Map<String,List<Integer>> wordOrderInterior=new HashMap<>();
         for (String a : text.split(" ")) {
-            if (wordOrderInterior.containsKey(a)) {
-                List<Integer> order=wordOrderInterior.get(a);
-                order.add(index);
-                wordOrderInterior.put(a,order);
-            }
-            else {
-                List<Integer> order=new ArrayList<>();
-                order.add(index);
-                wordOrderInterior.put(a,order);
-            }
-            index++;
             String helper = "";
             if (a.toUpperCase().equals(a)) {
                 for (int i = 0; i < 10; ++i) {
@@ -160,7 +146,6 @@ public class TFIDFKeywordExtractor {
             }
             result = result.concat(" " + a);
         }
-        wordOrder.put(reqId,wordOrderInterior);
         return result;
     }
 
@@ -182,7 +167,4 @@ public class TFIDFKeywordExtractor {
     }
 
 
-    public Map<String,Map<String,List<Integer>>> getWordOrder() {
-        return wordOrder;
-    }
 }

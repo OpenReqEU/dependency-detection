@@ -18,7 +18,6 @@ import java.util.Map;
 public class RAKEKeywordExtractor {
     private Double cutoff = 3.0;
     private TextPreprocessing preprocess = new TextPreprocessing();
-    private Map<String,Map<String,List<Integer>>> wordOrder=new HashMap<>();
 
     /**
      * Passes the text through Lucene's token analyzer
@@ -48,23 +47,9 @@ public class RAKEKeywordExtractor {
         Rake rake = new Rake();
         for (Requirement s : corpus) {
             String text = "";
-            int index=0;
-            Map<String,List<Integer>> wordOrderInferior=new HashMap<>();
             for (String k : RAKEanalyzeNoStopword(s.getDescription())) {
-                if (wordOrderInferior.containsKey(k)) {
-                    List<Integer> order=wordOrderInferior.get(k);
-                    order.add(index);
-                    wordOrderInferior.put(k,order);
-                }
-                else {
-                    List<Integer> order=new ArrayList<>();
-                    order.add(index);
-                    wordOrderInferior.put(k,order);
-                }
-                index++;
                 text = text + " " + k;
             }
-            wordOrder.put(s.getId(),wordOrderInferior);
             Map<String, Double> aux = rake.getKeywordsFromText(text);
             String sum = "";
             for (String j : aux.keySet()) {
@@ -131,7 +116,4 @@ public class RAKEKeywordExtractor {
         return getAnalyzedStrings(text, analyzer);
     }
 
-    public Map<String,Map<String,List<Integer>>> getWordOrder() {
-        return wordOrder;
-    }
 }

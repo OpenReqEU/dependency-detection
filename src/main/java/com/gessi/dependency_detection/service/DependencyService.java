@@ -13,6 +13,7 @@ import java.util.concurrent.ExecutionException;
 
 import com.gessi.dependency_detection.WordEmbedding;
 import com.gessi.dependency_detection.domain.KeywordTool;
+import de.tudarmstadt.ukp.dkpro.lexsemresource.exception.ResourceLoaderException;
 import org.apache.uima.UIMAException;
 import org.apache.uima.resource.ResourceInitializationException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,7 +52,7 @@ public class DependencyService {
 	 * @throws IOException
 	 */
 	@Autowired
-	public DependencyService(StorageProperties properties) throws IOException {
+	public DependencyService(StorageProperties properties) throws IOException, ResourceLoaderException {
 		this.rootLocation = Paths.get(properties.getRootLocation());
 		this.ontLocation = Paths.get(properties.getOntLocation());
 		this.docLocation = Paths.get(properties.getDocLocation());
@@ -193,7 +194,8 @@ public class DependencyService {
 			dkpro.similarity.algorithms.api.SimilarityException, LexicalSemanticResourceException, ExecutionException, InterruptedException {
 
 		// analyse the ontology classes
-		int maxSize=ontHandler.searchClasses(analizer);
+		if (keywordTool.equals(KeywordTool.TFIDF_BASED))  ontHandler.searchClassesTfIdfBased();
+		else ontHandler.searchClasses(analizer);
 		// read the requirements from JSON
 		Map<String, String> requirements = jsonHandler.readRequirement(json, projectId);
 		// foreach requirement
@@ -201,7 +203,7 @@ public class DependencyService {
 		List<Dependency> deps = new ArrayList<>();
 
 		if (keywordTool.equals(KeywordTool.TFIDF_BASED)) {
-			Map<String, String> syntxResutls = analizer.prepareRequirements(requirements, maxSize);
+			Map<String, String> syntxResutls = analizer.prepareRequirements(requirements);
 			WordEmbedding wordEmbedding = new WordEmbedding();// Declared here so it won't initialize every time
 			for (Entry<String, String> entry : requirements.entrySet()) {
 				ontHandler.matching(syntxResutls.get(entry.getKey()), entry.getKey(), entry.getValue(), syny, thr, wordEmbedding);
@@ -211,7 +213,19 @@ public class DependencyService {
 		}
 
 		else if (keywordTool.equals(KeywordTool.RULE_BASED)) {
-			//TODO old method
+			for (Entry<String, String> entry : requirements.entrySet()) {
+				String key = entry.getKey();
+				String value = entry.getValue();
+				if (key != null && value != null && !value.equals("")) {
+					// Apply NLP methods (syntactic approach)
+					List<Node> syntxResutls = analizer.requirementAnalysis(value);
+
+					// Matching of extracted terms with the ontology, it is also applied the semantic appraoch
+					ontHandler.matchingRuleBased(syntxResutls, key, value, analizer, syny, thr);
+				}
+			}
+			// Extract dependencies from the ontology
+			deps = ontHandler.ontConflictDetection();
 		}
 
 		System.out.println(deps.size());
