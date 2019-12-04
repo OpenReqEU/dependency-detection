@@ -118,7 +118,7 @@ public class Controller {
 		} catch (SimilarityException | LexicalSemanticResourceException e) {
 			return new ResponseEntity<>(createException(e.toString(),"Similarity Error"), HttpStatus.INTERNAL_SERVER_ERROR);
 		} catch (ExecutionException e) {
-			e.printStackTrace();
+			return new ResponseEntity<>(createException(e.toString(),"Execution Error"), HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 		return new ResponseEntity<>(onjN, HttpStatus.OK);
 	}
