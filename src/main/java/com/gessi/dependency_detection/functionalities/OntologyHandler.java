@@ -215,9 +215,9 @@ public class OntologyHandler {
 		for (int j = 0; j < ontClasses.size(); j++) {
 		    lemmas = classesLemmas.get(j);
 		    if (keywords.split(" ").length >= lemmas.length && extractNGram(keywords, lemmas, syny,thr,wordEmbedding)) {
-				System.out.println("A MATCH WAS MADE BETWEEN:");
-				System.out.println("REQUIREMENT KEYWORDS: "+keywords);
-				System.out.println("ONTOLOGY NAME: "+lemmas.toString());
+				System.out.println("Requirement " + reqId + " contains class " + String.join(" ", lemmas));
+				//System.out.println("REQUIREMENT KEYWORDS: "+keywords);
+				//System.out.println("ONTOLOGY NAME: "+lemmas.toString());
 
 				classes.add(ontClasses.get(j));
 			}
@@ -225,7 +225,7 @@ public class OntologyHandler {
 
 		// Requirement instantiation within the ontology
 		for (OntClass cls : classes) {
-			System.out.println("A MATCH WAS MADE");
+			//System.out.println("A MATCH WAS MADE");
 			Individual individual = this.model.createIndividual(this.source + ":" + reqId + "_" + cls.getLocalName(),
 					cls);
 			DatatypeProperty req = this.model.getDatatypeProperty(this.source + "#requirement");
@@ -307,7 +307,7 @@ public class OntologyHandler {
 									if (!f.equals(t)) {
 										Dependency newDep = new Dependency(f, t, Status.PROPOSED,
 												DependencyType.valueOf((String) dep.get(0).toString().toUpperCase()));
-										dependencies.add(newDep);
+										if (!dependencies.contains(newDep)) dependencies.add(newDep);
 									}
 								}
 							}
