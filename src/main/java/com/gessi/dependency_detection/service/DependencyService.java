@@ -5,10 +5,15 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.concurrent.ExecutionException;
 
+import com.gessi.dependency_detection.WordEmbedding;
+import com.gessi.dependency_detection.domain.KeywordTool;
+import de.tudarmstadt.ukp.dkpro.lexsemresource.exception.ResourceLoaderException;
 import org.apache.uima.UIMAException;
 import org.apache.uima.resource.ResourceInitializationException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,7 +52,7 @@ public class DependencyService {
 	 * @throws IOException
 	 */
 	@Autowired
-	public DependencyService(StorageProperties properties) throws IOException {
+	public DependencyService(StorageProperties properties) throws IOException, ResourceLoaderException {
 		this.rootLocation = Paths.get(properties.getRootLocation());
 		this.ontLocation = Paths.get(properties.getOntLocation());
 		this.docLocation = Paths.get(properties.getDocLocation());
@@ -181,31 +186,49 @@ public class DependencyService {
 	 * @throws IOException
 	 * @throws ResourceInitializationException
 	 * @throws UIMAException
-	 * @throws                                  dkpro.similarity.algorithms.api.SimilarityException
+	 * @throws dkpro.similarity.algorithms.api.SimilarityException
 	 * @throws LexicalSemanticResourceException
 	 */
-	public ObjectNode conflictDependencyDetection(String projectId, boolean syny, double thr)
+	public ObjectNode conflictDependencyDetection(String projectId, boolean syny, double thr, KeywordTool keywordTool)
 			throws IOException, ResourceInitializationException, UIMAException,
-			dkpro.similarity.algorithms.api.SimilarityException, LexicalSemanticResourceException {
+			dkpro.similarity.algorithms.api.SimilarityException, LexicalSemanticResourceException, ExecutionException, InterruptedException {
 
 		// analyse the ontology classes
-		ontHandler.searchClasses(analizer);
+		if (keywordTool.equals(KeywordTool.TFIDF_BASED))  ontHandler.searchClassesTfIdfBased();
+		else ontHandler.searchClasses(analizer);
 		// read the requirements from JSON
 		Map<String, String> requirements = jsonHandler.readRequirement(json, projectId);
 		// foreach requirement
-		for (Entry<String, String> entry : requirements.entrySet()) {
-			String key = entry.getKey();
-			String value = entry.getValue();
-			if (key != null && value != null && !value.equals("")) {
-				// Apply NLP methods (syntactic approach)
-				List<Node> syntxResutls = analizer.requirementAnalysis(value);
-				
-				// Matching of extracted terms with the ontology, it is also applied the semantic appraoch
-				ontHandler.matching(syntxResutls, key, value, analizer, syny, thr);
+
+		List<Dependency> deps = new ArrayList<>();
+
+		if (keywordTool.equals(KeywordTool.TFIDF_BASED)) {
+			Map<String, String> syntxResutls = analizer.prepareRequirements(requirements);
+			WordEmbedding wordEmbedding = new WordEmbedding();// Declared here so it won't initialize every time
+			for (Entry<String, String> entry : requirements.entrySet()) {
+				ontHandler.matching(syntxResutls.get(entry.getKey()), entry.getKey(), entry.getValue(), syny, thr, wordEmbedding);
 			}
+			// Extract dependencies from the ontology
+			deps = ontHandler.ontConflictDetection();
 		}
-		// Extract dependencies from the ontology
-		List<Dependency> deps = ontHandler.ontConflictDetection();
+
+		else if (keywordTool.equals(KeywordTool.RULE_BASED)) {
+			for (Entry<String, String> entry : requirements.entrySet()) {
+				String key = entry.getKey();
+				String value = entry.getValue();
+				if (key != null && value != null && !value.equals("")) {
+					// Apply NLP methods (syntactic approach)
+					List<Node> syntxResutls = analizer.requirementAnalysis(value);
+
+					// Matching of extracted terms with the ontology, it is also applied the semantic appraoch
+					ontHandler.matchingRuleBased(syntxResutls, key, value, analizer, syny, thr);
+				}
+			}
+			// Extract dependencies from the ontology
+			deps = ontHandler.ontConflictDetection();
+		}
+
+		System.out.println(deps.size());
 		return jsonHandler.storeDependencies(json, deps);
 	}
 }

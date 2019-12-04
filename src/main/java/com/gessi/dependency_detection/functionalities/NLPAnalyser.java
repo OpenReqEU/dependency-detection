@@ -1,22 +1,22 @@
 package com.gessi.dependency_detection.functionalities;
 
-import java.io.IOException;
-import java.io.InputStream;
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.FileReader;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
+import java.io.InputStream;
+import java.util.*;
+import java.util.concurrent.ExecutionException;
 
+import com.gessi.dependency_detection.components.Node;
 import com.gessi.dependency_detection.util.Control;
+import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma;
+import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence;
+import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
+import de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency;
+import de.tudarmstadt.ukp.dkpro.core.clearnlp.ClearNlpLemmatizer;
+import de.tudarmstadt.ukp.dkpro.core.clearnlp.ClearNlpParser;
+import de.tudarmstadt.ukp.dkpro.core.clearnlp.ClearNlpPosTagger;
 import dkpro.similarity.algorithms.api.SimilarityException;
-import org.apache.uima.UIMAException;
-import org.apache.uima.analysis_engine.AnalysisEngine;
-import org.apache.uima.analysis_engine.AnalysisEngineDescription;
-import org.apache.uima.fit.testing.factory.TokenBuilder;
-import org.apache.uima.fit.util.JCasUtil;
-import org.apache.uima.jcas.JCas;
-import org.apache.uima.resource.ResourceInitializationException;
 
 import de.tudarmstadt.ukp.dkpro.lexsemresource.LexicalSemanticResource;
 import de.tudarmstadt.ukp.dkpro.lexsemresource.core.ResourceFactory;
@@ -24,27 +24,23 @@ import de.tudarmstadt.ukp.dkpro.lexsemresource.exception.LexicalSemanticResource
 import de.tudarmstadt.ukp.dkpro.lexsemresource.exception.ResourceLoaderException;
 import dkpro.similarity.algorithms.lsr.LexSemResourceComparator;
 import dkpro.similarity.algorithms.lsr.path.WuPalmerComparator;
-
-import org.springframework.core.io.ClassPathResource;
-
-import com.gessi.dependency_detection.components.Node;
-
-import static org.apache.uima.fit.factory.AnalysisEngineFactory.createEngineDescription;
-import static org.apache.uima.fit.factory.AnalysisEngineFactory.createEngine;
-
-import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma;
-import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence;
-import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
-import de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.*;
-
-import de.tudarmstadt.ukp.dkpro.core.clearnlp.ClearNlpLemmatizer;
-import de.tudarmstadt.ukp.dkpro.core.clearnlp.ClearNlpParser;
-import de.tudarmstadt.ukp.dkpro.core.clearnlp.ClearNlpPosTagger;
 import opennlp.tools.sentdetect.SentenceDetectorME;
 import opennlp.tools.sentdetect.SentenceModel;
 import opennlp.tools.tokenize.Tokenizer;
 import opennlp.tools.tokenize.TokenizerME;
 import opennlp.tools.tokenize.TokenizerModel;
+import org.apache.uima.UIMAException;
+import org.apache.uima.analysis_engine.AnalysisEngine;
+import org.apache.uima.analysis_engine.AnalysisEngineDescription;
+import org.apache.uima.fit.testing.factory.TokenBuilder;
+import org.apache.uima.fit.util.JCasUtil;
+import org.apache.uima.jcas.JCas;
+import org.apache.uima.resource.ResourceInitializationException;
+import org.springframework.core.io.ClassPathResource;
+
+import static org.apache.uima.fit.factory.AnalysisEngineFactory.createEngine;
+import static org.apache.uima.fit.factory.AnalysisEngineFactory.createEngineDescription;
+
 
 public class NLPAnalyser {
 
@@ -67,6 +63,7 @@ public class NLPAnalyser {
 	public NLPAnalyser() {
 		super();
 		try {
+			System.out.println("Loading");
 			wordnet = ResourceFactory.getInstance().get("wordnet", "en");
 			wordnet.setIsCaseSensitive(false);
 		} catch (ResourceLoaderException e) {
@@ -75,15 +72,40 @@ public class NLPAnalyser {
 		}
 	}
 
-
 	/**
-	 * The approach of dependency detection
-	 * @param requirement
+	 * Semantic similarity engine (DKPRO & WordNet)
+	 * @param term1
+	 * @param term2
 	 * @return
-	 * @throws IOException
-	 * @throws ResourceInitializationException
-	 * @throws UIMAException
+	 * @throws SimilarityException
+	 * @throws LexicalSemanticResourceException
 	 */
+	public double semanticSimilarity(String term1, String term2)
+			throws SimilarityException, LexicalSemanticResourceException {
+
+		if (comparatorWN == null)
+			comparatorWN = new WuPalmerComparator(wordnet, wordnet.getRoot());
+		return comparatorWN.getSimilarity(term1, term2);
+
+	}
+
+	public Map<String,String> prepareRequirements(Map<String, String> requirements) throws InterruptedException, ExecutionException, IOException {
+		List<com.gessi.dependency_detection.domain.Requirement> recs=new ArrayList<>();
+		for (String s:requirements.keySet()) {
+			recs.add(new com.gessi.dependency_detection.domain.Requirement(s,requirements.get(s)));
+		}
+		Map<String,String> keywords;
+		if (requirements.keySet().size()>100) {
+			TFIDFKeywordExtractor extractor=new TFIDFKeywordExtractor();
+			 keywords=extractor.computeTFIDF(recs);
+		}
+		else {
+			RAKEKeywordExtractor extractor=new RAKEKeywordExtractor();
+			keywords=extractor.computeRake(recs);
+		}
+		return keywords;
+	}
+
 	public List<Node> requirementAnalysis(String requirement)
 			throws IOException, ResourceInitializationException, UIMAException {
 
@@ -127,6 +149,31 @@ public class NLPAnalyser {
 	}
 
 	/**
+	 * Debug
+	 * Utility to read a file
+	 * @param path
+	 * @return
+	 */
+	public List<String> readFile(String path) {
+		ArrayList<String> fileLines = new ArrayList<>();
+
+		try(FileReader fr = new FileReader(path);
+			BufferedReader br = new BufferedReader(fr)) {
+
+			String sCurrentLine;
+
+			while ((sCurrentLine = br.readLine()) != null) {
+				fileLines.add(sCurrentLine);
+			}
+
+		} catch (IOException e) {
+			Control.getInstance().showErrorMessage(e.getMessage());
+		}
+		return fileLines;
+	}
+//--------------------------------------------------------------RULE BASED
+
+	/**
 	 * Noisy text cleaning
 	 * Rule-based method
 	 * It uses regexp to replace and remove noisy text
@@ -159,7 +206,7 @@ public class NLPAnalyser {
 		// split the phrase correctly
 		sentence = sentence.replaceAll("\\.(\\s)", " . ");
 		sentence = sentence.replaceAll("\\s+", " ");
-		
+
 		// Check the endpoint of the sentence
 		if (sentence.length() > 1) {
 			if (sentence.substring(sentence.length() - 1).equals(";")
@@ -173,7 +220,7 @@ public class NLPAnalyser {
 		}
 		return sentence;
 	}
-	
+
 	/**
 	 * Tokenization (OpenNLP)
 	 * @param requirmenet
@@ -245,6 +292,78 @@ public class NLPAnalyser {
 
 		return jcas;
 	}
+	/**
+	 * Dependency parser engine (clearNLP)
+	 * This function generates a dependency tree from the dependency parser results.
+	 * @param aText
+	 * @return
+	 * @throws ResourceInitializationException
+	 * @throws UIMAException
+	 * @throws IOException
+	 */
+	public Node dependencyParser(String aText) throws ResourceInitializationException, UIMAException, IOException {
+		if (parserEngine == null) {
+			parserEngine = createEngine(createEngineDescription(createEngineDescription(tagger, lemma),
+					createEngineDescription(ClearNlpParser.class)));
+		}
+		JCas jcas = runParser(parserEngine, "en", aText);
+		Node root = null;
+		ArrayList<Node> dependencyTree = new ArrayList<>();
+		Collection<Dependency> deps = JCasUtil.select(jcas, Dependency.class);
+		if (!deps.isEmpty()) {
+			for (Dependency d : deps) {
+				Node node = new Node(d.getDependent().getBegin(), d.getGovernor().getBegin(),
+						d.getDependent().getPosValue(), d.getDependencyType(), d.getDependent().getCoveredText(),
+						d.getDependent().getLemmaValue(), d);
+				dependencyTree.add(node);
+			}
+
+			root = fillTreeLinks(dependencyTree);
+		}
+		return root;
+	}
+	/**
+	 * Update the tree information
+	 * @param tree
+	 * @return
+	 */
+	private Node fillTreeLinks(ArrayList<Node> tree) {
+		Node root = null;
+		for (Node n : tree) {
+			if (n.getParentId() > n.getId()) {
+				int pIdx = findParent(tree, n.getParentId(), tree.indexOf(n) + 1, n.getParentId() > n.getId());
+				tree.get(pIdx).addSonNodes(n);
+
+			} else if (n.getParentId() < n.getId()) {
+				int pIdx = findParent(tree, n.getParentId(), tree.indexOf(n) - 1, n.getParentId() > n.getId());
+				tree.get(pIdx).addSonNodes(n);
+			} else {
+				root = n;
+			}
+		}
+		return root;
+	}
+	/**
+	 * Find the parent of the node from the dependncy parser results
+	 * @param tree
+	 * @param parentId
+	 * @param idx
+	 * @param next
+	 * @return
+	 */
+	private int findParent(ArrayList<Node> tree, int parentId, int idx, boolean next) {
+		boolean find = false;
+		while (!find) {
+			if (tree.get(idx).getId() == parentId) {
+				find = true;
+			} else if (next) {
+				idx++;
+			} else {
+				idx--;
+			}
+		}
+		return idx;
+	}
 
 	/**
 	 * Lemmatization engine (clearNLP)
@@ -284,119 +403,10 @@ public class NLPAnalyser {
 		return ret;
 	}
 
-	/**
-	 * Dependency parser engine (clearNLP)
-	 * This function generates a dependency tree from the dependency parser results.
-	 * @param aText
-	 * @return
-	 * @throws ResourceInitializationException
-	 * @throws UIMAException
-	 * @throws IOException
-	 */
-	public Node dependencyParser(String aText) throws ResourceInitializationException, UIMAException, IOException {
-		if (parserEngine == null) {
-			parserEngine = createEngine(createEngineDescription(createEngineDescription(tagger, lemma),
-					createEngineDescription(ClearNlpParser.class)));
-		}
-		JCas jcas = runParser(parserEngine, "en", aText);
-		Node root = null;
-		ArrayList<Node> dependencyTree = new ArrayList<>();
-		Collection<Dependency> deps = JCasUtil.select(jcas, Dependency.class);
-		if (!deps.isEmpty()) {
-			for (Dependency d : deps) {
-				Node node = new Node(d.getDependent().getBegin(), d.getGovernor().getBegin(),
-						d.getDependent().getPosValue(), d.getDependencyType(), d.getDependent().getCoveredText(),
-						d.getDependent().getLemmaValue(), d);
-				dependencyTree.add(node);
-			}
 
-			root = fillTreeLinks(dependencyTree);
-		}
-		return root;
-	}
 
-	/**
-	 * Update the tree information
-	 * @param tree
-	 * @return
-	 */
-	private Node fillTreeLinks(ArrayList<Node> tree) {
-		Node root = null;
-		for (Node n : tree) {
-			if (n.getParentId() > n.getId()) {
-				int pIdx = findParent(tree, n.getParentId(), tree.indexOf(n) + 1, n.getParentId() > n.getId());
-				tree.get(pIdx).addSonNodes(n);
 
-			} else if (n.getParentId() < n.getId()) {
-				int pIdx = findParent(tree, n.getParentId(), tree.indexOf(n) - 1, n.getParentId() > n.getId());
-				tree.get(pIdx).addSonNodes(n);
-			} else {
-				root = n;
-			}
-		}
-		return root;
-	}
 
-	/**
-	 * Find the parent of the node from the dependncy parser results
-	 * @param tree
-	 * @param parentId
-	 * @param idx
-	 * @param next
-	 * @return
-	 */
-	private int findParent(ArrayList<Node> tree, int parentId, int idx, boolean next) {
-		boolean find = false;
-		while (!find) {
-			if (tree.get(idx).getId() == parentId) {
-				find = true;
-			} else if (next) {
-				idx++;
-			} else {
-				idx--;
-			}
-		}
-		return idx;
-	}
 
-	/**
-	 * Semantic similarity engine (DKPRO & WordNet)
-	 * @param term1
-	 * @param term2
-	 * @return
-	 * @throws SimilarityException
-	 * @throws LexicalSemanticResourceException
-	 */
-	public double semanticSimilarity(String term1, String term2)
-			throws SimilarityException, LexicalSemanticResourceException {
 
-		if (comparatorWN == null)
-			comparatorWN = new WuPalmerComparator(wordnet, wordnet.getRoot());
-		return comparatorWN.getSimilarity(term1, term2);
-
-	}
-
-	/**
-	 * Debug
-	 * Utility to read a file
-	 * @param path
-	 * @return
-	 */
-	public List<String> readFile(String path) {
-		ArrayList<String> fileLines = new ArrayList<>();
-
-		try(FileReader fr = new FileReader(path);
-			BufferedReader br = new BufferedReader(fr)) {
-
-			String sCurrentLine;
-
-			while ((sCurrentLine = br.readLine()) != null) {
-				fileLines.add(sCurrentLine);
-			}
-
-		} catch (IOException e) {
-			Control.getInstance().showErrorMessage(e.getMessage());
-		}
-		return fileLines;
-	}
 }

@@ -49,4 +49,23 @@ public class Dependency {
 	return dependencyType;
     }
 
+    @Override
+    public boolean equals(Object o) {
+
+        if (o instanceof Dependency){
+            Dependency dep = (Dependency) o;
+            return (dep.getFrom().equals(this.from) && dep.getTo().equals(this.to) && dep.getDependencyType().equals(this.dependencyType));
+        }
+
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 17 * hash + (this.to != null ? this.to.hashCode() : 0) + (this.from != null ? this.from.hashCode() : 0) +
+                (this.dependencyType != null ? this.dependencyType.hashCode() : 0);
+        return hash;
+    }
+
 }
