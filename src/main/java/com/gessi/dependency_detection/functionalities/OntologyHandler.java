@@ -185,7 +185,7 @@ public class OntologyHandler {
 		for (String s: ontologyLemmas) {
 			boolean synonymExists=false;
 			for (String l:requirementLemmas) {
-				if (wordEmbedding.computeSimilarity(s,l)>=thr) {
+				if (l.equals(s)||wordEmbedding.computeSimilarity(s,l)>=thr) {
 					synonymExists=true;
 					break;
 				}
@@ -267,6 +267,7 @@ public class OntologyHandler {
 
 		// Requirement instantiation within the ontology
 		for (OntClass cls : classes) {
+			System.out.println("I WAS IN");
 			Individual individual = this.model.createIndividual(this.source + ":" + reqId + "_" + cls.getLocalName(),
 					cls);
 			DatatypeProperty req = this.model.getDatatypeProperty(this.source + "#requirement");
