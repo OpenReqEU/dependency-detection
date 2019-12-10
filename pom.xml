@@ -31,6 +31,12 @@
 			<id>ukp-oss-snapshots</id>
 			<url>http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-snapshots</url>
 		</repository>
+
+        <repository>
+            <id>project</id>
+            <url>file://${project.basedir}/repo</url>
+        </repository>
+
 	</repositories>
 
 
@@ -65,11 +71,9 @@
 			<version>7.7.1</version>
 		</dependency>
 		<dependency>
-			<groupId>linguistic</groupId>
+			<groupId>com.linguistic</groupId>
 			<artifactId>rake</artifactId>
-			<version>1.0</version>
-			<scope>system</scope>
-			<systemPath>${project.basedir}/libs/linguistic/rake/1.0/rake-1.0.jar</systemPath>
+			<version>1.0.0</version>
 		</dependency>
 
 

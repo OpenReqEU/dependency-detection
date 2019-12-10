@@ -131,6 +131,7 @@ public class DependencyService {
 	 * @param json
 	 */
 	public void storeJson(String json) {
+	    System.out.println(json);
 		this.json = json;
 	}
 
@@ -201,7 +202,6 @@ public class DependencyService {
 		// foreach requirement
 
 		List<Dependency> deps = new ArrayList<>();
-
 		if (keywordTool.equals(KeywordTool.TFIDF_BASED)) {
 			Map<String, String> syntxResutls = analizer.prepareRequirements(requirements);
 			WordEmbedding wordEmbedding = new WordEmbedding();// Declared here so it won't initialize every time
@@ -227,8 +227,7 @@ public class DependencyService {
 			// Extract dependencies from the ontology
 			deps = ontHandler.ontConflictDetection();
 		}
-
-		System.out.println(deps.size());
+		System.out.println("DEPENDENCIES FOUND: "+deps.size());
 		return jsonHandler.storeDependencies(json, deps);
 	}
 }
