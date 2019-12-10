@@ -168,7 +168,7 @@ public class OntologyHandler {
 	 * @throws SimilarityException
 	 * @throws LexicalSemanticResourceException
 	 */
-	private boolean extractNGram(String node, String[] lemmas, boolean syny,double thr,WordEmbedding wordEmbedding) throws SimilarityException, LexicalSemanticResourceException, IOException {
+	private boolean extractNGram(String node, String[] lemmas, boolean syny, Double thr,WordEmbedding wordEmbedding) throws SimilarityException, LexicalSemanticResourceException, IOException {
 		String[] lemmasNode = node.split(" ");
 		Set nodeSet=new HashSet(Arrays.asList(lemmasNode));
 		Set lemmaSet=new HashSet(Arrays.asList(lemmas));
@@ -180,7 +180,7 @@ public class OntologyHandler {
 		}
 	}
 
-	private boolean isSynonym(Set<String> requirementLemmas, Set<String> ontologyLemmas,double thr,WordEmbedding wordEmbedding) throws IOException {
+	private boolean isSynonym(Set<String> requirementLemmas, Set<String> ontologyLemmas,Double thr,WordEmbedding wordEmbedding) throws IOException {
 		boolean isSynonym=true;
 		for (String s: ontologyLemmas) {
 			boolean synonymExists=false;
@@ -209,7 +209,7 @@ public class OntologyHandler {
 	 * @throws SimilarityException
 	 * @throws LexicalSemanticResourceException
 	 */
-	public void matching(String keywords, String reqId, String requirement, boolean syny,double thr,WordEmbedding wordEmbedding) throws IOException, SimilarityException, LexicalSemanticResourceException {
+	public void matching(String keywords, String reqId, String requirement, boolean syny, Double thr,WordEmbedding wordEmbedding) throws IOException, SimilarityException, LexicalSemanticResourceException {
 		ArrayList<OntClass> classes = new ArrayList<>();
 		String[] lemmas;
 		for (int j = 0; j < ontClasses.size(); j++) {
@@ -253,7 +253,7 @@ public class OntologyHandler {
 	 */
 
 	public void matchingRuleBased(List<Node> topNodes, String reqId, String requirement, NLPAnalyser analizer, boolean syny,
-						 double thr) throws IOException, SimilarityException, LexicalSemanticResourceException {
+						 Double thr) throws IOException, SimilarityException, LexicalSemanticResourceException {
 		ArrayList<OntClass> classes = new ArrayList<>();
 		String[] words;
 		String[] lemmas;
@@ -368,7 +368,7 @@ public class OntologyHandler {
 		return result;
 	}
 	private boolean extractNGramRuleBased(Node node, String[] words, String[] lemmas, NLPAnalyser analizer, boolean syny,
-								 double thr) throws SimilarityException, LexicalSemanticResourceException {
+								 Double thr) throws SimilarityException, LexicalSemanticResourceException {
 		String[] termsNode = node.getTerm().split(" ");
 		String[] lemmasNode = node.getLemma().split(" ");
 		int n = words.length;
@@ -399,7 +399,7 @@ public class OntologyHandler {
 	 */
 	private boolean findPotentialNgram(int idx, int level, int n, String[] termsNode, String[] lemmasNode,
 									   Stack<String> ngramTerm, Stack<String> ngramLemma, String[] words, String[] lemmas, NLPAnalyser analizer,
-									   boolean syny, double thr) throws SimilarityException, LexicalSemanticResourceException {
+									   boolean syny, Double thr) throws SimilarityException, LexicalSemanticResourceException {
 		boolean find = false;
 		for (int j = idx; j < termsNode.length && !find; j++) {
 			ngramTerm.push(termsNode[j]);
@@ -431,7 +431,7 @@ public class OntologyHandler {
 	 * @throws LexicalSemanticResourceException
 	 */
 	private boolean isSameNgram(Stack<String> ngramTerm, Stack<String> ngramLemma, String[] words, String[] lemmas,
-								NLPAnalyser analizer, boolean syny, double thr)
+								NLPAnalyser analizer, boolean syny, Double thr)
 			throws SimilarityException, LexicalSemanticResourceException {
 		boolean find = false;
 		ArrayList<Integer> idxOntLemmaAnalized = new ArrayList<>();
@@ -524,7 +524,7 @@ public class OntologyHandler {
 	 * @throws SimilarityException
 	 * @throws LexicalSemanticResourceException
 	 */
-	private boolean isSynonymRuleBased(String reqTerm, String ontLemma, NLPAnalyser analizer, double thr)
+	private boolean isSynonymRuleBased(String reqTerm, String ontLemma, NLPAnalyser analizer, Double thr)
 			throws SimilarityException, LexicalSemanticResourceException {
 		if (!ontLemma.matches("\\d+|\\W+")) {
 			if (!synonyms.get(ontLemma).contains(reqTerm) && !noSynonyms.get(ontLemma).contains(reqTerm)) {

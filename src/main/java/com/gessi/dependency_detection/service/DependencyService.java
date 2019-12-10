@@ -190,7 +190,7 @@ public class DependencyService {
 	 * @throws dkpro.similarity.algorithms.api.SimilarityException
 	 * @throws LexicalSemanticResourceException
 	 */
-	public ObjectNode conflictDependencyDetection(String projectId, boolean syny, double thr, KeywordTool keywordTool)
+	public ObjectNode conflictDependencyDetection(String projectId, boolean syny, Double thr, KeywordTool keywordTool)
 			throws IOException, ResourceInitializationException, UIMAException,
 			dkpro.similarity.algorithms.api.SimilarityException, LexicalSemanticResourceException, ExecutionException, InterruptedException {
 
