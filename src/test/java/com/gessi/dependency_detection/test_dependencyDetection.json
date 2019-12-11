@@ -2,7 +2,7 @@
   "projects" : [ {
     "id" : "ABC",
     "name" : "ABCExample",
-    "specifiedRequirements" : [ "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "O", "P", "Q"]
+    "specifiedRequirements" : [ "D", "E", "TND_318", "TND_331"]
   } ],
   "dependencies" : [
     {
@@ -14,18 +14,6 @@
     }
   ],
   "requirements" : [ {
-    "id" : "A",
-    "name" : "a",
-    "text" : "The project of reconstructing the second track of the railway line Dugo Selo – Križevci is a constituent part of the Operational programme 'Traffic' 2007 - 2013"
-  }, {
-    "id" : "B",
-    "name" : "b",
-    "text" : "Span structure of the bridge is made from steel plate girders, project worker similarity lines structure similarity"
-  }, {
-    "id" : "C",
-    "name" : "c",
-    "text" : "Bridge abutments are made of concrete with parallel wing walls, projects workers similarities line structures similarity;"
-  }, {
     "id" : "D",
     "name" : "d",
     "text" : "Abutments are made from concrete with small angled wing walls,"
@@ -34,53 +22,14 @@
     "name" : "e",
     "text" : "Track thresholds are supported by two secondary longitudinal structure I-34 girders:"
   }, {
-    "id" : "F",
-    "name" : "f",
-    "text" : "The thickness of the bridge slab is from 40 cm on bearings 0.0001"
+    "id": "TND_318",
+    "requirement_type": "DEF",
+    "text": "The level ETCS/ERTMS level 2 system requires the implementation of a dedicated video surveillance system. To ensure high-level video information, the areas where there are point machines and level crossings as well as the persons and all locations required by the beneficiary will be monitored. The following works will be executed:",
+    "reqDomains": "PM"
   }, {
-    "id" : "G",
-    "name" : "g",
-    "text" : "Secondary longitudinal plate girders are positioned in respective. distance of 1,8 m"
-  }, {
-    "id" : "H",
-    "name" : "h",
-    "text" : "Project of reconstructing th track must be completed; in entirety within four years from the day, of the Beginning of Works"
-  }, {
-    "id" : "I",
-    "name" : "i",
-    "text" : "Within the performance dynamics, the priority is assigned to the subsection Vrbovec–Križevci"
-  }, {
-    "id" : "J",
-    "name" : "j",
-    "text" : "The subsection Vrbovec–Križevci has to be constructed within two years from the day of the Beginning of Works",
-    "requirement_type" : "def"
-  }, {
-    "id" : "K",
-    "name" : "k",
-    "text" : ""
-  }, {
-    "id" : "L",
-    "name" : "l",
-    "text" : "a"
-  }, {
-    "id" : "M",
-    "name" : "m",
-    "text" : "a"
-  },
-    {
-      "id" : "O",
-      "name" : "We are just equal or similar",
-      "text" : "We are just equal or similar"
-    },
-    {
-      "id" : "P",
-      "name" : "We are just equal or similar",
-      "text" : "We are just equal or similar"
-    },
-    {
-      "id" : "Q",
-      "name" : "We are just equal or similar",
-      "text" : "We are just equal or similar",
-      "requirement_type" : "something"
-    }]
+    "id": "TND_331",
+    "requirement_type": "DEF",
+    "text": "software changes of EI installation for the station adjustment and interfacing with the new systems (IABS, RBC, LED light units etc.);",
+    "reqDomains": "PM"}
+  ]
 }
