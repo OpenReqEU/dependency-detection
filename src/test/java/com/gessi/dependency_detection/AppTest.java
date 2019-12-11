@@ -32,7 +32,7 @@ public class AppTest {
     private MockMvc mockMvc;
 
     @Test
-    public void Success() throws Exception {
+    public void ruleBasedWithSynonymy() throws Exception {
 
         StringBuilder ontologyFile = new StringBuilder();
         StringBuilder jsonFile = new StringBuilder();
@@ -58,7 +58,40 @@ public class AppTest {
                 "application/json",
                 jsonFile.toString().getBytes());
 
-        this.mockMvc.perform(MockMvcRequestBuilders.fileUpload("/upc/dependency-detection/json/ontology/ABC?synonymy=false&threshold=0.1&keywordTool=RULE_BASED")
+        this.mockMvc.perform(MockMvcRequestBuilders.fileUpload("/upc/dependency-detection/json/ontology/ABC?synonymy=true&threshold=0.9&keywordTool=RULE_BASED")
+                .file(ontology)
+                .file(json))
+                .andExpect(status().isOk());
+    }
+
+    @Test
+    public void TFIDFBasedWithSynonymy() throws Exception {
+
+        StringBuilder ontologyFile = new StringBuilder();
+        StringBuilder jsonFile = new StringBuilder();
+        String line;
+
+        BufferedReader ontologyReader = new BufferedReader(new FileReader("src/test/java/com/gessi/dependency_detection/openreq-rail-small.owl"));
+        while ((line = ontologyReader.readLine()) != null) {
+            ontologyFile.append(line + "\n");
+        }
+
+        BufferedReader jsonReader = new BufferedReader(new FileReader("src/test/java/com/gessi/dependency_detection/test_dependencyDetection.json"));
+        while ((line = jsonReader.readLine()) != null) {
+            jsonFile.append(line + "\n");
+        }
+
+        MockMultipartFile ontology = new MockMultipartFile("ontology",
+                "openreq-rail-small.owl",
+                "text/plain",
+                ontologyFile.toString().getBytes());
+
+        MockMultipartFile json = new MockMultipartFile("json",
+                "test_dependencyDetection.json",
+                "application/json",
+                jsonFile.toString().getBytes());
+
+        this.mockMvc.perform(MockMvcRequestBuilders.fileUpload("/upc/dependency-detection/json/ontology/ABC?synonymy=true&threshold=0.9&keywordTool=TFIDF_BASED")
                 .file(ontology)
                 .file(json))
                 .andExpect(status().isOk());
@@ -115,9 +148,6 @@ public class AppTest {
         Assert.assertEquals(clause, requirement2.getClause());
         Assert.assertEquals(id, requirement1.getId());
         Assert.assertEquals(id, requirement1.getId());
-
-
-
 
     }
 }
