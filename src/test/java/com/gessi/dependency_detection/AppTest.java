@@ -65,7 +65,7 @@ public class AppTest {
     }
 
     @Test
-    public void TFIDFBasedWithSynonymy() throws Exception {
+    public void TFIDFSmallBasedWithSynonymy() throws Exception {
 
         StringBuilder ontologyFile = new StringBuilder();
         StringBuilder jsonFile = new StringBuilder();
@@ -92,6 +92,39 @@ public class AppTest {
                 jsonFile.toString().getBytes());
 
         this.mockMvc.perform(MockMvcRequestBuilders.fileUpload("/upc/dependency-detection/json/ontology/ABC?synonymy=true&threshold=0.9&keywordTool=TFIDF_BASED")
+                .file(ontology)
+                .file(json))
+                .andExpect(status().isOk());
+    }
+
+    @Test
+    public void TFIDFLargeBasedWithSynonymy() throws Exception {
+
+        StringBuilder ontologyFile = new StringBuilder();
+        StringBuilder jsonFile = new StringBuilder();
+        String line;
+
+        BufferedReader ontologyReader = new BufferedReader(new FileReader("src/test/java/com/gessi/dependency_detection/openreq-rail-small.owl"));
+        while ((line = ontologyReader.readLine()) != null) {
+            ontologyFile.append(line + "\n");
+        }
+
+        BufferedReader jsonReader = new BufferedReader(new FileReader("src/test/java/com/gessi/dependency_detection/test_dependencyDetection_large.json"));
+        while ((line = jsonReader.readLine()) != null) {
+            jsonFile.append(line + "\n");
+        }
+
+        MockMultipartFile ontology = new MockMultipartFile("ontology",
+                "openreq-rail-small.owl",
+                "text/plain",
+                ontologyFile.toString().getBytes());
+
+        MockMultipartFile json = new MockMultipartFile("json",
+                "test_dependencyDetection.json",
+                "application/json",
+                jsonFile.toString().getBytes());
+
+        this.mockMvc.perform(MockMvcRequestBuilders.fileUpload("/upc/dependency-detection/json/ontology/SIEMENS?synonymy=true&threshold=0.9&keywordTool=TFIDF_BASED")
                 .file(ontology)
                 .file(json))
                 .andExpect(status().isOk());
