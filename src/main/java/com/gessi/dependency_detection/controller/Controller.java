@@ -79,10 +79,10 @@ public class Controller {
 			@ApiParam(value = "The Ontology file to upload (RDF/XML lang.)", required = true) @RequestPart("ontology") @Valid @NotNull @NotBlank MultipartFile ontology,
 			@ApiParam(value = "The JSON file to upload", required = true) @RequestPart("json") @Valid String json,
 			@ApiParam(value = "Id of the project where the requirements to analize are.", required = true) @PathVariable("projectId") String projectId,
-			@ApiParam(value = "If true, semantic similarity (synonymy) detection is applied to improve the detection algorithm.", required = true) @RequestParam(value = "synonymy", required = true,
+			@ApiParam(value = "If true, semantic similarity (synonymy) detection is applied to improve the detection algorithm.", required = false) @RequestParam(value = "synonymy", required = false,
 			defaultValue = "false") Boolean synonymy,
 			@ApiParam(value = "Threshold of semantic similarity to detect synonyms (included).", required = false) @RequestParam(value = "threshold", required = false) Double threshold,
-			@ApiParam(value = "Keyword extraction tool (RULE_BASED or TFIDF_BASED)", required = true) @RequestParam(value = "keywordTool", required = true,
+			@ApiParam(value = "Keyword extraction tool (RULE_BASED or TFIDF_BASED)", required = false) @RequestParam(value = "keywordTool", required = false,
 					defaultValue = "RULE_BASED") KeywordTool keywordTool)
 			throws IOException, InterruptedException {
 		Control.getInstance().showInfoMessage("Start computing");
