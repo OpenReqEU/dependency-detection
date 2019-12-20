@@ -509,6 +509,15 @@ public class OntologyHandler {
 		if (term.toLowerCase().matches(ontLemma + "s|es"))
 			return true;
 
+		if (term.equalsIgnoreCase(ontWord + "."))
+			return true;
+		if (term.equalsIgnoreCase(ontLemma + "."))
+			return true;
+		if (lemma.equalsIgnoreCase(ontWord + "."))
+			return true;
+		if (lemma.equalsIgnoreCase(ontLemma + "."))
+			return true;
+
 		return false;
 	}
 
