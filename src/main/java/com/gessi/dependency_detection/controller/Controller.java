@@ -125,12 +125,7 @@ public class Controller {
 	}
 
 	private LinkedHashMap<String, String> createException(String exception, String message) {
-		LinkedHashMap<String, String> result = new LinkedHashMap<>();
-		result.put("status", "500");
-		result.put("error", "Internal Server Error");
-		result.put("exception", exception);
-		result.put("message", message);
-		return result;
+		return WithPersistenceController.createErrorResponse(exception, message);
 	}
 
 }

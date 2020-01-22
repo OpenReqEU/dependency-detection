@@ -2,16 +2,19 @@ package com.gessi.dependency_detection.controller;
 
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.gessi.dependency_detection.domain.KeywordTool;
-import com.gessi.dependency_detection.entity.RequirementEntity;
+import com.gessi.dependency_detection.entity.Dependency;
+import com.gessi.dependency_detection.entity.OpenReqSchema;
 import com.gessi.dependency_detection.service.DependencyService;
 import com.gessi.dependency_detection.service.FileFormatException;
 import com.gessi.dependency_detection.util.Control;
 import de.tudarmstadt.ukp.dkpro.lexsemresource.exception.LexicalSemanticResourceException;
 import dkpro.similarity.algorithms.api.SimilarityException;
 import io.swagger.annotations.*;
+import net.sf.extjwnl.data.Exc;
 import org.apache.uima.UIMAException;
 import org.apache.uima.resource.ResourceInitializationException;
 import org.hibernate.validator.constraints.NotBlank;
+import org.json.JSONException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -34,9 +37,23 @@ public class WithPersistenceController {
     @Autowired
     private DependencyService depService;
 
-    @PostMapping("/requirements")
-    @ApiOperation(value = "Uploads a requirements dataset", notes = "Uploads a JSON object containing requirements data " +
-            "and stores the requirements into the service database ", response = String.class)
+    /**
+     * Function to upload an ontology (in RDF/XML language) and a JSON Object to the
+     * server, extracts the dependencies of all the project's requirements stored in
+     * JSON by the support of an ontology, NLP and ML algorithms and finally removes
+     * the uploaded files.
+     *
+     * @param ontology
+     * @param json
+     * @param projectId
+     * @param synonymy
+     * @param threshold
+     * @return
+     * @throws IOException
+     * @throws InterruptedException
+     */
+    @PostMapping("/{projectId}")
+    @ApiOperation(value = "Uploads JSON and Ontology files to detect dependencies", notes = "Uploads an ontology (in RDF/XML language) and a JSON Object to the server, extracts the dependencies of all the project's requirements stored in JSON by the support of the ontology and finally removes the uploaded files.", response = String.class)
     @ApiResponses(value = { @ApiResponse(code = 0, message = "Non content: There is no content to submit."),
             @ApiResponse(code = 200, message = "OK: The request has succeeded."),
             @ApiResponse(code = 201, message = "Created: The request has been fulfilled and has resulted in one or more new resources being created.", response = String.class),
@@ -45,20 +62,60 @@ public class WithPersistenceController {
             @ApiResponse(code = 404, message = "Not Found: The server could not find what was requested by the client."),
             @ApiResponse(code = 500, message = "Internal Server Error. For more information see ‘message’ in the Response Body.") })
     public ResponseEntity uploadJSONFile(
+            @ApiParam(value = "The Ontology file to upload (RDF/XML lang.)", required = true) @RequestPart("ontology") @Valid @NotNull @NotBlank MultipartFile ontology,
             @ApiParam(value = "The JSON file to upload", required = true) @RequestPart("json") @Valid String json,
-            @ApiParam(value = "Id of the project to store the requirements", required = true) @PathVariable("projectId") String projectId)
+            @ApiParam(value = "Id of the project where the requirements to analize are.", required = true) @PathVariable("projectId") String projectId,
+            @ApiParam(value = "If true, semantic similarity (synonymy) detection is applied to improve the detection algorithm.", required = false) @RequestParam(value = "synonymy", required = false,
+                    defaultValue = "false") Boolean synonymy,
+            @ApiParam(value = "Threshold of semantic similarity to detect synonyms (included).", required = false) @RequestParam(value = "threshold", required = false) Double threshold,
+            @ApiParam(value = "Keyword extraction tool (RULE_BASED or TFIDF_BASED)", required = false) @RequestParam(value = "keywordTool", required = false,
+                    defaultValue = "RULE_BASED") KeywordTool keywordTool)
             throws IOException, InterruptedException {
-        Control.getInstance().showInfoMessage("Start storing requirements");
+        Control.getInstance().showInfoMessage("Start computing");
+        ObjectNode onjN = null;
         try {
-            depService.saveRequirements(json, projectId);
-        } catch (Exception e) {
+            if (!ontology.getOriginalFilename().contains("owl") && !ontology.getOriginalFilename().contains("rdf")) {
+                throw new FileFormatException();
+            }
+
+            // Initialize folders
+            depService.initDoc();
+            depService.initOnt();
+
+            // save the ontology
+            depService.store(ontology);
+
+            // Ontology loader
+            depService.loadOntology();
+
+            depService.storeJson(json);
+            // apply the dependency detection
+
+            onjN = depService.conflictDependencyDetection(projectId, synonymy,
+                    threshold, keywordTool);
+
+            depService.saveDependencies(onjN);
+
+            /* Delete the uploaded file */
+            depService.deleteAll();
+        } catch (FileFormatException e) {
+            return new ResponseEntity<>(createException(e.toString(),"The format file must be txt."), HttpStatus.INTERNAL_SERVER_ERROR);
+        } catch (ResourceInitializationException e) {
+            return new ResponseEntity<>(createException(e.toString(),"Parser Error"), HttpStatus.INTERNAL_SERVER_ERROR);
+        } catch (UIMAException e) {
+            return new ResponseEntity<>(createException(e.toString(),"NLP Error"), HttpStatus.INTERNAL_SERVER_ERROR);
+        } catch (SimilarityException | LexicalSemanticResourceException e) {
+            return new ResponseEntity<>(createException(e.toString(),"Similarity Error"), HttpStatus.INTERNAL_SERVER_ERROR);
+        } catch (ExecutionException e) {
             return new ResponseEntity<>(createException(e.toString(),"Execution Error"), HttpStatus.INTERNAL_SERVER_ERROR);
+        } catch (JSONException e) {
+            return new ResponseEntity<>(createException(e.toString(),"Internal Error"), HttpStatus.INTERNAL_SERVER_ERROR);
         }
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    @GetMapping("/requirements")
-    @ApiOperation(value = "Get requirements", notes = "Get all requirements of a specific project", response = String.class)
+    @GetMapping("/{projectId}")
+    @ApiOperation(value = "Get dependency", notes = "Looks for a dependency between req1 and req2 (if exists) and returns its type", response = String.class)
     @ApiResponses(value = { @ApiResponse(code = 0, message = "Non content: There is no content to submit."),
             @ApiResponse(code = 200, message = "OK: The request has succeeded."),
             @ApiResponse(code = 201, message = "Created: The request has been fulfilled and has resulted in one or more new resources being created.", response = String.class),
@@ -66,19 +123,26 @@ public class WithPersistenceController {
             @ApiResponse(code = 403, message = "Forbidden: The server understood the request but refuses to authorize it."),
             @ApiResponse(code = 404, message = "Not Found: The server could not find what was requested by the client."),
             @ApiResponse(code = 500, message = "Internal Server Error. For more information see ‘message’ in the Response Body.") })
-    public ResponseEntity getRequirements(
-            @ApiParam(value = "Id of the project where the requirements to analize are.", required = true) @PathVariable("projectId") String projectId)
+    public ResponseEntity uploadJSONFile(
+            @ApiParam(value = "Id of the project where the requirements to analize are.", required = true) @PathVariable("projectId") String projectId,
+            @ApiParam(value = "First req ID") @RequestParam("req1") String req1,
+            @ApiParam(value = "Second req ID") @RequestParam("req2") String req2)
             throws IOException, InterruptedException {
-        List<RequirementEntity> requirementEntities;
+
+        OpenReqSchema openReqSchema = null;
         try {
-            requirementEntities = depService.getRequirements(projectId);
+            openReqSchema = depService.findDependencies(req1, req2);
         } catch (Exception e) {
-            return new ResponseEntity<>(createException(e.toString(),"Execution Error"), HttpStatus.INTERNAL_SERVER_ERROR);
+            return new ResponseEntity<>(createException(e.toString(),"Internal Error"), HttpStatus.INTERNAL_SERVER_ERROR);
         }
-        return new ResponseEntity<>(requirementEntities, HttpStatus.OK);
+        return new ResponseEntity<>(openReqSchema, HttpStatus.OK);
     }
 
     private LinkedHashMap<String, String> createException(String exception, String message) {
+        return createErrorResponse(exception, message);
+    }
+
+    static LinkedHashMap<String, String> createErrorResponse(String exception, String message) {
         LinkedHashMap<String, String> result = new LinkedHashMap<>();
         result.put("status", "500");
         result.put("error", "Internal Server Error");

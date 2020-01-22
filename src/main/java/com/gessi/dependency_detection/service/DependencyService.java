@@ -11,13 +11,18 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.concurrent.ExecutionException;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.gessi.dependency_detection.WordEmbedding;
 import com.gessi.dependency_detection.domain.KeywordTool;
-import com.gessi.dependency_detection.entity.RequirementEntity;
-import com.gessi.dependency_detection.repository.RequirementRepository;
+import com.gessi.dependency_detection.entity.Dependency;
+import com.gessi.dependency_detection.entity.OpenReqSchema;
+import com.gessi.dependency_detection.repository.DependencyRepository;
 import de.tudarmstadt.ukp.dkpro.lexsemresource.exception.ResourceLoaderException;
 import org.apache.uima.UIMAException;
 import org.apache.uima.resource.ResourceInitializationException;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.FileSystemUtils;
@@ -25,7 +30,6 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import com.gessi.dependency_detection.components.Dependency;
 import com.gessi.dependency_detection.components.Node;
 import com.gessi.dependency_detection.functionalities.JSONHandler;
 import com.gessi.dependency_detection.functionalities.NLPAnalyser;
@@ -48,11 +52,11 @@ public class DependencyService {
 	private JSONHandler jsonHandler;
 
 	@Autowired
-	private RequirementRepository requirementRepository;
+	private DependencyRepository dependencyRepository;
 
 	/**
 	 * Constructor
-	 * 
+	 *
 	 * @param properties
 	 * @throws IOException
 	 */
@@ -112,7 +116,7 @@ public class DependencyService {
 
 	/**
 	 * Function to store a file into rootLocation.
-	 * 
+	 *
 	 * @param file
 	 */
 	public void store(MultipartFile file) {
@@ -125,45 +129,45 @@ public class DependencyService {
 			}
 			Files.copy(file.getInputStream(), this.ontLocation.resolve(filename),
 					StandardCopyOption.REPLACE_EXISTING);
-			} catch (IOException e) {
-				throw new StorageException("Failed to store file " + filename, e);
+		} catch (IOException e) {
+			throw new StorageException("Failed to store file " + filename, e);
 		}
 	}
 
 	/**
 	 * Function to store JSON String.
-	 * 
+	 *
 	 * @param json
 	 */
 	public void storeJson(String json) {
-	    System.out.println(json);
+		System.out.println(json);
 		this.json = json;
 	}
 
 	/**
 	 * Function to load the stored file.
-	 * 
+	 *
 	 * @param filename
 	 * @return
 	 */
 	public Path load(String filename, int option) {
 		switch (option) {
-		case 0:
-			return rootLocation.resolve(filename);
-		case 1:
-			return ontLocation.resolve(filename);
-		case 2:
-			return docLocation.resolve(filename);
-		default:
-			//not possible
-			break;
+			case 0:
+				return rootLocation.resolve(filename);
+			case 1:
+				return ontLocation.resolve(filename);
+			case 2:
+				return docLocation.resolve(filename);
+			default:
+				//not possible
+				break;
 		}
 		return null;
 	}
 
 	/**
 	 * Function to load the ontology
-	 * 
+	 *
 	 * @throws IOException
 	 */
 	public void loadOntology() throws IOException {
@@ -184,7 +188,7 @@ public class DependencyService {
 	/**
 	 * Function to extract dependencies from requirements, with the support of the
 	 * input ontology and NLP algorithms
-	 * 
+	 *
 	 * @param projectId
 	 * @param syny
 	 * @param thr
@@ -200,13 +204,13 @@ public class DependencyService {
 			dkpro.similarity.algorithms.api.SimilarityException, LexicalSemanticResourceException, ExecutionException, InterruptedException {
 
 		// analyse the ontology classes
-		if (keywordTool.equals(KeywordTool.TFIDF_BASED))  ontHandler.searchClassesTfIdfBased();
+		if (keywordTool.equals(KeywordTool.TFIDF_BASED)) ontHandler.searchClassesTfIdfBased();
 		else ontHandler.searchClasses(analizer);
 		// read the requirements from JSON
 		Map<String, String> requirements = jsonHandler.readRequirement(json, projectId);
 		// foreach requirement
 
-		List<Dependency> deps = new ArrayList<>();
+		List<com.gessi.dependency_detection.components.Dependency> deps = new ArrayList<>();
 		if (keywordTool.equals(KeywordTool.TFIDF_BASED)) {
 			Map<String, String> syntxResutls = analizer.prepareRequirements(requirements);
 			WordEmbedding wordEmbedding = new WordEmbedding();// Declared here so it won't initialize every time
@@ -215,9 +219,7 @@ public class DependencyService {
 			}
 			// Extract dependencies from the ontology
 			deps = ontHandler.ontConflictDetection();
-		}
-
-		else if (keywordTool.equals(KeywordTool.RULE_BASED)) {
+		} else if (keywordTool.equals(KeywordTool.RULE_BASED)) {
 			for (Entry<String, String> entry : requirements.entrySet()) {
 				String key = entry.getKey();
 				String value = entry.getValue();
@@ -232,25 +234,25 @@ public class DependencyService {
 			// Extract dependencies from the ontology
 			deps = ontHandler.ontConflictDetection();
 		}
-		System.out.println("DEPENDENCIES FOUND: "+deps.size());
+		System.out.println("DEPENDENCIES FOUND: " + deps.size());
 		return jsonHandler.storeDependencies(json, deps);
 	}
 
-	public void saveRequirements(String json, String projectId) {
+	public void saveDependencies(ObjectNode onjN) throws JSONException {
+		List<Dependency> dependencies = new ArrayList<>();
+		JSONObject json = new JSONObject(onjN.toString());
+		ObjectMapper objectMapper = new ObjectMapper();
 		try {
-			Map<String, String> requirements = jsonHandler.readRequirement(json, projectId);
-			List<RequirementEntity> requirementEntities = new ArrayList<>();
-			for (String key : requirements.keySet()) {
-				RequirementEntity requirementEntity = new RequirementEntity(key, requirements.get(key), projectId);
-				requirementEntities.add(requirementEntity);
-			}
-			requirementRepository.saveAll(requirementEntities);
-		} catch (IOException e) {
+			OpenReqSchema schema = objectMapper.readValue(json.toString(), OpenReqSchema.class);
+			dependencyRepository.saveAll(schema.getDependencies());
+		} catch (JsonProcessingException e) {
 			e.printStackTrace();
 		}
 	}
 
-	public List<RequirementEntity> getRequirements(String projectId) {
-		return requirementRepository.findAllByProject(projectId);
+	public OpenReqSchema findDependencies(String req1, String req2) {
+		OpenReqSchema openReqSchema = new OpenReqSchema();
+		openReqSchema.setDependencies(dependencyRepository.findByIds(req1, req2));
+		return openReqSchema;
 	}
 }
