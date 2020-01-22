@@ -87,6 +87,7 @@ public class TFIDFKeywordExtractor {
                 newText=newText+" "+s;
             }
             processedRequirements.put(r.getId(),newText);
+            ++counter;
         }
         return processedRequirements;
 
