@@ -37,7 +37,7 @@ public class SwaggerConfig extends WebMvcConfigurerAdapter {
      * @return
      */
     @Bean
-    public Docket api() { return new Docket(DocumentationType.SWAGGER_2).host("api.openreq.eu/dependency-detection")
+    public Docket api() { return new Docket(DocumentationType.SWAGGER_2).host("localhost:9407")
 		.apiInfo(apiInfo()).pathMapping("/").select()
 		.apis(RequestHandlerSelectors.basePackage("com.gessi.dependency_detection.controller"))
 		.paths(PathSelectors.any()).build()

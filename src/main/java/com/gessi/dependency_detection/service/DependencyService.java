@@ -13,6 +13,8 @@ import java.util.concurrent.ExecutionException;
 
 import com.gessi.dependency_detection.WordEmbedding;
 import com.gessi.dependency_detection.domain.KeywordTool;
+import com.gessi.dependency_detection.entity.RequirementEntity;
+import com.gessi.dependency_detection.repository.RequirementRepository;
 import de.tudarmstadt.ukp.dkpro.lexsemresource.exception.ResourceLoaderException;
 import org.apache.uima.UIMAException;
 import org.apache.uima.resource.ResourceInitializationException;
@@ -44,6 +46,9 @@ public class DependencyService {
 	private String ontologyName;
 	private OntologyHandler ontHandler;
 	private JSONHandler jsonHandler;
+
+	@Autowired
+	private RequirementRepository requirementRepository;
 
 	/**
 	 * Constructor
@@ -229,5 +234,23 @@ public class DependencyService {
 		}
 		System.out.println("DEPENDENCIES FOUND: "+deps.size());
 		return jsonHandler.storeDependencies(json, deps);
+	}
+
+	public void saveRequirements(String json, String projectId) {
+		try {
+			Map<String, String> requirements = jsonHandler.readRequirement(json, projectId);
+			List<RequirementEntity> requirementEntities = new ArrayList<>();
+			for (String key : requirements.keySet()) {
+				RequirementEntity requirementEntity = new RequirementEntity(key, requirements.get(key), projectId);
+				requirementEntities.add(requirementEntity);
+			}
+			requirementRepository.saveAll(requirementEntities);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public List<RequirementEntity> getRequirements(String projectId) {
+		return requirementRepository.findAllByProject(projectId);
 	}
 }
