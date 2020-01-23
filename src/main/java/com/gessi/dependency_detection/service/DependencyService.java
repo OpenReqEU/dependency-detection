@@ -140,7 +140,6 @@ public class DependencyService {
 	 * @param json
 	 */
 	public void storeJson(String json) {
-		System.out.println(json);
 		this.json = json;
 	}
 

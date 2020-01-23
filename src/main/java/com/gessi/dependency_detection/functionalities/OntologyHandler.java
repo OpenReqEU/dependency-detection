@@ -215,7 +215,7 @@ public class OntologyHandler {
 		for (int j = 0; j < ontClasses.size(); j++) {
 		    lemmas = classesLemmas.get(j);
 		    if (keywords.split(" ").length >= lemmas.length && extractNGram(keywords, lemmas, syny,thr,wordEmbedding)) {
-				System.out.println("Requirement " + reqId + " contains class " + String.join(" ", lemmas));
+				//System.out.println("Requirement " + reqId + " contains class " + String.join(" ", lemmas));
 				//System.out.println("REQUIREMENT KEYWORDS: "+keywords);
 				//System.out.println("ONTOLOGY NAME: "+lemmas.toString());
 
@@ -267,7 +267,6 @@ public class OntologyHandler {
 
 		// Requirement instantiation within the ontology
 		for (OntClass cls : classes) {
-			System.out.println("I WAS IN");
 			Individual individual = this.model.createIndividual(this.source + ":" + reqId + "_" + cls.getLocalName(),
 					cls);
 			DatatypeProperty req = this.model.getDatatypeProperty(this.source + "#requirement");
