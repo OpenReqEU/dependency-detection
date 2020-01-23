@@ -7,5 +7,6 @@ public class DependencyId implements Serializable {
     private String toid;
     private String fromid;
     private String dependency_type;
+    private Long analysis_id;
 
 }

@@ -238,21 +238,33 @@ public class DependencyService {
 		return jsonHandler.storeDependencies(json, deps);
 	}
 
-	public void saveDependencies(ObjectNode onjN) throws JSONException {
-		List<Dependency> dependencies = new ArrayList<>();
+	public Long saveDependencies(ObjectNode onjN, String projectId) throws JSONException {
+		Long id = System.currentTimeMillis();
 		JSONObject json = new JSONObject(onjN.toString());
 		ObjectMapper objectMapper = new ObjectMapper();
 		try {
 			OpenReqSchema schema = objectMapper.readValue(json.toString(), OpenReqSchema.class);
+			for (Dependency d : schema.getDependencies()) {
+				d.setAnalysis_id(id);
+				d.setProject_id(projectId);
+			}
 			dependencyRepository.saveAll(schema.getDependencies());
 		} catch (JsonProcessingException e) {
 			e.printStackTrace();
 		}
+		return id;
 	}
 
-	public OpenReqSchema findDependencies(String req1, String req2) {
+	public OpenReqSchema findDependencies(String req1, String req2, String projectId, long id) {
 		OpenReqSchema openReqSchema = new OpenReqSchema();
-		openReqSchema.setDependencies(dependencyRepository.findByIds(req1, req2));
+		if (req1 != null && req2 != null)
+			openReqSchema.setDependencies(dependencyRepository.findByIds(req1, req2, projectId, id));
+		else
+			openReqSchema.setDependencies(dependencyRepository.findByAnalysis(id));
 		return openReqSchema;
+	}
+
+	public void deleteDependencies(Long analysisId) {
+		dependencyRepository.deleteByAnalysisId(analysisId);
 	}
 }
