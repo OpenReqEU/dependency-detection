@@ -96,7 +96,7 @@ public class WithPersistenceController {
             onjN = depService.conflictDependencyDetection(projectId, synonymy,
                     threshold, keywordTool);
 
-            id = depService.saveDependencies(onjN, projectId);
+            id = depService.saveDependencies(onjN);
 
             /* Delete the uploaded file */
             depService.deleteAll();
@@ -126,14 +126,13 @@ public class WithPersistenceController {
             @ApiResponse(code = 500, message = "Internal Server Error. For more information see ‘message’ in the Response Body.") })
     public ResponseEntity getDependencies(
             @ApiParam(value = "ID of the dependency analysis", required = true) @PathVariable("analysisId") Long analysisId,
-            @ApiParam(value = "ID of the project where the requirements to analize are.", required = true) @RequestParam("projectId") String projectId,
             @ApiParam(value = "First req ID") @RequestParam(value = "req1", required = false) String req1,
             @ApiParam(value = "Second req ID") @RequestParam(value = "req2", required = false) String req2)
             throws IOException, InterruptedException {
 
         OpenReqSchema openReqSchema = null;
         try {
-            openReqSchema = depService.findDependencies(req1, req2, projectId, analysisId);
+            openReqSchema = depService.findDependencies(req1, req2, analysisId);
         } catch (Exception e) {
             e.printStackTrace();
             return new ResponseEntity<>(createException(e.toString(),"Internal Error"), HttpStatus.INTERNAL_SERVER_ERROR);
