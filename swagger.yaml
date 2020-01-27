@@ -9,54 +9,64 @@ info:
   license:
     name: EPL-v1.0
     url: 'https://www.eclipse.org/legal/epl-v10.html'
-host: 'https://api.openreq.eu/dependency-detection'
-basePath: /
+host: api.openreq.eu
+basePath: /dependency-detection
 tags:
-- name: Cross-reference detection Service
-  description: API related to cross-reference detection
-- name: controller
-  description: Controller
+  - name: Cross-reference detection Service
+    description: API related to cross-reference detection
+  - name: controller
+    description: Controller
 paths:
   '/upc/dependency-detection/json/ontology/{projectId}':
     post:
       tags:
-      - controller
+        - controller
       summary: Uploads JSON and Ontology files to detect dependencies
       description: 'Uploads an ontology (in RDF/XML language) and a JSON Object to the server, extracts the dependencies of all the project''s requirements stored in JSON by the support of the ontology and finally removes the uploaded files.'
       operationId: uploadJSONFileUsingPOST
       consumes:
-      - multipart/form-data
+        - multipart/form-data
       produces:
-      - '*/*'
+        - '*/*'
       parameters:
-      - name: ontology
-        in: formData
-        description: The Ontology file to upload (RDF/XML lang.)
-        required: true
-        type: file
-      - name: json
-        in: formData
-        description: The JSON file to upload
-        required: true
-        type: string
-      - name: projectId
-        in: path
-        description: Id of the project where the requirements to analize are.
-        required: true
-        type: string
-      - name: synonymy
-        in: query
-        description: 'If true, semantic similarity (synonymy) detection is applied to improve the detection algorithm.'
-        required: true
-        type: boolean
-      - name: threshold
-        in: query
-        description: Threshold of semantic similarity to detect synonyms (included).
-        required: false
-        type: number
-        format: double
+        - name: ontology
+          in: formData
+          description: The Ontology file to upload (RDF/XML lang.)
+          required: true
+          type: file
+        - name: json
+          in: formData
+          description: The JSON file to upload
+          required: true
+          type: string
+        - name: projectId
+          in: path
+          description: Id of the project where the requirements to analize are.
+          required: true
+          type: string
+        - name: synonymy
+          in: query
+          description: 'If true, semantic similarity (synonymy) detection is applied to improve the detection algorithm.'
+          required: false
+          type: boolean
+          default: false
+        - name: threshold
+          in: query
+          description: Threshold of semantic similarity to detect synonyms (included).
+          required: false
+          type: number
+          format: double
+        - name: keywordTool
+          in: query
+          description: Keyword extraction tool (RULE_BASED or TFIDF_BASED)
+          required: false
+          type: string
+          default: RULE_BASED
+          enum:
+            - RULE_BASED
+            - TFIDF_BASED
       responses:
-        '0':
+        '400':
           description: 'Non content: There is no content to submit.'
         '200':
           description: 'OK: The request has succeeded.'
@@ -74,3 +84,79 @@ paths:
           description: 'Not Found: The server could not find what was requested by the client.'
         '500':
           description: Internal Server Error. For more information see ‘message’ in the Response Body.
+definitions:
+  ResponseEntity:
+    type: object
+    properties:
+      body:
+        type: object
+      statusCode:
+        type: string
+        enum:
+          - '100'
+          - '101'
+          - '102'
+          - '103'
+          - '200'
+          - '201'
+          - '202'
+          - '203'
+          - '204'
+          - '205'
+          - '206'
+          - '207'
+          - '208'
+          - '226'
+          - '300'
+          - '301'
+          - '302'
+          - '303'
+          - '304'
+          - '305'
+          - '307'
+          - '308'
+          - '400'
+          - '401'
+          - '402'
+          - '403'
+          - '404'
+          - '405'
+          - '406'
+          - '407'
+          - '408'
+          - '409'
+          - '410'
+          - '411'
+          - '412'
+          - '413'
+          - '414'
+          - '415'
+          - '416'
+          - '417'
+          - '418'
+          - '419'
+          - '420'
+          - '421'
+          - '422'
+          - '423'
+          - '424'
+          - '426'
+          - '428'
+          - '429'
+          - '431'
+          - '451'
+          - '500'
+          - '501'
+          - '502'
+          - '503'
+          - '504'
+          - '505'
+          - '506'
+          - '507'
+          - '508'
+          - '509'
+          - '510'
+          - '511'
+      statusCodeValue:
+        type: integer
+        format: int32
