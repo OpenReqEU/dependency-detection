@@ -1,0 +1,5037 @@
+{
+  "requirements": [
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 811,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RAMS\nPM_ERTMS"
+        }
+      ],
+      "requirementParent": "235625",
+      "id": "235629",
+      "text": "RBC 1 If the Contractor intends to introduce new functions and/or propose improved solutions from the ones proposed in this document, these must be approved by CFR.(LC)",
+      "title": "TND_1780"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 812,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "Sys_Mgmt\nPM_ERTMS"
+        }
+      ],
+      "requirementParent": "235625",
+      "id": "235630",
+      "text": "RBC 2 This document is the basis for establishing the final version for CRS of the RBC.(LC)",
+      "title": "TND_1781"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 815,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RAMS"
+        }
+      ],
+      "requirementParent": "235632",
+      "id": "235633",
+      "text": "RBC 3 If several RBCs are to be installed, each of them must fulfil the following values. (LC)",
+      "title": "TND_1784"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 816,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RAMS"
+        }
+      ],
+      "requirementParent": "235632",
+      "id": "235634",
+      "text": "RBC 4 MTBSF. For a total failure, the MTBSF for the RBC (including interfaces to the electronic interlock installations and GSM-R) must be at least 760,000 hours. The tender must present relevant documents proving this value. Such documents must be made by independent bodies (e.g. EBA, Certifer, etc.).(O)",
+      "title": "TND_1785"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 817,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RAMS"
+        }
+      ],
+      "requirementParent": "235632",
+      "id": "235635",
+      "text": "RBC 5 MTTR. For a total failure, the MTTR for the RBC (including interfaces to the electronic interlock installations and GSM-R) must be at most 340 minutes. The tender must present relevant documents proving this value. Such documents must be made by independent bodies (e.g. EBA, Certifer, etc.).(O)",
+      "title": "TND_1786"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 818,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RAMS"
+        }
+      ],
+      "requirementParent": "235632",
+      "id": "235636",
+      "text": "RBC 6 The Tenderer must present the principles for the calculation of the MTBF and MTTR in their tender.(O)",
+      "title": "TND_1787"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 819,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RAMS"
+        }
+      ],
+      "requirementParent": "235632",
+      "id": "235637",
+      "text": "RBC 7 The Tenderer must present in their tender how the RBC meets the above MTBF and MTTR values. (O)",
+      "title": "TND_1788"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 820,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RAMS"
+        }
+      ],
+      "requirementParent": "235632",
+      "id": "235638",
+      "text": "RBC 8 Uptime. For the RBC (including the interfaces to the electronic interlock installations and GSM-R) at least 99.955% uptime must be ensured. The offer must present relevant documents proving this value. (O)",
+      "title": "TND_1789"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 822,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nRAMS"
+        }
+      ],
+      "requirementParent": "235632",
+      "id": "235640",
+      "text": "RBC 9 The above values must be valid for the entire useful life of the equipment (25 years).(LC)",
+      "title": "TND_1793"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 823,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nRAMS\nBid_Manager"
+        }
+      ],
+      "requirementParent": "235632",
+      "id": "235641",
+      "text": "RBC 10 SIL 4. The software and the hardware equipment must be designed in accordance with SIL 4, as described in the relevant CENELEC norms (EN 50126, EN 50128 and EN 50129). The offer must present relevant documents proving this value. Such documents must be prepared by independent bodies (e.g. EBA, Certifer, etc.).(O)",
+      "title": "TND_1794"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 824,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235632",
+      "id": "235642",
+      "text": "RBC 11 For the purposes of this document, “software and hardware equipment” shall mean the RBC including the interfaces to the electronic interlock installations and GSM-R.(LC)",
+      "title": "TND_1795"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 826,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nRAMS"
+        }
+      ],
+      "requirementParent": "235643",
+      "id": "235644",
+      "text": "RBC 12 The tender for the RBC must be compliant with EN 50129, paragraph B4 “Operating with outside influences”. For B.4.6, the tenderer must submit their proposal.(O)",
+      "title": "TND_1797"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 827,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nRAMS"
+        }
+      ],
+      "requirementParent": "235643",
+      "id": "235645",
+      "text": "RBC 13 Environment-1. All the equipment must meet the relative humidity requirement: maximum 85% without condensation.(LC)",
+      "title": "TND_1798"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 828,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nRAMS\nPower"
+        }
+      ],
+      "requirementParent": "235643",
+      "id": "235646",
+      "text": "RBC 14 Environment-2. All the equipment must operate in the ambient environment temperature range:\na) - 40°C to +70°C for outdoor equipment;\nb) -10°C to +50°C for indoor equipment. The use of air conditioning systems is accepted, according to the applicable standards, for the cases when the offered equipment does not meet the specified limits. Any air conditioning is considered in this case to be for safety and work with the same reserve as the equipment on which it is used. The air conditioning must operate when the UPS is supplied from the main source or from the generator group. (LC)",
+      "title": "TND_1799"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 829,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "EHS\nEngineering_RO"
+        }
+      ],
+      "requirementParent": "235643",
+      "id": "235647",
+      "text": "RBC 15 Measures must be taken to protect the outdoor equipment against: (LC)\n- theft, vandalism and sabotage;\n- vibrations;\n- water ingress;\n- dust ingress.\nFor this, containers, cabinets, pickets and boxes for outdoor equipment must be fitted with:\n- an adequate protection system against moisture;\n- an effective locking system;\n- doors with contacts for containers and cabinets that signal the central post when they are opened.\nWater-sensitive equipment must be placed 1 meter above ground level.",
+      "title": "TND_1802"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 830,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "Sys_Mgmt\nEngineering_RO"
+        }
+      ],
+      "requirementParent": "235643",
+      "id": "235648",
+      "text": "RBC 16 RBC and the interfaces with the electronic interlock installations and GSM-R installations must be mounted inside containers. It is allowed to install ETCS equipment in the same container as the one for the electronic interlock installations or in the equipment building. (LC)",
+      "title": "TND_1812"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 831,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "Engineering_AT"
+        }
+      ],
+      "requirementParent": "235643",
+      "id": "235649",
+      "text": "RBC 17 The Tenderer must take into consideration that the outdoor equipment will be installed near the 27 kV / 50 Hz catenary.(LC)",
+      "title": "TND_1813"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 832,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "Indusi\nCustomer_Doc"
+        }
+      ],
+      "requirementParent": "235643",
+      "id": "235650",
+      "text": "RBC 18 CEM. Electromagnetic compatibility must be ensured between the proposed solution and the existing trackside INDUSI system and with INDUSI 60/PZB 90, installed on the current engines. The Tenderer shall present documentary evidence to this effect. (O)",
+      "title": "TND_1814"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 833,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235643",
+      "id": "235651",
+      "text": "RBC 19 Solution maturity. The solution proposed for the ETCS RBC must be based at least on SRS 230d, in compliance with one of the specification sets 1, 2 or 3 of annex A2 to the Decision (EU) 2016/919, of the European Commission of 27 May 2016 (table A 2.1, table A 2.2, table A 2.3).(O)",
+      "title": "TND_1815"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 836,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "GSMR\nRBC"
+        }
+      ],
+      "requirementParent": "235653",
+      "id": "235654",
+      "text": "RBC 20 RBC Capacity. RBC and GSM-R must be able to operate with at least 40 OBU located simultaneously in the area it controls. (O)",
+      "title": "TND_1818"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 837,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "GSMR\nRBC"
+        }
+      ],
+      "requirementParent": "235653",
+      "id": "235655",
+      "text": "RBC 21 eLDA. Between RBC and the CTS exchange, an IP connection will be made for the eLDA.(LC)",
+      "title": "TND_1819"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 838,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "GSMR\nRBC"
+        }
+      ],
+      "requirementParent": "235653",
+      "id": "235656",
+      "text": "RBC 22 Between the RBC, CEs and MSCs, the GSM-R IP/MPLS transport network must be used. (LC)",
+      "title": "TND_1820"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 839,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "GSMR\nRBC"
+        }
+      ],
+      "requirementParent": "235653",
+      "id": "235657",
+      "text": "RBC 23 The RBC shall connect simultaneously in both MSCs. In case of failure of a MSC, RBC shall automatically switch, without any human intervention, within a maximum of 30 seconds, to the other MSC.(LC)",
+      "title": "TND_1821"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 840,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235653",
+      "id": "235658",
+      "text": "RBC 24 To connect with the neighboring RBCs, the tenderer shall use UNISIG Subset 039.(LC)",
+      "title": "TND_1822"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 844,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nMMI_Traffic_Mgmt"
+        }
+      ],
+      "requirementParent": "235661",
+      "id": "235662",
+      "text": "RBC 25 The CMI must be of the vital MMI type, similar with the requirements presented in the specifications for the CE installations regarding MMI. The CMI operation post must be redundant (hot reserve). The reserve post must contain the same number of monitors as the main one and provide identical operation facilities. (LC)",
+      "title": "TND_1826"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 845,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nMMI_Traffic_Mgmt"
+        }
+      ],
+      "requirementParent": "235661",
+      "id": "235663",
+      "text": "RBC 26 CMI Playback. The hardware equipment and the related software shall be supplied as part of the tender, ensuring the playback facility for the CMI operation post - RBC. It shall be placed in the dedicated RBC maintenance location.(LC)",
+      "title": "TND_1827"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 846,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nMMI_Traffic_Mgmt"
+        }
+      ],
+      "requirementParent": "235661",
+      "id": "235664",
+      "text": "RBC 27 The implementation of the graphic symbols for the CMI shall be done in compliance with the document Symbol Catalog version 1.3.2.(LC)",
+      "title": "TND_1828"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 848,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nMMI_Traffic_Mgmt"
+        }
+      ],
+      "requirementParent": "235661",
+      "id": "235666",
+      "text": "RBC 28 Any indication for the controller must be displayed on the CMI.(LC)",
+      "title": "TND_1830"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 849,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nMMI_Traffic_Mgmt"
+        }
+      ],
+      "requirementParent": "235661",
+      "id": "235667",
+      "text": "RBC 29 When an OBU enters the area of responsibility of the RBC, the RBC must send the train number received from the OBU to the CMI. The train number displayed on the CMI must be unique, both on the graphical representation and in the application that displays the alarms and in the list of trains registered with that RBC. (LC)",
+      "title": "TND_1831"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 850,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nMMI_Traffic_Mgmt"
+        }
+      ],
+      "requirementParent": "235661",
+      "id": "235668",
+      "text": "RBC 30 If the train numbers are different, the CMI and the MMI/CMT must display an error message: “Train number error”.(LC)",
+      "title": "TND_1832"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 851,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nMMI_Traffic_Mgmt"
+        }
+      ],
+      "requirementParent": "235661",
+      "id": "235669",
+      "text": "RBC 31 A check will be performed, with a warning message on the CMI, if 2 engine mechanics enter the same train number.(LC)",
+      "title": "TND_1833"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 852,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nMMI_Traffic_Mgmt"
+        }
+      ],
+      "requirementParent": "235661",
+      "id": "235670",
+      "text": "RBC 32 It must be possible from the CMI to carry out the UES command for all modes specified in UNISIG to accept this command (SB, FS, SR, OS, UN, SE, SN), and for the ones that do not accept UES (NP, SH, SL, NL,TR, PT, SF, IS, RV), the command must be rejected from the start by the installation logic.(LC)",
+      "title": "TND_1834"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 853,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "GSMR\nMMI_ETCS\nMMI_IXL\nRBC\nMMI_Traffic_Mgmt"
+        }
+      ],
+      "requirementParent": "235661",
+      "id": "235671",
+      "text": "RBC 33 REC: If the mechanic presses the REC button (Railway Emergency Call) on the cab radio, the Alarm window of the CMI must display a text message containing the operational number of the train that activated the REC, the date and time. This message must be accompanied by a sound signal. (LC)",
+      "title": "TND_1835"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 855,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nEngineering_AT"
+        }
+      ],
+      "requirementParent": "235672",
+      "id": "235673",
+      "text": "RBC 34 Track configuration (LC)\nThe RBC must include a database containing information regarding the track configuration. The track configuration must consist at least of:\n- Track sections (identification, length)\n- Balises\n- Turnouts\n- ITN\n- Declivities\n- Static speed profiles for all categories of trains specified in OPE TSI „ ANNEX B - LIST OF ETCS OPERATIONAL TRAIN CATEGORIES”\n- Static speed profiles for the turnout outside position.\n- Areas where MA termination is not allowed or areas where trains are not allowed to stop\n- Features of the catenary\n- Maximum load per axle of the track\n- Kilometric positions\n- National values\n- Temporary speed restrictions\n- Whistle indicators\n- Neutral zones of the catenary (indicating: “decouple the breaker”)\n- Metallic bridges and any other large metal masses\n- Position of the stopping lines on the current track and of stations\n- Areas where the engine mechanic must disable the magnetic brake, the “EDDY” electromagnetic brake and the regenerative brake\n- Areas where the mechanic must switch the air conditioning to recirculation.\nIt is the duty of the Contractor to properly enter all the above data in the RBC software and obtain all technical information needed for a complete configuration of the track.\nThe Contractor has the obligation to provide the members of the CFR Technical Verification Panel in table form all the configuration data entered in the RBC software, according to requirementbookmark15",
+      "title": "TND_1837"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 856,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235672",
+      "id": "235674",
+      "text": "RBC 35 RBC must perform ITN information management.(LC)",
+      "title": "TND_1860"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 857,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235672",
+      "id": "235675",
+      "text": "RBC 36 Operational data (LC)\nThe RBC must dynamically use a set of operational data. The operational data must consist at least of:\n- The last position received from all recorded trains\n- The last speed received from all recorded trains\n- The mode in which the trains run\n- Other data received by the train\nIt must be possible to display such data on the CMI.",
+      "title": "TND_1861"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 858,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235672",
+      "id": "235676",
+      "text": "RBC 37 On startup, the RBC must check its configuration and run a self-test program.(LC)",
+      "title": "TND_1868"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 859,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nRBC\nMMI_Traffic_Mgmt"
+        }
+      ],
+      "requirementParent": "235672",
+      "id": "235677",
+      "text": "RBC 38 Any fault that could lead to degraded operation of the RBC must be reported to the controller. (LC)",
+      "title": "TND_1869"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 860,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235672",
+      "id": "235678",
+      "text": "RBC 39 The diagnostic system must recognize the fault conditions of the RBC system and of the interfaces with the other systems (CE, OBU, GSM-R).(LC)",
+      "title": "TND_1870"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 861,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nRBC\nMMI_Traffic_Mgmt"
+        }
+      ],
+      "requirementParent": "235672",
+      "id": "235679",
+      "text": "RBC 40 TSR after system restart\nIn case of a fault in the system and a restart of the system, the RBC must keep/store all the temporary speed restrictions. Speed restrictions must be kept even on complete power loss on the RBC equipment. Deleting them is only allowed when replacing the RBC system software. After a fault followed by a restart, the RBC must show the controller for confirmation all the temporary speed restrictions that had been stored until the procedure is completed by the controller, the RBC must not be able to issue MAs to the trains in its area. (LC)",
+      "title": "TND_1871"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 862,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nRBC\nMMI_Traffic_Mgmt"
+        }
+      ],
+      "requirementParent": "235672",
+      "id": "235680",
+      "text": "RBC 41 Last stored conditions\nRBC must keep stored and be able to display on the CMI on startup the specific data (track configuration) or other data, if applicable. (LC)",
+      "title": "TND_1873"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 863,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nRBC\nMMI_Traffic_Mgmt"
+        }
+      ],
+      "requirementParent": "235672",
+      "id": "235681",
+      "text": "RBC 42 After restart-1(LC)\nAfter a restart, the RBC must determine:\n- Train position (after the OBU receiving position reports)\n- The state of the objects (from interlock installations)",
+      "title": "TND_1875"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 864,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235672",
+      "id": "235682",
+      "text": "RBC 43 After restart-2(LC)\nAfter restarting the RBC, it must request each OBU that still has a communication session open with it to close the session and initiate a new “start of mission”.",
+      "title": "TND_1879"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 865,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nRBC\nMMI_Traffic_Mgmt\nService_Diagnostic"
+        }
+      ],
+      "requirementParent": "235672",
+      "id": "235683",
+      "text": "RBC 44 After restart-3(LC)\nWhen the RBC is ready to operate safely after the restart, it must report to the controller and the maintenance personnel.",
+      "title": "TND_1881"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 866,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nOBU"
+        }
+      ],
+      "requirementParent": "235672",
+      "id": "235684",
+      "text": "RBC 45 A valid position must be obtain after the engine passes by any group of balises in the RBC area. The OBU - RBC system must be able to recognize a valid position, as it has been previously defined. This requirement applies for all situations, not only “after restart”. (LC)",
+      "title": "TND_1883"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 867,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nEngineering_AT"
+        }
+      ],
+      "requirementParent": "235672",
+      "id": "235685",
+      "text": "RBC 46 The RBC must be aware of the balise groups in its area and the ones in the related announcement/transition zones.(LC)",
+      "title": "TND_1884"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 868,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235672",
+      "id": "235686",
+      "text": "RBC 47 The RBC must always be able to determine whether a reported position corresponds to its own area or not.(LC)",
+      "title": "TND_1885"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 869,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235672",
+      "id": "235687",
+      "text": "RBC 48 The RBC must be able to transmit to the appropriate train any change that occurs in the CE installation that affects that train, for instance by issuing message for conditional/unconditional emergency stop when the conditions for train movement are no longer met. (LC)",
+      "title": "TND_1886"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 870,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nMMI_Traffic_Mgmt"
+        }
+      ],
+      "requirementParent": "235672",
+      "id": "235688",
+      "text": "RBC 49 When the RBC has recorded the train number, it must be shown on the controller’s screen so that the controller may easily identify the last section occupied by the train. The indication must rely on the information received from the OBU.(LC)",
+      "title": "TND_1887"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 871,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nMMI_Traffic_Mgmt\nEngineering_AT"
+        }
+      ],
+      "requirementParent": "235672",
+      "id": "235689",
+      "text": "RBC 50 Announcement/transition zones must be shown on the CMI.(LC)",
+      "title": "TND_1888"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 872,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nEngineering_AT"
+        }
+      ],
+      "requirementParent": "235672",
+      "id": "235690",
+      "text": "RBC 51 The start and end conditions (display / clear) for individual text messages on the DMI shall be specified as design data and shall be approved by the Client. (LC)",
+      "title": "TND_1889"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 873,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nEngineering_AT"
+        }
+      ],
+      "requirementParent": "235672",
+      "id": "235691",
+      "text": "RBC 52 The system reaction to problems related to linking between two consecutive groups of missing/malfunctioning balises along the track must be “service brake”. (LC)",
+      "title": "TND_1890"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 875,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235692",
+      "id": "235693",
+      "text": "RBC 53 The RBC must accept/record the train even if the reported position is invalid or unknown. (LC)",
+      "title": "TND_1892"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 876,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235692",
+      "id": "235694",
+      "text": "RBC 54 When a train has been recorded with an invalid/unknown position, the RBC must not issue a movement authority for that train unless it is in the “Staff Responsible” mode.(LC)",
+      "title": "TND_1893"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 877,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nRBC\nMMI_Traffic_Mgmt"
+        }
+      ],
+      "requirementParent": "235692",
+      "id": "235695",
+      "text": "RBC 55 As soon as a report is received from the train on a valid position, the train and its number must be shown in the relevant positions on the CMI.(LC)",
+      "title": "TND_1894"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 878,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235692",
+      "id": "235696",
+      "text": "RBC 56 If the train is accepted by the RBC, the recording must be done according to the document “TSI CCS Annex A”.(LC)",
+      "title": "TND_1895"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 880,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235697",
+      "id": "235698",
+      "text": "RBC 57 The RBC must not accept/record a train if the valid position that was reported shows that the OBU is not in its own area or in the approach/transition zones. A message shall be sent to the train on the cancellation (from the RBC viewpoint) and the communication session shall be closed. See also the definitions at paragraph 5.4.2.1, SUBSET 026.(LC)",
+      "title": "TND_1897"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 881,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235697",
+      "id": "235699",
+      "text": "RBC 58 A train that was manually recorded in the RBC outside the controlled area must not be disconnected when entering the area of that RBC.(LC)",
+      "title": "TND_1898"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 883,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235700",
+      "id": "235701",
+      "text": "RBC 59 The train must not be slowed due to a level transition.(LC)",
+      "title": "TND_1900"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 884,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nEngineering_AT"
+        }
+      ],
+      "requirementParent": "235700",
+      "id": "235702",
+      "text": "RBC 60 At CFR the entry point in a level 2 zone must be a traffic signal. The announcement/transition zone must be the section before this signal.(LC).",
+      "title": "TND_1901"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 885,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nEngineering_AT"
+        }
+      ],
+      "requirementParent": "235700",
+      "id": "235703",
+      "text": "RBC 61 When designing the RBC, it shall be taken into account that supervised areas need to be provided for at the ends which ensure the issue of movement authorities according to the requirements in this document. (LC)",
+      "title": "TND_1902"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 886,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235700",
+      "id": "235704",
+      "text": "RBC 62 It must be taken into account that the necessary information when leaving the supervised areas shall be taken from systems that are implemented outside the project. Supervised areas are areas that are adjacent to the area controlled by the RBC, from which the ETCS system must gather the information to perform entry/exit transitions.(LC)",
+      "title": "TND_1903"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 889,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nEngineering_AT"
+        }
+      ],
+      "requirementParent": "235706",
+      "id": "235707",
+      "text": "RBC 63 The border between level 0/STM and level 2 must be a traffic signal, as shown in the figure. The level change must be done after this signal. (LC)",
+      "title": "TND_1906"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 891,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235706",
+      "id": "235709",
+      "text": "RBC 64 The transition procedure must be as presented in the document “TSI CCS Annex A ” plus the requirements in this document. (LC)",
+      "title": "TND_1908"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 892,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235706",
+      "id": "235710",
+      "text": "RBC 65 The RBC must not send the same Movement Authority to 2 successive trains running from the level 0/STM area to the level 2 area. (LC)",
+      "title": "TND_1909"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 893,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nEngineering_AT"
+        }
+      ],
+      "requirementParent": "235706",
+      "id": "235711",
+      "text": "RBC 66 Trains that enter areas that are not controlled by the RBC (level 0/1/STM) must be automatically recorded, without requiring the train to brake for this purpose.(LC)",
+      "title": "TND_1910"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 894,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235706",
+      "id": "235712",
+      "text": "RBC 67 Even if a route is not set for the train, the transition must be announced by the announcement balise group (LTA), but in this case no MA shall be issued for the train.(LC)",
+      "title": "TND_1911"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 897,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nEngineering_AT"
+        }
+      ],
+      "requirementParent": "235714",
+      "id": "235715",
+      "text": "RBC 68 The border between level 1 and level 2 must be a traffic signal.(LC)",
+      "title": "TND_1914"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 898,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nEngineering_AT"
+        }
+      ],
+      "requirementParent": "235714",
+      "id": "235716",
+      "text": "RBC 69 Border signals shall be connected both at ETCS level 1 (LEU) and at ETCS level 2 (RBC), through the CE installation.(LC)",
+      "title": "TND_1915"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 899,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235714",
+      "id": "235717",
+      "text": "RBC 70 If the border signal is a block signal set on stop due to a reason for which the RBC could issue the MA (burnt out lamps, faulty ITN, occupied section, etc.), the RBC must issue such MA, which will become active when the transition is performed. (LC)",
+      "title": "TND_1916"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 900,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235714",
+      "id": "235718",
+      "text": "RBC 71 It is allowable to have the ETCS level 1 system issue an MA over the ETCS level 2 area, for the purpose of preventing a reduction in speed / braking of the OBU due to the level transition. (LC)",
+      "title": "TND_1917"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 901,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235714",
+      "id": "235719",
+      "text": "RBC 72 In any situation, after making the transition, the following are required:\n- reduction by the RBC of the MA given by the ETCS level 1 system OR\n- introduction of a TSR on the existing MA, which must occur immediately. (LC)",
+      "title": "TND_1918"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 902,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "OBU"
+        }
+      ],
+      "requirementParent": "235714",
+      "id": "235720",
+      "text": "RBC 73 If the following condition cannot be fulfilled due to a lack of communication of the OBU with the RBC, the functionality for T_NVCONTACT must be triggered. See also the chapter „TNVCONTACT’ (LC)",
+      "title": "TND_1921"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 903,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235714",
+      "id": "235721",
+      "text": "RBC 74 The requirements are the same as presented in the chapter “Automatic transition from level 0/STM to level 2”.(LC)",
+      "title": "TND_1922"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 905,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nEngineering_AT"
+        }
+      ],
+      "requirementParent": "235722",
+      "id": "235723",
+      "text": "RBC 75 The border between level 2 and level 0/STM must be a traffic signal, as shown in the figure. The level change must occur before this signal, so that the train may go over the signal in the INDUSI mode and the mechanic be able to see and comply with the signal indications. (LC)",
+      "title": "TND_1924"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 908,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235722",
+      "id": "235726",
+      "text": "RBC 76 The transition procedure must be the one presented in the document “TSI CCS Annex A document ” plus the requirements in this document.(LC)",
+      "title": "TND_1927"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 909,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nEngineering_AT"
+        }
+      ],
+      "requirementParent": "235722",
+      "id": "235727",
+      "text": "RBC 77 The transition to level 0/STM must be done before the signal, according to the following drawing, so that the train may go over the signal with INDUSI enabled. The issued MA must have length until the next signal, over the limits of the level 2 areas, but will disappear (will be cancelled in the OBU) at the time of transition to level 0. (LC)",
+      "title": "TND_1928"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 910,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235722",
+      "id": "235728",
+      "text": "RBC 78 In order to comply with chapter 1.1 of the “Instruction for Train Speed Control and Auto-stop - Trackside Equipment”, ed. 1972, the speed V_LOA when exiting a level shall be in accordance with the indication of the first signal after leaving ETCS level 2, as follows:",
+      "title": "TND_1929"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 920,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235722",
+      "id": "235738",
+      "text": "RBC 79 The MA must be issued beyond the limits of the level 2 area so that the train is able to pass the signal without any speed restriction. (LC)",
+      "title": "TND_1941"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 921,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nEngineering_AT"
+        }
+      ],
+      "requirementParent": "235722",
+      "id": "235739",
+      "text": "RBC 80 The details on the location of the balises for the exit of the OBU from level 2 to level 0/STM shall be detailed as design data for each individual case. (LC)",
+      "title": "TND_1942"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 923,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nEngineering_AT"
+        }
+      ],
+      "requirementParent": "235740",
+      "id": "235741",
+      "text": "RBC 81 The border between level 2 and level 1 must be a traffic signal. (LC)",
+      "title": "TND_1944"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 924,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nEngineering_AT"
+        }
+      ],
+      "requirementParent": "235740",
+      "id": "235742",
+      "text": "RBC 82 Border signals shall be connected both to ETCS level 1(LEU) and to ETCS level 2 (RBC), through the CE installation.(LC)",
+      "title": "TND_1945"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 925,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235740",
+      "id": "235743",
+      "text": "RBC 83 If the border signal is on stop (regardless of whether it is a station signal or a block signal), the MA shall end at this signal. (LC)",
+      "title": "TND_1946"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 926,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235740",
+      "id": "235744",
+      "text": "RBC 84 If the border signal shows a permissive indication, then the MA shall not stop at this signal. (LC)",
+      "title": "TND_1947"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 927,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nEngineering_AT"
+        }
+      ],
+      "requirementParent": "235740",
+      "id": "235745",
+      "text": "RBC 85 The telegram announcing the level transition (including the position where the transition will occur) must be issued by the RBC and the balise group that announces the transition (LTA-BG).(LC)",
+      "title": "TND_1948"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 928,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nOBU"
+        }
+      ],
+      "requirementParent": "235740",
+      "id": "235746",
+      "text": "RBC 86 The transition (made at the latest at the LT-BG) shall be made before the border signal. (LC)",
+      "title": "TND_1949"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 930,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nOBU"
+        }
+      ],
+      "requirementParent": "235747",
+      "id": "235748",
+      "text": "RBC 87 The engine mechanic must have the possibility to connect to the RBC manually outside the area controlled by it. (LC)",
+      "title": "TND_1951"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 932,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nEngineering_AT"
+        }
+      ],
+      "requirementParent": "235749",
+      "id": "235750",
+      "text": "RBC 88 The value for the variable T_NVCONTACT is set every 15 seconds, and the reaction, indicated by the variable M_NVCONTACT, is “service brake”. (LC)",
+      "title": "TND_1953"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 933,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "Engineering_AT"
+        }
+      ],
+      "requirementParent": "235749",
+      "id": "235751",
+      "text": "RBC 89 The value for the variable T_NVCONTACT shall be recorded both in the balises that announce the transition to level 2 (LTA-BG) and in the balises for transition to level 2 (LT-BG).(LC)",
+      "title": "TND_1954"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 934,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235749",
+      "id": "235752",
+      "text": "RBC 90 Recovery: The RBC shall be connected to both MSCs (Bucharest & Ploiesti), in order to operate under load-sharing, i.e. if a MSC fails the ETCS services must switch to the other MSC, without human intervention, in less than 30 seconds. (LC)",
+      "title": "TND_1955"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 936,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235753",
+      "id": "235754",
+      "text": "RBC 91 The train must not be slowed due to a handover between the 2 RBCs.(LC)",
+      "title": "TND_1957"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 937,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nEngineering_AT"
+        }
+      ],
+      "requirementParent": "235753",
+      "id": "235755",
+      "text": "RBC 92 The border between 2 RBCs must be a traffic signal. (LC)",
+      "title": "TND_1958"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 938,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nEngineering_AT"
+        }
+      ],
+      "requirementParent": "235753",
+      "id": "235756",
+      "text": "RBC 93 Block signals are installed at CFR 2 on a mast, back to back. If the border between 2 RBCs consists of block signals, one of such signals shall be the border for the first level 2 area and the second one for the second area.(LC)",
+      "title": "TND_1959"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 939,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nPM_ERTMS"
+        }
+      ],
+      "requirementParent": "235753",
+      "id": "235757",
+      "text": "RBC 94 The offered system must (O):\n- be in commercial operation in a railway administration in the European Union or Switzerland.\n- in the implementation presented at the previous point, the offered RBC must perform the HANDOVER function with a RBC manufactured by another supplier, according to the European requirements specified in subset 039 version 2.3.0 or later.",
+      "title": "TND_1960"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 942,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235759",
+      "id": "235760",
+      "text": "RBC 95 The RBC must ensure that the allocation of the train position to a location and line is correct and updated before issuing a MA.(LC)",
+      "title": "TND_1965"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 943,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nEngineering_AT"
+        }
+      ],
+      "requirementParent": "235759",
+      "id": "235761",
+      "text": "RBC 96 The parameters for the OBU requesting a new MA must be given by the RBC. T_MAR = 20 sec.(LC)",
+      "title": "TND_1966"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 944,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nOBU\nIXL_HW"
+        }
+      ],
+      "requirementParent": "235759",
+      "id": "235762",
+      "text": "RBC 97 In the station, it must not be allowed that the OBU have a MA without it being mirrored in a route that is locked in the electronic interlock installation. (LC)",
+      "title": "TND_1967"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 945,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235759",
+      "id": "235763",
+      "text": "RBC 98 In case of a MA from the OBU (with the corresponding route locked), for which the CE installation announces the RBC that the train is no longer permitted to enter the route, the RBC must immediately revoke the MA, with the new EoA at the signal that had authorized the route. The RBC must ensure by requesting confirmation from the OBU, that the shortened MA is being used by the OBU.(LC)",
+      "title": "TND_1968"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 950,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nOBU"
+        }
+      ],
+      "requirementParent": "235759",
+      "id": "235768",
+      "text": "RBC 99 The withdrawal of an MA (from the OBU) must be done by the RBC through an emergency stop message sent by the RBC. When receiving an emergency stop message, the OBU confirms whether the MA revocation has been carried out. (LC)",
+      "title": "TND_1973"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 951,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235759",
+      "id": "235769",
+      "text": "RBC 100 Sending an emergency stop message as an independent command initiated by the controller for a certain train shall be implemented. (LC)",
+      "title": "TND_1974"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 952,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_IXL\nRBC\nMMI_Traffic_Mgmt\nIXL_HW"
+        }
+      ],
+      "requirementParent": "235759",
+      "id": "235770",
+      "text": "RBC 101 It must be possible to stop all trains in a certain area (not smaller than a station or a current line between 2 stations), by means of a single command carried out in the electronic interlock installation. (LC)",
+      "title": "TND_1975"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 953,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235759",
+      "id": "235771",
+      "text": "RBC 102 Conditional emergency stop shall be used for CFR.(LC)",
+      "title": "TND_1976"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 955,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235772",
+      "id": "235773",
+      "text": "RBC 103 The RBC must never issue an MA for an OBU if any of the following elements is missing (LC):\n- \trequest for an MA from the OBU\n-\troute set in the CE installation\n-\tknown ETCS level (the RBC must know at what level the OBU is running)\n-\tposition report from the OBU\n-\trunning direction (if the OBU is not in the RBC’s own area, but in the approach zone).",
+      "title": "TND_1978"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 956,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235772",
+      "id": "235774",
+      "text": "RBC 104 The length of an MA shall be given in compliance with the indications of the signals/route settings in the CE installation.(LC)",
+      "title": "TND_1984"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 957,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235772",
+      "id": "235775",
+      "text": "RBC 105 Because the project line is a conventional line with signals, the length of the new MA must be dependent on route lengths. (LC)",
+      "title": "TND_1985"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 958,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nEngineering_AT"
+        }
+      ],
+      "requirementParent": "235772",
+      "id": "235776",
+      "text": "RBC 106 Under normal conditions (FS or OS, with no braking reaction from the system), an MA must always end 20m before a traffic signal, measured from the signal to the front end on the engine. (LC)",
+      "title": "TND_1986"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 959,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235772",
+      "id": "235777",
+      "text": "RBC 107 The MA EoA shall always be a traffic signal; the MA shall never end at maneuver signals.(LC)",
+      "title": "TND_1987"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 960,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nOBU"
+        }
+      ],
+      "requirementParent": "235772",
+      "id": "235778",
+      "text": "RBC 108 The speed indication on the DMI shall always take precedence over any speed indications of the traffic signals.(LC)",
+      "title": "TND_1988"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 961,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nEngineering_AT"
+        }
+      ],
+      "requirementParent": "235772",
+      "id": "235779",
+      "text": "RBC 109 The length of any MA issued by the RBC shall be determined according to the following rules (LC):\na)\tNo more than 6 block sectors\nb)\tA maximum of 6600 m.",
+      "title": "TND_1989"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 962,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nEngineering_AT"
+        }
+      ],
+      "requirementParent": "235772",
+      "id": "235780",
+      "text": "RBC 110 To determine the length of the MA under the requirement bookmark45 the RBC shall start from the value 0, and then add sections until one of the two conditions is met (reaching either 6 sectors or the length of 6,600m).(LC)",
+      "title": "TND_1992"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 963,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235772",
+      "id": "235781",
+      "text": "RBC 111 Based on the routes made in the electronic interlock installation and the previous rule, the RBC must establish the MA with a certain length and send it to the OBU.(LC)",
+      "title": "TND_1993"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 964,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nEngineering_AT"
+        }
+      ],
+      "requirementParent": "235772",
+      "id": "235782",
+      "text": "RBC 112 To indicate the time when the OBU must request a new MA / MA extension, package 57 shall be sent to the OBU once. (LC)",
+      "title": "TND_1994"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 965,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nEngineering_AT"
+        }
+      ],
+      "requirementParent": "235772",
+      "id": "235783",
+      "text": "RBC 113 The point where the OBU must request a new MA (extension of the current MA) must be before the point where the OBU should start to brake, in compliance with the MRSP (Most Restrictive Speed Profile). The time between the two points is T_MAR=20 seconds. (LC)",
+      "title": "TND_1995"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 966,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nOBU"
+        }
+      ],
+      "requirementParent": "235772",
+      "id": "235784",
+      "text": "RBC 114 After starting to request a new MA, the OBU must continue to request it until it receives one. (LC)",
+      "title": "TND_1996"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 967,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nIXL_HW"
+        }
+      ],
+      "requirementParent": "235772",
+      "id": "235785",
+      "text": "RBC 115 When it receives a request from an MA from a train, the RBC must request the CE installation to prepare a route for that train.(LC)",
+      "title": "TND_1997"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 968,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_IXL\nRBC\nMMI_Traffic_Mgmt\nIXL_HW"
+        }
+      ],
+      "requirementParent": "235772",
+      "id": "235786",
+      "text": "RBC 116 The route setting request shall stop being displayed on the MMI (LC):",
+      "title": "TND_1998"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 974,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nMMI_Traffic_Mgmt"
+        }
+      ],
+      "requirementParent": "235772",
+      "id": "235792",
+      "text": "RBC 117 The request must be done by blinking the signal label on the MMI screen (of the IDM).(LC)",
+      "title": "TND_2004"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 977,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235772",
+      "id": "235795",
+      "text": "RBC 118 If the route has been set before, the RBC does not need to issue a new MA if the OBU has not already requested an MA.(LC)",
+      "title": "TND_2007"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 979,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nIXL_HW"
+        }
+      ],
+      "requirementParent": "235772",
+      "id": "235797",
+      "text": "RBC 119 When the RBC receives a request: if the route is already set, the MA shall be issued immediately, without any additional request to the CE installation. If the route is not set (it is not possible to issue an MA), the RBC must send a request to the CE installation to set a route. (LC)",
+      "title": "TND_2009"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 980,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nRBC\nMMI_Traffic_Mgmt"
+        }
+      ],
+      "requirementParent": "235772",
+      "id": "235798",
+      "text": "RBC 120 The request for an MA (and whether it was resolved or not) must be displayed on the CMI. The display at the CMI-RBC post of the MA request originating from the engine must be done by changing the background of the train number from the current color (white or red) to yellow, for 3 seconds for each MA request that is received. (LC)",
+      "title": "TND_2010"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 981,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nRBC\nMMI_Traffic_Mgmt"
+        }
+      ],
+      "requirementParent": "235772",
+      "id": "235799",
+      "text": "RBC 121 The CMI must display the length of each MA. The MA must displayed at all times. (LC)",
+      "title": "TND_2011"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 982,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235772",
+      "id": "235800",
+      "text": "RBC 122 The MA set over a section with turnouts (in a station) must take into consideration all the static speed profiles (SSP) for the deviated positions of the turnouts (lower values for speed compared to direct speed). (LC)",
+      "title": "TND_2012"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 983,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235772",
+      "id": "235801",
+      "text": "RBC 123 Issuing an MA over a stop signal: if the signal gives the indication “permissive stop” or is an “absolute stop” signal and shows the indication “call on locked route”, which involves a locked route covered by the signal, the RBC must issue an appropriate MA. (LC)",
+      "title": "TND_2013"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 984,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235772",
+      "id": "235802",
+      "text": "RBC 124 Depending on the situation, the MA over a signal that shows the indication STOP may be FS or OS. The issue of this MA must be done in compliance with paragraph5.2.(LC)",
+      "title": "TND_2014"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 986,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235772",
+      "id": "235804",
+      "text": "RBC 125 If more than one motor vehicle (OBU) is located on a section and a route is executed by the CE installation, the RBC must be able to send the MA to the appropriate OBU, based on the position report of the OBU on the track.(LC)",
+      "title": "TND_2016"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 987,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235772",
+      "id": "235805",
+      "text": "RBC 126 The RBC shall never issue an MA that is not consistent with the train direction. (LC)",
+      "title": "TND_2017"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 989,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235806",
+      "id": "235807",
+      "text": "RBC 127 It is not acceptable in any situation that a train should have an MA over an unlocked route/ part of a route.(LC)",
+      "title": "TND_2019"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 990,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235806",
+      "id": "235808",
+      "text": "RBC 128 A change in the indication of a signal from “permissive” to “STOP” must generate the issue of a new updated MA from the RBC.(LC)",
+      "title": "TND_2020"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 991,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235806",
+      "id": "235809",
+      "text": "RBC 129 If the OBU has passed a signal (that had a permissive indication) and a turnout or a level crossing installation from the rest of the locked route (previously authorized by that signal) loses control / detection, the RBC must send the UES (for the turnout over which the train will pass/ the level crossing installation).(LC)",
+      "title": "TND_2021"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 993,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235806",
+      "id": "235811",
+      "text": "RBC 130 The reaction of the system must be to trip only if losing control/detection for the element takes place “in front of the train”. (LC)",
+      "title": "TND_2023"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 994,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235806",
+      "id": "235812",
+      "text": "RBC 131 For this function, the turnouts in the sliding path or the ones covering it and the level crossing installations in the sliding paths of the routes shall not be taken into consideration. Also, after the train passes the start signal of the route, any non-sequential occupancy of the route sections or loss of control/detection on the turnouts covering the routes shall not be taken into consideration. (LC)",
+      "title": "TND_2024"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 995,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_IXL\nRBC\nMMI_Traffic_Mgmt"
+        }
+      ],
+      "requirementParent": "235806",
+      "id": "235813",
+      "text": "RBC 132 Upon failure of the Level Crossing Installation, a text message without confirmation shall be issued: “Faulty level crossing km.xxx+yyy”.(LC)",
+      "title": "TND_2025"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1000,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nIXL_HW"
+        }
+      ],
+      "requirementParent": "235806",
+      "id": "235818",
+      "text": "RBC 133 For the case with a turnout in the parking position, the following functional requirements shall be considered for the configuration of the RBC / CE: (LC)",
+      "title": "TND_2030"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1013,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235830",
+      "id": "235831",
+      "text": "RBC 134 If the link between RBC and the CE installation is missing, the RBC must enable the UES for all trains (also for SB and SR modes with a valid position) in the coverage area of the Electronic Interlock. (LC)",
+      "title": "TND_2043"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1014,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nEngineering_AT"
+        }
+      ],
+      "requirementParent": "235830",
+      "id": "235832",
+      "text": "RBC 135 The RBC shall deemed that the link with the CE has failed if the duration of the interruption in the connection exceeds 5 seconds.(LC)",
+      "title": "TND_2044"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1015,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235830",
+      "id": "235833",
+      "text": "RBC 136 The RBC shall not issue an MA for any signal in the station or the block.(LC)",
+      "title": "TND_2045"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1016,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nRBC\nMMI_Traffic_Mgmt"
+        }
+      ],
+      "requirementParent": "235830",
+      "id": "235834",
+      "text": "RBC 137 The loss of the link between CE and RBC must be signaled both on the CMI and on the MMI.(LC)",
+      "title": "TND_2046"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1020,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nIXL_HW"
+        }
+      ],
+      "requirementParent": "235837",
+      "id": "235838",
+      "text": "RBC 138 If the RBC and the CE installation are not aligned in time, the RBC must not send MA to any OBU. A misalignment is deemed to be any time difference that is greater than or equal to 5 seconds. (LC)",
+      "title": "TND_2050"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1021,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nEngineering_AT"
+        }
+      ],
+      "requirementParent": "235837",
+      "id": "235839",
+      "text": "RBC 139 The system must ensure the synchronization of the time displayed on the human machine interface at CE and RBC (MMI and CMI).(LC)",
+      "title": "TND_2051"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1022,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nIXL_HW"
+        }
+      ],
+      "requirementParent": "235837",
+      "id": "235840",
+      "text": "RBC 140 For the case in which the RBC and the CE installation are not aligned in time, a procedure must be provided for the alignment.(LC)",
+      "title": "TND_2052"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1023,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nRBC\nMMI_Traffic_Mgmt\nOBU"
+        }
+      ],
+      "requirementParent": "235837",
+      "id": "235841",
+      "text": "RBC 141 Each communication with each OBU shall be considered individually. The CMI shall display an alarm message upon losing communication between the OBU and the RBC.(LC)",
+      "title": "TND_2053"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1024,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235837",
+      "id": "235842",
+      "text": "RBC 142 If communication is down, the RBC must consider the communication reestablished when it receives a new position report from the OBU.(LC)",
+      "title": "TND_2054"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1025,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nOBU"
+        }
+      ],
+      "requirementParent": "235837",
+      "id": "235843",
+      "text": "RBC 143 When communication with the OBU is reestablished, the RBC must send a new MA only if new elements appear (if the OBU has already requested an extension of the MA and a new route has been made in the interlock installation). (LC)",
+      "title": "TND_2055"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1028,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235845",
+      "id": "235846",
+      "text": "RBC 144 When all the requirements are met for train running (known location of the train, set and locked route), the RBC must issue an MA in the Full Supervision (FS) mode.(LC)",
+      "title": "TND_2058"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1029,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235845",
+      "id": "235847",
+      "text": "RBC 145 The conditions for MA FS must be supervised at all times.(LC)",
+      "title": "TND_2059"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1030,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235845",
+      "id": "235848",
+      "text": "RBC 146 The RBC must intervene with appropriate action, when applicable, for instance by issuing an emergency stop message, when the conditions for train running are no longer met. (LC)",
+      "title": "TND_2060"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1032,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235849",
+      "id": "235850",
+      "text": "RBC 147 The OS MA must be issued by the RBC only if the train position and movement direction are known and the route is set and locked. Additionally, the train must be in its own area or the announcement/transition one. (LC)",
+      "title": "TND_2062"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1034,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nEngineering_AT"
+        }
+      ],
+      "requirementParent": "235849",
+      "id": "235852",
+      "text": "RBC 149 The distance from which the mechanic must have the OS window activated must be 200 m before the signal (in the station or on a block).(LC)",
+      "title": "TND_2064"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1035,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "OBU"
+        }
+      ],
+      "requirementParent": "235849",
+      "id": "235853",
+      "text": "RBC 150 The confirmation for OS MA must be requested from the mechanic regardless of the mode in which the OBU is when receiving the OS MA (the OBU may be in FS, OS or SR when it receives the OS MA).(LC)",
+      "title": "TND_2065"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1036,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "OBU"
+        }
+      ],
+      "requirementParent": "235849",
+      "id": "235854",
+      "text": "RBC 151 If the mechanic fails to confirm after 5 seconds the transition to the OS mode from the current mode, the train shall receive the reaction “service brake” (SB), regardless of the train’s running speed. (LC)",
+      "title": "TND_2066"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1037,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235849",
+      "id": "235855",
+      "text": "RBC 152 If the mechanic has confirmed the message for the transition to OS but the train has not passed the respective block/station signal with its front end and in the meantime the message switches the indication to permissive (as conditions have arisen to switch the mode to FS), the engine must receive the mode transition to FS, without being forced to needlessly run a block sector/a station route with reduced 20km/h speed, similar to a train that is not fitted with ETCS.(LC)",
+      "title": "TND_2067"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1039,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235856",
+      "id": "235858",
+      "text": "RBC 153 The distance indicated for the Staff Responsible (SR) mode must be a national value. (LC)",
+      "title": "TND_2069"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1040,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nRBC\nMMI_Traffic_Mgmt"
+        }
+      ],
+      "requirementParent": "235856",
+      "id": "235860",
+      "text": "RBC 154 The RBC must display to the controller, through the CMI, the fact that the OBU is running in SR mode.(LC)",
+      "title": "TND_2070"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1043,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nEngineering_AT"
+        }
+      ],
+      "requirementParent": "235856",
+      "id": "235865",
+      "text": "RBC 156 All traffic signals shall be fitted with a balise group „STOP if in SR” (STOP if the OBU is in SR mode). For back-to-back signals, the same balise group shall be used for both directions. (LC)",
+      "title": "TND_2073"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1045,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235867",
+      "id": "235869",
+      "text": "RBC 157 The conditions for the issue of the TAF by the RBC are(LC):\n-\tthe OBU has a valid position\n-\tthe RBC can validate the position\n-\tthe RBC is able to send an MA (FS or OS)\n-\tthe OBU is in one of the following modes: SB, OS or SR\n-\tthe OBU has not passed the signal with its front end.",
+      "title": "TND_2075"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1046,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nEngineering_AT"
+        }
+      ],
+      "requirementParent": "235867",
+      "id": "235871",
+      "text": "RBC 158 The RBC shall issue the TAF request, which shall be displayed on the DMI when the OBU is in the TAF window (starting 200 m to the station or block signal). At the same distance, a group of balises shall be placed, consisting of 2 balises. The same group of balises shall also perform the function to reset the errors accumulated in the system onboard the engine. (LC)",
+      "title": "TND_2081"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1047,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235867",
+      "id": "235873",
+      "text": "RBC 159 When the TAF is confirmed by the mechanic, the RBC shall issue an MA to the signal, followed by an MA issued in compliance with the signal indication / state. (LC)",
+      "title": "TND_2082"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1048,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235867",
+      "id": "235875",
+      "text": "RBC 160 If there are two OBUs on the same section in the 200m TAF window, both having a valid position, the RBC shall only send the TAF to the first OBU in front of the referred signal. (LC)",
+      "title": "TND_2083"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1050,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nRBC\nMMI_Traffic_Mgmt"
+        }
+      ],
+      "requirementParent": "235877",
+      "id": "235879",
+      "text": "RBC 161 The controller must be able to enter and cancel a TSR by means of the CMI. The CMI must display the date, time and name of the operator that entered/cancelled a speed restriction. A log shall be generated in the CMI which shall include the above required information, which shall be protected against alteration/deletion by creating a special administrator account for legal data.(LC)",
+      "title": "TND_2085"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1051,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235877",
+      "id": "235881",
+      "text": "RBC 162 The minimum number of TSRs active at the same time, entered by the RBC operator through the CMI, must be at least equal to the total number of elements that are individually defined in the software for which TSRs can be entered (sections with/without a turnout), in the area controlled by that RBC.(LC)",
+      "title": "TND_2086"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1052,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS"
+        }
+      ],
+      "requirementParent": "235877",
+      "id": "235883",
+      "text": "RBC 163 For effective use during hot periods, a function shall be implemented in the CMI- RBC allowing the operator to enter multiple TSRs with the same value, selecting the start and the end of the affected area, without requiring individual selection of all included software components. (LC)",
+      "title": "TND_2087"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1053,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235877",
+      "id": "235885",
+      "text": "RBC 164 It is allowed to enter a TSR even if MAs are set for that area or even if there are occupied sections in that area. (LC)",
+      "title": "TND_2088"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1054,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nEngineering_AT"
+        }
+      ],
+      "requirementParent": "235877",
+      "id": "235887",
+      "text": "RBC 165 For a TSR, it must be possible to specify at least (LC):\n-\tmaximum speed value\n-\tTSR limits (start/end)\n-\ttext messages associated with the TSR (automatically sending a text message with the TSR, informing the mechanic). The text message shall be: “Speed restriction”. This shall be sent when the OBU is 1,000 m from the TSR. This is a message without acknowledgement.",
+      "title": "TND_2089"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1055,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235877",
+      "id": "235889",
+      "text": "RBC 166 The RBC must check and validate the TSR that was entered by the controller (for plausibility. (LC)",
+      "title": "TND_2093"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1056,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235877",
+      "id": "235891",
+      "text": "RBC 167 Entering/removing a TSR must be considered immediately by the system. Such entering/removal must be immediately sent to the OBU (existing MAs must updated). (LC)",
+      "title": "TND_2094"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1057,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nRBC\nMMI_Traffic_Mgmt"
+        }
+      ],
+      "requirementParent": "235877",
+      "id": "235892",
+      "text": "RBC 168 It must be possible to define the limits of the TSR (LC)\n-\teither by identifying the track section without a turnout or the turnout\n-\tor by position on the track (every 5 m).",
+      "title": "TND_2095"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1058,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235877",
+      "id": "235894",
+      "text": "RBC 169 The RBC must allow the revocation (cancellation) of a TSR by the controller. (LC)",
+      "title": "TND_2098"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1059,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nRBC\nMMI_Traffic_Mgmt"
+        }
+      ],
+      "requirementParent": "235877",
+      "id": "235896",
+      "text": "RBC 170 It must be possible to enter/enable and cancel each TSR individually. (LC)",
+      "title": "TND_2099"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1060,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nRBC\nMMI_Traffic_Mgmt\nEngineering_AT"
+        }
+      ],
+      "requirementParent": "235877",
+      "id": "235898",
+      "text": "RBC 171 It must be possible to enter a TSR with a 5km/h resolution, from 5km/h to 155km/h.(LC)",
+      "title": "TND_2100"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1061,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nRBC\nMMI_Traffic_Mgmt"
+        }
+      ],
+      "requirementParent": "235877",
+      "id": "235901",
+      "text": "RBC 172 It must be possible to overlap TSRs.(LC)",
+      "title": "TND_2101"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1062,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nRBC\nMMI_Traffic_Mgmt"
+        }
+      ],
+      "requirementParent": "235877",
+      "id": "235903",
+      "text": "RBC 173 Each TSR must be displayed distinctly on the CMI. Upon request from the Controller, its geographical limits shall be displayed on the schematic plan on the CMI.(LC)",
+      "title": "TND_2102"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1063,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nRBC\nMMI_Traffic_Mgmt"
+        }
+      ],
+      "requirementParent": "235877",
+      "id": "235905",
+      "text": "RBC 174 If 2 or more TSR overlap on a section, the CMI shall display the lowest one, according to the manner of presentation of the TSR.(LC)",
+      "title": "TND_2103"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1064,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nRBC\nMMI_Traffic_Mgmt"
+        }
+      ],
+      "requirementParent": "235877",
+      "id": "235907",
+      "text": "RBC 175 If 2 or more TSR overlap, the cancellation of one of the restrictions must not lead to any other TSR being cancelled.(LC)",
+      "title": "TND_2104"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1065,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nRBC\nMMI_Traffic_Mgmt"
+        }
+      ],
+      "requirementParent": "235877",
+      "id": "235909",
+      "text": "RBC 176 The speed corresponding to the TSR must be indicated upon request from the controller. (LC)",
+      "title": "TND_2105"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1066,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235877",
+      "id": "235911",
+      "text": "RBC 177 In case of reset/loss of power to the RBC, the recorded TSRs must not be deleted or lost. The only case when it is accepted to lose entered TSRs is when changing the RBC software.(LC)",
+      "title": "TND_2106"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1067,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nRBC\nMMI_Traffic_Mgmt"
+        }
+      ],
+      "requirementParent": "235877",
+      "id": "235913",
+      "text": "RBC 178 The manner in which the TSRs are defined and displayed shall be in compliance with the document Symbol Catalog version 1.3.2. (LC)",
+      "title": "TND_2107"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1068,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nEngineering_AT"
+        }
+      ],
+      "requirementParent": "235877",
+      "id": "235915",
+      "text": "RBC 179 For an OBU in SR mode, the TSR must always be sent if the OBU is on the track block. In stations, the TSR shall only be sent by association with an MA.(LC)",
+      "title": "TND_2108"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1069,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nEngineering_AT"
+        }
+      ],
+      "requirementParent": "235877",
+      "id": "235917",
+      "text": "RBC 180 The TSR must be given correctly and be real, under traffic safe conditions. The constructor must match the special km and the real ones. All data required for this matching are in the responsibility of the Constructor. Special Km are displayed on sign plates on the poles along the track, used by the track personnel to communicate speed restrictions. Real Km are as measured by the Contractor in the topo measurement, according to requirement GEN 69 and entered in the RBC design data.\n“Matching special and real km” specified in this requirement means implementing a software function that allows the CMI operator to enter the speed restriction in the form shown in the field (special km), which shall be automatically converted by the RBC software to real km, which shall be used in the entered speed restriction.\nThe Contractor shall make available to the Client’s Technical Verification Panel in form of a table the matching between real and special km for the entire area of the RBC.\nThe Tenderer shall present how this matching will be made and shall stipulate all the costs for this in the tender. (O)",
+      "title": "TND_2109"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1071,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nEngineering_AT"
+        }
+      ],
+      "requirementParent": "235919",
+      "id": "235921",
+      "text": "RBC 181 When it receives from the CE installation information regarding “Faulty ITN”, the RBC must immediately issue an MA with EoA at 50 m from the closest end of the level crossing. (LC)",
+      "title": "TND_2114"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1072,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235919",
+      "id": "235922",
+      "text": "RBC 182 If the train is less than 50m from the closest end of the level crossing in the running direction, the RBC shall send the order to immediately apply the emergency brake (UES).(LC)",
+      "title": "TND_2115"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1073,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nEngineering_AT"
+        }
+      ],
+      "requirementParent": "235919",
+      "id": "235924",
+      "text": "RBC 183 The DMI shall display a single text message without acknowledgement “Faulty level crossing, km.xxx+yyy\" (where xxx+yyy are the kilometric position of the level crossing in the signaling schematic), as follows:",
+      "title": "TND_2116"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1077,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nEngineering_AT"
+        }
+      ],
+      "requirementParent": "235919",
+      "id": "235931",
+      "text": "RBC 184 The distance from which the mechanic must be able to give confirmation on the DMI regarding the transition from the current running mode to OS mode shall be 250m from the nearest end of the level crossing, in the running direction.(LC)",
+      "title": "TND_2120"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1078,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nOBU"
+        }
+      ],
+      "requirementParent": "235919",
+      "id": "235933",
+      "text": "RBC 185 The length of the train running area in OS mode, over the faulty level crossing, shall be defined as follows: 50m from the nearest end of the level crossing plus the width of the crossing plus 50m after the level crossing.(LC)",
+      "title": "TND_2121"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1079,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nOBU"
+        }
+      ],
+      "requirementParent": "235919",
+      "id": "235935",
+      "text": "RBC 186 After the train passes with its front end the running area in OS mode, the mode shall automatically transition to FS (if the train was before in FS mode before the faulty level crossing and the conditions are met to change the current mode). If the OBU was in SR/OS mode before the faulty level crossing, the OBU shall keep the running mode until the next traffic signal. (LC)",
+      "title": "TND_2122"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1081,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235919",
+      "id": "235938",
+      "text": "RBC 187 If the reason for which the level crossing was deemed faulty disappears (LC):",
+      "title": "TND_2124"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1087,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235945",
+      "id": "235947",
+      "text": "RBC 188 The “End of mission” procedure must be performed in compliance with the document “TSI CCS Annex A” plus the requirements in this document. (LC)",
+      "title": "TND_2130"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1088,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nRBC\nMMI_Traffic_Mgmt"
+        }
+      ],
+      "requirementParent": "235945",
+      "id": "235948",
+      "text": "RBC 189 The number of the train and the data regarding the train must be removed from the controller’s monitor when the de-recording is complete. (LC)",
+      "title": "TND_2131"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1090,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235949",
+      "id": "235950",
+      "text": "RBC 190 Shunting movements are not performed under RBC control.(LC)",
+      "title": "TND_2133"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1092,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "Engineering_AT"
+        }
+      ],
+      "requirementParent": "235949",
+      "id": "235952",
+      "text": "RBC 191 The OBU must not be able to leave the station while in shunting (SH) mode.(LC)",
+      "title": "TND_2135"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1093,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "Engineering_AT"
+        }
+      ],
+      "requirementParent": "235949",
+      "id": "235953",
+      "text": "RBC 192 Balises at the entry signal in stations must contain the information “STOP if in SH\", in the exit direction, in order to prohibit the train in SH mode which has no longer a connection with the RBC from leaving the station. (LC)",
+      "title": "TND_2136"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1094,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nOBU"
+        }
+      ],
+      "requirementParent": "235949",
+      "id": "235954",
+      "text": "RBC 193 The RBC must send the permission to make maneuvers to an OBU when it receives a request from it, only if the OBU has a valid position and is inside the station. (LC)",
+      "title": "TND_2137"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1095,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nEngineering_AT"
+        }
+      ],
+      "requirementParent": "235949",
+      "id": "235955",
+      "text": "RBC 194 No list of balises shall be sent to the OBU.(LC)",
+      "title": "TND_2138"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1097,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nEngineering_AT"
+        }
+      ],
+      "requirementParent": "235949",
+      "id": "235957",
+      "text": "RBC 195 Permanent shunting areas shall be used, defined inside the stations. (LC)",
+      "title": "TND_2140"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1098,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nOBU"
+        }
+      ],
+      "requirementParent": "235949",
+      "id": "235958",
+      "text": "RBC 196 The RBC must allow shunting inside stations from ETCS-equipped tracks (included in the RBC) to tracks that are not equipped with ETCS (not included in the RBC).(LC)",
+      "title": "TND_2141"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1099,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235949",
+      "id": "235959",
+      "text": "RBC 197 The shunting mode must be accepted by the RBC independently on whether the shunting signal in front of the train is set to free or not, and in areas inside the station that are not fitted with shunting signals. (LC)",
+      "title": "TND_2142"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1102,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235949",
+      "id": "235962",
+      "text": "RBC 198 Shunting routes need not be recorded in the RBC.(LC)",
+      "title": "TND_2145"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1103,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "OBU"
+        }
+      ],
+      "requirementParent": "235949",
+      "id": "235963",
+      "text": "RBC 199 The OBU must be allowed to enter SH mode only when it (the OBU) is not moving. (LC)",
+      "title": "TND_2146"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1106,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nEngineering_AT"
+        }
+      ],
+      "requirementParent": "235965",
+      "id": "235966",
+      "text": "RBC 200 Neutral zones must be indicated in the track configuration.(LC)",
+      "title": "TND_2149"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1107,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nOBU"
+        }
+      ],
+      "requirementParent": "235965",
+      "id": "235967",
+      "text": "RBC 201 The RBC must send the OBU an indication of the places where the mechanic must close/open the circuit breaker.(LC)",
+      "title": "TND_2150"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1108,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235965",
+      "id": "235968",
+      "text": "RBC 202 The issued MAs must take the following into account (LC):",
+      "title": "TND_2151"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1114,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235973",
+      "id": "235974",
+      "text": "RBC 203 The RBC must be able to memorize the text messages sent to the OBUs under its responsibility (its own area).(LC)",
+      "title": "TND_2159"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1115,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235973",
+      "id": "235975",
+      "text": "RBC 204 Only text messages received from the time when the OBU is recorded in the respective RBC shall be considered. (LC)",
+      "title": "TND_2160"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1116,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nPM_ERTMS"
+        }
+      ],
+      "requirementParent": "235973",
+      "id": "235976",
+      "text": "RBC 205 The Tenderer shall provide to the Client, as part of the tender, an instrument for the real-time reading of telegrams sent/received between the RBC and each recorded OBU. The instrument must be able to automatically store the received telegrams for at least 1 month. The instrument shall be available starting with the CFR test period and shall then remain property of CFR.(LC)",
+      "title": "TND_2161"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1118,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235977",
+      "id": "235978",
+      "text": "RBC 206 The RBC must be able to operate with fixed block lengths / track sections for train separation.(LC)",
+      "title": "TND_2163"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1119,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nEngineering_AT"
+        }
+      ],
+      "requirementParent": "235977",
+      "id": "235979",
+      "text": "RBC 207 For the indication to run on the left track of the double line fitted with trivialized BLA / BLAI, the RBC shall issue a text message with acknowledgment. The text is “Exit left”. If the mechanic does not acknowledge the message, a service brake shall be generated.(LC)",
+      "title": "TND_2164"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1120,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nEngineering_AT"
+        }
+      ],
+      "requirementParent": "235977",
+      "id": "235980",
+      "text": "RBC 208 For the direction indicator, the RBC shall issue a text message without acknowledgment. The text is “Direction” followed by the name of the station. (LC)",
+      "title": "TND_2165"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1121,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nEngineering_AT"
+        }
+      ],
+      "requirementParent": "235977",
+      "id": "235981",
+      "text": "RBC 209 2 static speed profiles are defined as function of the 2 categories of trains: (I)",
+      "title": "TND_2166"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1124,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nEngineering_AT"
+        }
+      ],
+      "requirementParent": "235977",
+      "id": "235984",
+      "text": "RBC 210 The Contractor shall place in the field, in the necessary locations, the signs for entering/leaving the ETCS level 2. (LC)",
+      "title": "TND_2169"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1127,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235986",
+      "id": "235987",
+      "text": "RBC 211 The RBC must be able to send an emergency stop message (conditional and unconditional) to the OBU, based on the status of the routes/information in the CE installation.(LC)",
+      "title": "TND_2172"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1128,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235986",
+      "id": "235988",
+      "text": "RBC 212 The issue of an emergency stop message must be possible at any time. (LC)",
+      "title": "TND_2173"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1129,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235986",
+      "id": "235989",
+      "text": "RBC 213 The RBC must send an emergency stop message to an OBU until it receives acknowledgement from the OBU. The acknowledgment refers to the fact that the message has reached the OBU, not that the mechanic has acknowledged the message.(LC)",
+      "title": "TND_2174"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1130,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235986",
+      "id": "235990",
+      "text": "RBC 214 The emergency stop message must be revoked for the RBC to be able to issue a new MA to that OBU. (LC)",
+      "title": "TND_2175"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1131,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nRBC\nMMI_Traffic_Mgmt"
+        }
+      ],
+      "requirementParent": "235986",
+      "id": "235991",
+      "text": "RBC 215 The consequences (mode change, MA shortening) of each emergency stop message for each OBU must be shown on the CMI.(LC)",
+      "title": "TND_2176"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1133,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235992",
+      "id": "235993",
+      "text": "RBC 216 The RBC must support security key management. (LC)",
+      "title": "TND_2178"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1134,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235992",
+      "id": "235994",
+      "text": "RBC 217 The RBC must ensure that keys are kept securely and confidentially. It must be impossible to retrieve the secret keys installed in the RBC (for unauthorized persons).(LC)",
+      "title": "TND_2179"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1135,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235992",
+      "id": "235995",
+      "text": "RBC 218 The RBC must ensure the use of transport keys for the protection of the authentication keys (KMAC).(LC)",
+      "title": "TND_2180"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1136,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235992",
+      "id": "235996",
+      "text": "RBC 219 The generation and management of the keys must be according to UNISIG subset 038 and 114.(LC)",
+      "title": "TND_2181"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1137,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235992",
+      "id": "235997",
+      "text": "RBC 220 The RBC must be able to store up to 5000 KMAC keys.(LC)",
+      "title": "TND_2182"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1138,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235992",
+      "id": "235998",
+      "text": "RBC 221 The RBC must ensure secure procedures for the installation of transport keys. (LC)",
+      "title": "TND_2183"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1139,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235992",
+      "id": "235999",
+      "text": "RBC 222 The RBC must ensure the installation and deletion of keys without interrupting their operation (for instance, without restarting or rebooting the RBC).(LC)",
+      "title": "TND_2184"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1140,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235992",
+      "id": "236000",
+      "text": "RBC 223 Keys stored in the RBC must not be lost in case of a loss of power or when changing the RBC software.(LC)",
+      "title": "TND_2185"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1141,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235992",
+      "id": "236001",
+      "text": "RBC 224 The RBC must allow for different key management policies (for instance all trains/one train - one key). (LC)",
+      "title": "TND_2186"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1142,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235992",
+      "id": "236002",
+      "text": "RBC 225 Session keys generated by the RBC must be cryptographically strong, as specified in the UNISIG documents.(LC)",
+      "title": "TND_2187"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1143,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "235992",
+      "id": "236003",
+      "text": "RBC 226 The hardware and software equipment for key generation and management must be included in the tender, so that the Customer does not have to purchase additional equipment/software. (LC)",
+      "title": "TND_2188"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1156,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nOBU\nIXL_HW\nEngineering_AT"
+        }
+      ],
+      "requirementParent": "236015",
+      "id": "236016",
+      "text": "RBC 227 The RBC must issue a new MA FS, practically identical with the previous one, but containing additionally a text message that indicates to the mechanic that they have permission to go over the signal that gives the stop indication due to burnt lamps on permissive lights. It is also accepted to only send a text message to the OBU (as described above) without issuing a new MA. The text message shall be displayed on the DMI at 600 m (if the lamps were burnt before) or nearer (if the lamps burn out when the train is at less than 600 m distance) from the signal and shall be without acknowledgment. The message shall be “Defective Signal”. The message shall disappear from the DMI when the OBU passes the signal with its front end. (LC)",
+      "title": "TND_2203"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1158,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nPM_ERTMS"
+        }
+      ],
+      "requirementParent": "236017",
+      "id": "236018",
+      "text": "RBC 228 The conditions regarding the RBC’s reaction to a faulty level crossing on the block have been mentioned at chapter 3.9(LC)",
+      "title": "TND_2205"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1160,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nIXL_HW"
+        }
+      ],
+      "requirementParent": "236017",
+      "id": "236020",
+      "text": "RBC 229 The TCAF function in the CE installation is a function that is enabled on EACH TRACK, independently. In this respect, it should be taken into account that it is possible from the RBC’s viewpoint that the crossing may be considered faulty on one track (the one with TCAF activated) while on the other track the same level crossing would be deemed fully functional. (LC)",
+      "title": "TND_2207"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1162,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nEngineering_AT"
+        }
+      ],
+      "requirementParent": "236021",
+      "id": "236022",
+      "text": "RBC 230 In predefined locations (200 m in front of the signal), the RBC must send a TAF request to the OBU that is in OS or SR mode.(LC)",
+      "title": "TND_2209"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1164,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nOBU"
+        }
+      ],
+      "requirementParent": "236023",
+      "id": "236024",
+      "text": "RBC 231 If IDM has switched the block signal to stop, the RBC shall not issue an MA. The signal shall be overridden with OVERRIDE. (LC)",
+      "title": "TND_2211"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1166,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nOBU"
+        }
+      ],
+      "requirementParent": "236025",
+      "id": "236026",
+      "text": "RBC 232 If a block signal is on stop due to a block with reverse orientation, the RBC shall not issue the MA (for this signal). The signal shall be overridden with OVERRIDE.(LC)",
+      "title": "TND_2213"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1168,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nOBU"
+        }
+      ],
+      "requirementParent": "236027",
+      "id": "236028",
+      "text": "RBC 233 If a block signal is on stop due to failure of the interface between the stations (the case of BLAI), the RBC shall not issue MA (for this signal). The signal shall be overridden with OVERRIDE. (LC)",
+      "title": "TND_2215"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1170,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nOBU"
+        }
+      ],
+      "requirementParent": "236029",
+      "id": "236030",
+      "text": "RBC 234 If a block signal is on stop due to the fact that the CE installation is down or due to loss of communication between CE and the RBC, the RBC shall not issue MA (for this signal). The signal shall be overridden with OVERRIDE. (LC)",
+      "title": "TND_2217"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1172,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nOBU"
+        }
+      ],
+      "requirementParent": "236031",
+      "id": "236032",
+      "text": "RBC 235 If a block signal is on stop due to the fact that the CE installation is down or due to loss of communication between CE and the RBC, the RBC shall not issue MA (for this signal). The signal shall be overridden with OVERRIDE. (LC)",
+      "title": "TND_2219"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1174,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "236033",
+      "id": "236034",
+      "text": "RBC 236 In the case of mixed situations, the RBC must make the most restrictive decision (the most restrictive MA must be issued) and send the appropriate messages for mixed situations.(LC)",
+      "title": "TND_2221"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1176,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nIXL_HW"
+        }
+      ],
+      "requirementParent": "236035",
+      "id": "236036",
+      "text": "RBC 237 The RBC must not issue an MA for(LC):\n-\ta signal on stop displaying a call without a locked route\n-\ta signal on stop without displaying a call.\nThis applies even when the signal is on stop due to burnt out lamps.",
+      "title": "TND_2223"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1177,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "236035",
+      "id": "236037",
+      "text": "RBC 238 The RBC must issue an MA OS for a signal on stop that displays call with locked route (CH1).(LC)",
+      "title": "TND_2227"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1178,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nIXL_HW"
+        }
+      ],
+      "requirementParent": "236035",
+      "id": "236038",
+      "text": "RBC 239 If an ITN fails after an MA passes over it, the signal switches to stop and that MA must be withdrawn/ cancelled. Unlocking the route must comply with the requirements in this document. (LC)",
+      "title": "TND_2228"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1180,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "236039",
+      "id": "236040",
+      "text": "RBC 240 BLAI case: The reaction that care must be obtained at the RBC, following the activation of the AFBLE/AFBLI function on the BLAI, in the adjacent CE installations A and B, both with an established connection to the RBC, is described in the following table(LC):",
+      "title": "TND_2230"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1183,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nIXL_HW"
+        }
+      ],
+      "requirementParent": "236039",
+      "id": "236043",
+      "text": "RBC 241 After using the commands described at points 1-11 above, the RBC shall issue the MA FS for the static speed profile, without exceeding 100km/h, starting with the station exit signal to the block that is out of commission (AFBLE active), and to the entrance signal to the neighboring station (AFBLI active). (LC)",
+      "title": "TND_2233"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1184,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nIXL_HW"
+        }
+      ],
+      "requirementParent": "236039",
+      "id": "236044",
+      "text": "RBC 242 If one of the adjacent stations A or B has a loss of connection with the RBC, the RBC must not issue an MA in any of them, even if the command AFBLE/AFBLE was executed in the CE with an active connection to the RBC. (LC)",
+      "title": "TND_2234"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1186,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nIXL_HW"
+        }
+      ],
+      "requirementParent": "236039",
+      "id": "236046",
+      "text": "RBC 243 BLA/BLAS case: The reaction that must be obtained at the RBC, after activating the AFBL on the BLA/BLAS, in the adjacent CE/CED installations A and B, with station A having an established connection to the RBC, while station B is not included in the RBC, is described in the following table (LC):",
+      "title": "TND_2236"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1188,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nIXL_HW"
+        }
+      ],
+      "requirementParent": "236039",
+      "id": "236048",
+      "text": "RBC 244 After using the above AFBL command, the RBC shall issue an appropriate MA FS for the static speed profile, without exceeding 100km/h, starting with the exit signal from the station to the block that is out of commission (AFBL active), up to the exit from level 2 (BLA case) or the entry signal of the neighboring station (BLAS case).(LC)",
+      "title": "TND_2238"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1190,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "236049",
+      "id": "236050",
+      "text": "RBC 245 The RBC system must allow information to be recorded on defective/missing balise groups. (LC)",
+      "title": "TND_2240"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1192,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nRBC\nMMI_Traffic_Mgmt\nOBU\nEngineering_AT"
+        }
+      ],
+      "requirementParent": "236049",
+      "id": "236052",
+      "text": "RBC 246 If a train encounters a defective/missing balise group on the track, the reaction shall be “no reaction”. If two consecutive groups of defective/missing track balises are encountered, the reaction shall be “service break”. For both the above cases, the information on the missing/defective balises must be displayed on the CMI and the DMI.(LC)",
+      "title": "TND_2242"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1193,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "OBU"
+        }
+      ],
+      "requirementParent": "236049",
+      "id": "236053",
+      "text": "RBC 247 If a train connected to the RBC encounters a group with reversed balises, the reaction shall be “emergency braking”. (LC)",
+      "title": "TND_2243"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1196,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "Maintenance_Spares"
+        }
+      ],
+      "requirementParent": "236055",
+      "id": "236056",
+      "text": "RBC 248 The Tenderer’s offer must present quoted maintenance contract (on a yearly basis) that shall also include the list of spare parts, mean time between faults (MTBF) and the unit price per module. (O)",
+      "title": "TND_2246"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1197,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nMaintenance_Spares\nService_Diagnostic"
+        }
+      ],
+      "requirementParent": "236055",
+      "id": "236057",
+      "text": "RBC 249 Conceptul de întreținere must să includă funcții care să susțină(LC):",
+      "title": "TND_2247"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1203,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "Training"
+        }
+      ],
+      "requirementParent": "236055",
+      "id": "236063",
+      "text": "RBC 250 The Tenderer’s offer shall include training courses for the CFR personnel to operate and maintain the system. The courses shall be distinct for the operation personnel and the maintenance personnel. The courses must be quoted distinctly.(O)",
+      "title": "TND_2253"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1204,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "Training"
+        }
+      ],
+      "requirementParent": "236055",
+      "id": "236064",
+      "text": "RBC 251 Training shall be organized for at least 2 series of 8-10 persons.(LC)",
+      "title": "TND_2254"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1206,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "Engineering_AT"
+        }
+      ],
+      "requirementParent": "236065",
+      "id": "236066",
+      "text": "RBC 252 For this project, preparing the data for the track configuration in the RBC shall be the Contractor’s responsibility. (LC)",
+      "title": "TND_2256"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1207,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "Engineering_AT"
+        }
+      ],
+      "requirementParent": "236065",
+      "id": "236067",
+      "text": "RBC 253 Data preparation (as a specific application) consists of at least creating the fixed track configuration data including: (LC)\n-\tinfrastructure profile data;\n-\troute conditions and dependencies.",
+      "title": "TND_2257"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1210,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nMaintenance_Spares\nService_Diagnostic"
+        }
+      ],
+      "requirementParent": "236069",
+      "id": "236070",
+      "text": "RBC 254 The manufacturer of the RBC must provide all the necessary information regarding the measures for the preventative maintenance of RBC equipment, such as inspection intervals, durability of hardware equipment, acquiring spare parts, etc.(LC)",
+      "title": "TND_2262"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1212,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "Service_Diagnostic"
+        }
+      ],
+      "requirementParent": "236071",
+      "id": "236072",
+      "text": "RBC 255 The diagnostics function must assist the maintenance personnel in identifying defective units when a fault occurs. (LC)",
+      "title": "TND_2264"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1213,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "Service_Diagnostic"
+        }
+      ],
+      "requirementParent": "236071",
+      "id": "236073",
+      "text": "RBC 256 The diagnostics function must assist the maintenance personnel in filtering diagnostic messages by type and date.(LC)",
+      "title": "TND_2265"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1214,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "Service_Diagnostic"
+        }
+      ],
+      "requirementParent": "236071",
+      "id": "236074",
+      "text": "RBC 257 The diagnostics function must allow diagnostic data to be exported locally and to the central server located in the OCC.(LC)",
+      "title": "TND_2266"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1216,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "236075",
+      "id": "236076",
+      "text": "RBC 258 The RBC must be fitted with a set of self-test functions. Such functions must include a test on startup and online tests during operation.(LC)",
+      "title": "TND_2268"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1217,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nService_Diagnostic"
+        }
+      ],
+      "requirementParent": "236075",
+      "id": "236077",
+      "text": "RBC 259 The RBC must provide status and diagnostic messages for the RBC maintenance personnel in order to analyze any fault in the components and interfaces of the RBC. This must consider each hardware element in the RBC, also including the interfaces with the CE, OBU and GSM-R, relevant for the repair and replacement. Temporary faults and permanent faults must be shown to assist the maintenance personnel. (LC)",
+      "title": "TND_2269"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1218,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "236075",
+      "id": "236078",
+      "text": "RBC 260 After starting the RBC (for instance, after completing a repair), a fully automatic self-test must ensure that the operation of the RBC is safe.(LC)",
+      "title": "TND_2270"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1219,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "Service_Diagnostic"
+        }
+      ],
+      "requirementParent": "236075",
+      "id": "236079",
+      "text": "RBC 261 The maintenance of the trackside ETCS equipment and GSM-R must be assisted by diagnostics for(LC):\n-\tfaults in the balise groups (reading errors), reported by the OBU\n-\tGSM-R faults, frequency and location of dropped connections between RBC and OBU.",
+      "title": "TND_2271"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1220,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "Service_Diagnostic"
+        }
+      ],
+      "requirementParent": "236075",
+      "id": "236080",
+      "text": "RBC 262 All messages provided by the RBC must be documented with detailed descriptions and necessary actions in a maintenance manual (LC).",
+      "title": "TND_2274"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1222,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nRBC\nMMI_Traffic_Mgmt"
+        }
+      ],
+      "requirementParent": "236081",
+      "id": "236082",
+      "text": "RBC 263 Critical diagnostic messages must be displayed accompanied by a sound alarm.(LC)",
+      "title": "TND_2276"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1223,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nMMI_Traffic_Mgmt"
+        }
+      ],
+      "requirementParent": "236081",
+      "id": "236083",
+      "text": "RBC 264 Acknowledging a sound alarm must cause the sound alarm to be muted. (LC)",
+      "title": "TND_2277"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1224,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nMMI_Traffic_Mgmt"
+        }
+      ],
+      "requirementParent": "236081",
+      "id": "236084",
+      "text": "RBC 265 When the conditions that generated an alarm disappear, the alarm status must change until acknowledgment by the controller, at which time it shall be removed from the screen.(LC)",
+      "title": "TND_2278"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1226,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "Service_Diagnostic"
+        }
+      ],
+      "requirementParent": "236085",
+      "id": "236086",
+      "text": "RBC 266 The maintenance function must include sub-functions for providing detailed information regarding the system and its interfaces, as well as real-time status. The Contractor must present CFR its proposal for a maintenance tool. (LC)",
+      "title": "TND_2280"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1228,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nRBC\nMMI_Traffic_Mgmt\nService_Diagnostic"
+        }
+      ],
+      "requirementParent": "236087",
+      "id": "236088",
+      "text": "RBC 267 The RBC must include a function for recording legal data and the necessary data for system diagnostics and playback.(LC)",
+      "title": "TND_2282"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1229,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nService_Diagnostic"
+        }
+      ],
+      "requirementParent": "236087",
+      "id": "236089",
+      "text": "RBC 268 The recording function must save at least the following data(LC):",
+      "title": "TND_2283"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1236,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nService_Diagnostic"
+        }
+      ],
+      "requirementParent": "236087",
+      "id": "236096",
+      "text": "RBC 269 All saved data must have a time and date associated.(LC)",
+      "title": "TND_2290"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1237,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nService_Diagnostic"
+        }
+      ],
+      "requirementParent": "236087",
+      "id": "236097",
+      "text": "RBC 270 Recorded data must be stored in memory for at least six months.(LC)",
+      "title": "TND_2291"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1238,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nService_Diagnostic"
+        }
+      ],
+      "requirementParent": "236087",
+      "id": "236098",
+      "text": "RBC 271 The RBC must store all the legal data in a secure manner so that any data tampering and/or errors may be detected. (LC)",
+      "title": "TND_2292"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1239,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "Service_Diagnostic"
+        }
+      ],
+      "requirementParent": "236087",
+      "id": "236099",
+      "text": "RBC 272 The maintenance tool “recording function” must include functions for the analysis of recorded data, allowing recorded data to be filtered to have an efficient evaluation of the diagnostic data and for legal purposes.(LC)",
+      "title": "TND_2293"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1240,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "Service_Diagnostic"
+        }
+      ],
+      "requirementParent": "236087",
+      "id": "236100",
+      "text": "RBC 273 The analysis tool must provide at least the following (LC):\n-\tDisplaying specific data from the legal recorder\n-\tDownloading data from the legal recorder",
+      "title": "TND_2294"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1243,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nMMI_Traffic_Mgmt"
+        }
+      ],
+      "requirementParent": "236102",
+      "id": "236103",
+      "text": "RBC 274 The information must be presented so that it is easily understood and sufficient, so that the user understands the tasks to be performed. (LC)",
+      "title": "TND_2299"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1244,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nMMI_Traffic_Mgmt"
+        }
+      ],
+      "requirementParent": "236102",
+      "id": "236104",
+      "text": "RBC 275 The CMI must be physically distinct from the human-machine interface for the CE or CTC installations.(LC)",
+      "title": "TND_2300"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1245,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nMMI_Traffic_Mgmt"
+        }
+      ],
+      "requirementParent": "236102",
+      "id": "236105",
+      "text": "RBC 276 All text information displayed on the CMI must be in Romanian.(LC)",
+      "title": "TND_2301"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1246,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nMMI_Traffic_Mgmt"
+        }
+      ],
+      "requirementParent": "236102",
+      "id": "236106",
+      "text": "RBC 277 Each data input from the user must cause audio and/or visual feedback to confirm that the action was properly recognized. (LC)",
+      "title": "TND_2302"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1247,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nMMI_Traffic_Mgmt"
+        }
+      ],
+      "requirementParent": "236102",
+      "id": "236107",
+      "text": "RBC 278 During the detailed design, it must be possible to choose the types of sounds to be used and the times when such sounds must be used. (LC)",
+      "title": "TND_2303"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1248,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nMMI_Traffic_Mgmt"
+        }
+      ],
+      "requirementParent": "236102",
+      "id": "236108",
+      "text": "RBC 279 The information that require the user’s attention must be presented as to warn the user of such situation. (LC)",
+      "title": "TND_2304"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1249,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nMMI_Traffic_Mgmt"
+        }
+      ],
+      "requirementParent": "236102",
+      "id": "236109",
+      "text": "RBC 280 Critical messages must have a visual and sound component. (LC)",
+      "title": "TND_2305"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1250,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nMMI_Traffic_Mgmt"
+        }
+      ],
+      "requirementParent": "236102",
+      "id": "236110",
+      "text": "RBC 281 The user must be able to recognize at a glance the system status and the supervision status. Running directions must be labelled on the CMI.(LC)",
+      "title": "TND_2306"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1251,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nMMI_Traffic_Mgmt"
+        }
+      ],
+      "requirementParent": "236102",
+      "id": "236111",
+      "text": "RBC 282 The user must be able to easily identify the status from which the display is frozen. The entire chain must be supervised, from the object to track configuration.(LC)",
+      "title": "TND_2307"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1252,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nMMI_Traffic_Mgmt"
+        }
+      ],
+      "requirementParent": "236102",
+      "id": "236112",
+      "text": "RBC 283 The RBC must indicate to the user that it is busy when the result of the user action cannot be displayed immediately. (LC)",
+      "title": "TND_2308"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1253,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nMMI_Traffic_Mgmt"
+        }
+      ],
+      "requirementParent": "236102",
+      "id": "236113",
+      "text": "RBC 284 The indication “ready” must only be displayed to the user when the action requested by the user from the RBC has been executed. (LC)",
+      "title": "TND_2309"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1254,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nMMI_Traffic_Mgmt"
+        }
+      ],
+      "requirementParent": "236102",
+      "id": "236114",
+      "text": "RBC 285 The request for acknowledgment must be clearly displayed to the user. (LC)",
+      "title": "TND_2310"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1255,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nMMI_Traffic_Mgmt"
+        }
+      ],
+      "requirementParent": "236102",
+      "id": "236115",
+      "text": "RBC 286 The CMI must provide means for acknowledgment. (LC)",
+      "title": "TND_2311"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1256,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nMMI_Traffic_Mgmt"
+        }
+      ],
+      "requirementParent": "236102",
+      "id": "236116",
+      "text": "RBC 287 The CMI must provide means for consultation and data input. These must be easy to understand for the user. (LC)",
+      "title": "TND_2312"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1257,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nMMI_Traffic_Mgmt"
+        }
+      ],
+      "requirementParent": "236102",
+      "id": "236117",
+      "text": "RBC 288 The sound unit must be able to produce a variety of sounds. (LC)",
+      "title": "TND_2313"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1258,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nMMI_Traffic_Mgmt"
+        }
+      ],
+      "requirementParent": "236102",
+      "id": "236118",
+      "text": "RBC 289 The user must not have the possibility to adjust the sound volume. (LC)",
+      "title": "TND_2314"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1259,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nMMI_Traffic_Mgmt"
+        }
+      ],
+      "requirementParent": "236102",
+      "id": "236119",
+      "text": "RBC 290 Different sounds must be easy to distinguish and recognize for the user. (LC)",
+      "title": "TND_2315"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1260,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nRBC\nMMI_Traffic_Mgmt"
+        }
+      ],
+      "requirementParent": "236102",
+      "id": "236120",
+      "text": "RBC 291 The CMI must display the operational unit under the controller’s command.(LC)",
+      "title": "TND_2316"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1261,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nRBC\nMMI_Traffic_Mgmt"
+        }
+      ],
+      "requirementParent": "236102",
+      "id": "236121",
+      "text": "RBC 292 All trains under the supervision of the RBC must be displayed at the same time on the track configuration and in a table identifying the train supervision status. Additionally, the table of speed restrictions entered in the RBC must be displayed at all times. If all this information does not fit on a single monitor, it is allowed to display train supervision information on separate monitors. (LC)",
+      "title": "TND_2317"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1262,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nRBC\nMMI_Traffic_Mgmt"
+        }
+      ],
+      "requirementParent": "236102",
+      "id": "236122",
+      "text": "RBC 293 The MA sent to the train must be represented on the track configuration.(LC)",
+      "title": "TND_2318"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1263,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nMMI_Traffic_Mgmt"
+        }
+      ],
+      "requirementParent": "236102",
+      "id": "236123",
+      "text": "RBC 294 The MA must be shown continuously in graphic form and upon the controller’s request in table format.(LC)",
+      "title": "TND_2319"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1264,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nRBC\nMMI_Traffic_Mgmt"
+        }
+      ],
+      "requirementParent": "236102",
+      "id": "236124",
+      "text": "RBC 295 Indications regarding the RBC statuses must cover at least the following statuses(LC):",
+      "title": "TND_2320"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1267,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nRBC\nMMI_Traffic_Mgmt\nEngineering_AT"
+        }
+      ],
+      "requirementParent": "236102",
+      "id": "236127",
+      "text": "RBC 296 It must be possible to define the number and details regarding the information shown on the CMI. (LC)",
+      "title": "TND_2323"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1270,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nRBC\nMMI_Traffic_Mgmt"
+        }
+      ],
+      "requirementParent": "236129",
+      "id": "236130",
+      "text": "RBC 297 The Controller must be able to enter and remove speed restrictions (TSR), stop a certain train and authorize/withdraw the authorization of the RBC to issue MAs to recorded trains.(LC)",
+      "title": "TND_2326"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1272,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "236131",
+      "id": "236132",
+      "text": "RBC 298 The system engineer must have unrestricted access to the RBC.(LC)",
+      "title": "TND_2328"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1274,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nRBC\nMMI_Traffic_Mgmt"
+        }
+      ],
+      "requirementParent": "236133",
+      "id": "236134",
+      "text": "RBC 299 Access of the maintenance personnel to the track must be restricted to maintenance functions and such access must occur under the authority of the controller. (LC)",
+      "title": "TND_2330"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1277,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nMMI_Traffic_Mgmt"
+        }
+      ],
+      "requirementParent": "236136",
+      "id": "236137",
+      "text": "RBC 300 A workstation must be equipped with at least 32-inch graphic displays, keyboard, mouse, and any other equipment required for the controller’s activity. (LC)",
+      "title": "TND_2333"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1278,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nMMI_Traffic_Mgmt"
+        }
+      ],
+      "requirementParent": "236136",
+      "id": "236138",
+      "text": "RBC 301 The RBC must be able to display the fact that a train has received an emergency stop message (when the OBU sends this acknowledgment to the RBC).(LC).",
+      "title": "TND_2334"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1280,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nMMI_Traffic_Mgmt"
+        }
+      ],
+      "requirementParent": "236139",
+      "id": "236140",
+      "text": "RBC 302 It must be possible to integrate various types of information (such as diagrams and texts) in a single physical screen, including(LC):\n-\tOverviews;\n-\tAlarm list.",
+      "title": "TND_2336"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1282,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "Engineering_AT"
+        }
+      ],
+      "requirementParent": "236141",
+      "id": "236142",
+      "text": "RBC 303 The basic colors for displaying the status of the objects must be compliant with the CMI Symbol Catalog v.1.3.2. (LC)",
+      "title": "TND_2340"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1283,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "Engineering_AT"
+        }
+      ],
+      "requirementParent": "236141",
+      "id": "236143",
+      "text": "RBC 304 It must be possible to place an object anywhere in the track configuration. (LC)",
+      "title": "TND_2341"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1284,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "Engineering_AT"
+        }
+      ],
+      "requirementParent": "236141",
+      "id": "236144",
+      "text": "RBC 305 During detailed design it must be possible to define available commands when selecting a specific object.(LC)",
+      "title": "TND_2342"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1285,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "Engineering_AT"
+        }
+      ],
+      "requirementParent": "236141",
+      "id": "236145",
+      "text": "RBC 306 Tracks and objects in the RBC area and announcement/transition zones (signals, balises, etc.) must be represented on the CMI.(LC)",
+      "title": "TND_2343"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1286,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "Engineering_AT"
+        }
+      ],
+      "requirementParent": "236141",
+      "id": "236146",
+      "text": "RBC 307 Error messages must be displayed whether the faulty object is displayed on the screen at the time or not. (LC)",
+      "title": "TND_2344"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1287,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "Engineering_AT"
+        }
+      ],
+      "requirementParent": "236141",
+      "id": "236147",
+      "text": "RBC 308 The Controller must be able to add and remove texts from a section, for instance to identify any vehicle on that section. (LC)",
+      "title": "TND_2345"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1290,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nMMI_Traffic_Mgmt"
+        }
+      ],
+      "requirementParent": "236149",
+      "id": "236150",
+      "text": "RBC 309 It must be possible to predefine user groups. At least three user groups shall be defined: RBC operator, administrator, RBC observer.",
+      "title": "TND_2348"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1294,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nMMI_Traffic_Mgmt"
+        }
+      ],
+      "requirementParent": "236149",
+      "id": "236154",
+      "text": "RBC 310 It must be possible for each user to belong to several user groups. (LC)",
+      "title": "TND_2352"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1295,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nMMI_Traffic_Mgmt"
+        }
+      ],
+      "requirementParent": "236149",
+      "id": "236155",
+      "text": "RBC 311 It must be possible for each user group to contain several users. (LC)",
+      "title": "TND_2353"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1297,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nMMI_Traffic_Mgmt"
+        }
+      ],
+      "requirementParent": "236156",
+      "id": "236157",
+      "text": "RBC 312 Credentials must be checked as a login procedure based on a user account and password. (LC)",
+      "title": "TND_2355"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1298,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nMMI_Traffic_Mgmt"
+        }
+      ],
+      "requirementParent": "236156",
+      "id": "236158",
+      "text": "RBC 313 For each user group, it must be possible to define functions and information to which that group has access.(LC)",
+      "title": "TND_2356"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1299,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nMMI_Traffic_Mgmt"
+        }
+      ],
+      "requirementParent": "236156",
+      "id": "236159",
+      "text": "RBC 314 For each workstation it must be possible to define user groups that have the permission to operate that workstation.(LC)",
+      "title": "TND_2357"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1300,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nMMI_Traffic_Mgmt"
+        }
+      ],
+      "requirementParent": "236156",
+      "id": "236160",
+      "text": "RBC 315 For safety reasons, the user must not have permission to change display settings.(LC)",
+      "title": "TND_2358"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1302,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nMMI_Traffic_Mgmt"
+        }
+      ],
+      "requirementParent": "236161",
+      "id": "236162",
+      "text": "RBC 316 A specific alarm and its status must be displayed on the monitor in a convenient manner. (LC)",
+      "title": "TND_2360"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1303,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nMMI_Traffic_Mgmt"
+        }
+      ],
+      "requirementParent": "236161",
+      "id": "236163",
+      "text": "RBC 317 If an alarm is not allocated to a certain position, it must be shown as a text message.(LC)",
+      "title": "TND_2361"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1304,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nMMI_Traffic_Mgmt"
+        }
+      ],
+      "requirementParent": "236161",
+      "id": "236164",
+      "text": "RBC 318 All active alarms must be presented as an alarm list, which can be displayed on request. Additionally, after being acknowledged by the RBC operator and corrected by the maintenance personnel, they must remain displayed in an alarm history, which must be displayed on the CMI and at the maintenance station. (LC)",
+      "title": "TND_2362"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1306,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nPM_ERTMS"
+        }
+      ],
+      "requirementParent": "236165",
+      "id": "236166",
+      "text": "RBC 319 This project does not provide for special functions (such as TSR enabling/disabling) for portable devices. (LC)",
+      "title": "TND_2364"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1308,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "PM_ERTMS\nTest_Integration"
+        }
+      ],
+      "requirementParent": "236167",
+      "id": "236168",
+      "text": "RBC 320 All acceptance tests for the ETCS level 2 system shall check the content of the telegrams emitted/received by the RBC and the balises.(LC)",
+      "title": "TND_2366"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1309,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "PM_ERTMS\nTest_Integration"
+        }
+      ],
+      "requirementParent": "236167",
+      "id": "236169",
+      "text": "RBC 321 Declaration of conformity. As part of the tests, the Integrator must provide the technical possibility to actually read the content of the telegrams emitted/received by the RBC and the balises, for any situation that is possible in the project. In this case, CFR requires a declaration that guarantees the possibility to actually read the telegrams during testing and the tenderer presenting the software that will be delivered according to requirementbookmark77(O)",
+      "title": "TND_2367"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1311,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "Engineering_RO\nPM\nCommissioning"
+        }
+      ],
+      "requirementParent": "236170",
+      "id": "236171",
+      "text": "RBC 322 Testing. This service involves the physical installation of the equipment supplied by the tenderer in each location. (I)",
+      "title": "TND_2369"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1312,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RAMS\nTest_Integration\nEngineering_RO\nPM\nCommissioning"
+        }
+      ],
+      "requirementParent": "236170",
+      "id": "236172",
+      "text": "RBC 323 The Tenderer must ensure supervision for the installation and commissioning. Upon the first installation (first site) the tenderer shall make a proposal for the acceptance model, which proposal must be submitted to CFR for approval. All subsequent installations must be done according to the model approved by CFR.(LC)",
+      "title": "TND_2370"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1313,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "PM\nCustomer_Doc"
+        }
+      ],
+      "requirementParent": "236170",
+      "id": "236173",
+      "text": "RBC 324 After each installation, the tenderer must produce a file containing the most important documents for the installed equipment. The file shall contain wiring and installation plans and the settings that were used. (LC)",
+      "title": "TND_2371"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1314,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RAMS\nEngineering_RO\nPM\nCommissioning"
+        }
+      ],
+      "requirementParent": "236170",
+      "id": "236174",
+      "text": "RBC 325 CFR personnel must participate in each installation and commissioning.(LC)",
+      "title": "TND_2372"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1317,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "MMI_ETCS\nMMI_IXL\nRBC\nMMI_Traffic_Mgmt\nOBU\nTest_Integration\nIXL_HW\nPM\nService_Diagnostic"
+        }
+      ],
+      "requirementParent": "236175",
+      "id": "236177",
+      "text": "RBC 326 FAT (Factory Acceptance Tests). During the FAT, the tenderer has the obligation to test all the individual elements, units and parts of the system in order to prove full compliance with the specifications of the provided documents. The Client has the right to participate in all FAT done by the supplier. (LC)",
+      "title": "TND_2375"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1318,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RAMS\nSys_Mgmt\nEngineering_RO\nPM\nCommissioning"
+        }
+      ],
+      "requirementParent": "236175",
+      "id": "236178",
+      "text": "RBC 327 Tests on installation. The tests performed on installation are done to ensure the integrity of the equipment after delivery and installation. Additionally, such tests validate the hardware configuration, the integration of the RBC - CE - GSM-R systems and the fact that the installation meets the specifications. The Tenderer shall be responsible for the testing procedure for all the equipment of the RBC system.(LC)",
+      "title": "TND_2376"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1320,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "Test_Integration\nPM"
+        }
+      ],
+      "requirementParent": "236179",
+      "id": "236180",
+      "text": "RBC 328 The Contractor shall perform functional integration tests of the end-to-end integrated system before inviting CFR for tests. They shall request CFR tests to start only if their own tests have been successfully completed and the positive result shall be presented to the Client by submitting the internal check file showing the tests that were performed and the results that were obtained, at least one month prior to starting the CFR tests.(LC)",
+      "title": "TND_2378"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1321,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "PM_ERTMS\nTest_Integration\nEngineering_RO\nBid_Manager\nPM\nEngineering_AT\nCommissioning"
+        }
+      ],
+      "requirementParent": "236179",
+      "id": "236181",
+      "text": "RBC 329 The Tenderer shall submit as part of the offer the plan to test fulfilment of all RBC requirements in this document, with a summary description of the testing situations. The testing plan shall include both the tests to be performed in the laboratory with a train movement simulator, and dynamic tests to be performed in the field, with the test train. For this, the Tenderer shall present a conformity matrix in which each requirement shall be presented and the manner of achievement and testing by the Tenderer shall be explained, both in the laboratory and the field, and the sequence of tests.(O)",
+      "title": "TND_2379"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1322,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "OBU\nPM_ERTMS\nTest_Integration\nEngineering_AT"
+        }
+      ],
+      "requirementParent": "236179",
+      "id": "236182",
+      "text": "RBC 330 The Contractor shall make available, throughout the contract term (during the functioning of the Technical Verification Panel from CFR) a simulator for the OBU, which would provide all the information displayed on the DMI aboard the engine. This shall be connected to the RBC installed in the project or to a different RBC, installed at another location, which shall be made available to the CFR Technical Verification Panel for testing. If an RBC at a different location is used, it must be of the same type with the one supplied under the project and run the same software version, have the same configuration, and the necessary information must be provided by simulators/real CE equipment that run the same software as the CE installations in the project. The Contractor provide assistance to CFR personnel to operate the simulators, throughout the contract term (during the functioning of the Technical Verification Panel from CFR) (LC)",
+      "title": "TND_2380"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1323,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "PM"
+        }
+      ],
+      "requirementParent": "236179",
+      "id": "236183",
+      "text": "RBC 331 When performing dynamic engine tests  prior to the commissioning of the CE installations, the Contractor shall ensure the necessary personnel from the section models of the track circuits, matching the train movement. (LC)",
+      "title": "TND_2381"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1324,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RAMS\nPM_Commercial\nTest_Integration\nEngineering_RO\nQM\nPM\nCommissioning"
+        }
+      ],
+      "requirementParent": "236179",
+      "id": "236184",
+      "text": "RBC 332 During the performance of the tests presented in the tender, at pointbookmark175 if CFR representatives find that the test proposed by the Contractor is inconclusive to prove full compliance with a requirement, CFR may request the Contractor to supplement with additional tests at no extra cost. (LC)",
+      "title": "TND_2382"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1325,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "PM"
+        }
+      ],
+      "requirementParent": "236179",
+      "id": "236185",
+      "text": "RBC 333 Providing the test train with the respective personnel for the integration and acceptance tests for the ERTMS level 2 system, under dynamic status, is mandatory and is the exclusive duty of the Contractor.\nThe test train must be provided for the entire duration of the dynamic testing, to prove compliance with all the requirements, and to check the correction of any non-compliance. (LC)",
+      "title": "TND_2383"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1326,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nPM_ERTMS"
+        }
+      ],
+      "requirementParent": "236179",
+      "id": "236186",
+      "text": "RBC 334 The minimum operational scenarios that shall be tested for the acceptance of the RBC system are specified in SUBSET-076-5-2 and SUBSET 076-6-3 and shall cover at least the following cases:",
+      "title": "TND_2385"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1346,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nPM_ERTMS\nService_Diagnostic"
+        }
+      ],
+      "requirementParent": "236179",
+      "id": "236206",
+      "text": "RBC diagnostic testing;",
+      "title": "TND_2405"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1350,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC\nEngineering_AT"
+        }
+      ],
+      "requirementParent": "236209",
+      "id": "236210",
+      "text": "RBC 335 The national values for Romania, which the Contractor must integrate in the supplied ERTMS system, are shown in the table below(LC):",
+      "title": "TND_2409"
+    },
+    {
+      "requirement_type": "DEF",
+      "documentPositionOrder": 1354,
+      "requirementParts": [
+        {
+          "id": "domains",
+          "text": "RBC"
+        }
+      ],
+      "requirementParent": "236209",
+      "id": "236214",
+      "text": "RBC 336 The Contractor shall present all the values used for the rest of the variables defined in chapter 7.5 of SUBSET 026.(LC)",
+      "title": "TND_2414"
+    }
+  ],
+  "projects": [
+    {
+      "name": "Siemens_req",
+      "id": "Siemens",
+      "specifiedRequirements": [
+        "235629",
+        "235630",
+        "235633",
+        "235634",
+        "235635",
+        "235636",
+        "235637",
+        "235638",
+        "235640",
+        "235641",
+        "235642",
+        "235644",
+        "235645",
+        "235646",
+        "235647",
+        "235648",
+        "235649",
+        "235650",
+        "235651",
+        "235654",
+        "235655",
+        "235656",
+        "235657",
+        "235658",
+        "235662",
+        "235663",
+        "235664",
+        "235666",
+        "235667",
+        "235668",
+        "235669",
+        "235670",
+        "235671",
+        "235673",
+        "235674",
+        "235675",
+        "235676",
+        "235677",
+        "235678",
+        "235679",
+        "235680",
+        "235681",
+        "235682",
+        "235683",
+        "235684",
+        "235685",
+        "235686",
+        "235687",
+        "235688",
+        "235689",
+        "235690",
+        "235691",
+        "235693",
+        "235694",
+        "235695",
+        "235696",
+        "235698",
+        "235699",
+        "235701",
+        "235702",
+        "235703",
+        "235704",
+        "235707",
+        "235709",
+        "235710",
+        "235711",
+        "235712",
+        "235715",
+        "235716",
+        "235717",
+        "235718",
+        "235719",
+        "235720",
+        "235721",
+        "235723",
+        "235726",
+        "235727",
+        "235728",
+        "235738",
+        "235739",
+        "235741",
+        "235742",
+        "235743",
+        "235744",
+        "235745",
+        "235746",
+        "235748",
+        "235750",
+        "235751",
+        "235752",
+        "235754",
+        "235755",
+        "235756",
+        "235757",
+        "235760",
+        "235761",
+        "235762",
+        "235763",
+        "235768",
+        "235769",
+        "235770",
+        "235771",
+        "235773",
+        "235774",
+        "235775",
+        "235776",
+        "235777",
+        "235778",
+        "235779",
+        "235780",
+        "235781",
+        "235782",
+        "235783",
+        "235784",
+        "235785",
+        "235786",
+        "235792",
+        "235795",
+        "235797",
+        "235798",
+        "235799",
+        "235800",
+        "235801",
+        "235802",
+        "235804",
+        "235805",
+        "235807",
+        "235808",
+        "235809",
+        "235811",
+        "235812",
+        "235813",
+        "235818",
+        "235831",
+        "235832",
+        "235833",
+        "235834",
+        "235838",
+        "235839",
+        "235840",
+        "235841",
+        "235842",
+        "235843",
+        "235846",
+        "235847",
+        "235848",
+        "235850",
+        "235852",
+        "235853",
+        "235854",
+        "235855",
+        "235858",
+        "235860",
+        "235865",
+        "235869",
+        "235871",
+        "235873",
+        "235875",
+        "235879",
+        "235881",
+        "235883",
+        "235885",
+        "235887",
+        "235889",
+        "235891",
+        "235892",
+        "235894",
+        "235896",
+        "235898",
+        "235901",
+        "235903",
+        "235905",
+        "235907",
+        "235909",
+        "235911",
+        "235913",
+        "235915",
+        "235917",
+        "235921",
+        "235922",
+        "235924",
+        "235931",
+        "235933",
+        "235935",
+        "235938",
+        "235947",
+        "235948",
+        "235950",
+        "235952",
+        "235953",
+        "235954",
+        "235955",
+        "235957",
+        "235958",
+        "235959",
+        "235962",
+        "235963",
+        "235966",
+        "235967",
+        "235968",
+        "235974",
+        "235975",
+        "235976",
+        "235978",
+        "235979",
+        "235980",
+        "235981",
+        "235984",
+        "235987",
+        "235988",
+        "235989",
+        "235990",
+        "235991",
+        "235993",
+        "235994",
+        "235995",
+        "235996",
+        "235997",
+        "235998",
+        "235999",
+        "236000",
+        "236001",
+        "236002",
+        "236003",
+        "236016",
+        "236018",
+        "236020",
+        "236022",
+        "236024",
+        "236026",
+        "236028",
+        "236030",
+        "236032",
+        "236034",
+        "236036",
+        "236037",
+        "236038",
+        "236040",
+        "236043",
+        "236044",
+        "236046",
+        "236048",
+        "236050",
+        "236052",
+        "236053",
+        "236056",
+        "236057",
+        "236063",
+        "236064",
+        "236066",
+        "236067",
+        "236070",
+        "236072",
+        "236073",
+        "236074",
+        "236076",
+        "236077",
+        "236078",
+        "236079",
+        "236080",
+        "236082",
+        "236083",
+        "236084",
+        "236086",
+        "236088",
+        "236089",
+        "236096",
+        "236097",
+        "236098",
+        "236099",
+        "236100",
+        "236103",
+        "236104",
+        "236105",
+        "236106",
+        "236107",
+        "236108",
+        "236109",
+        "236110",
+        "236111",
+        "236112",
+        "236113",
+        "236114",
+        "236115",
+        "236116",
+        "236117",
+        "236118",
+        "236119",
+        "236120",
+        "236121",
+        "236122",
+        "236123",
+        "236124",
+        "236127",
+        "236130",
+        "236132",
+        "236134",
+        "236137",
+        "236138",
+        "236140",
+        "236142",
+        "236143",
+        "236144",
+        "236145",
+        "236146",
+        "236147",
+        "236150",
+        "236154",
+        "236155",
+        "236157",
+        "236158",
+        "236159",
+        "236160",
+        "236162",
+        "236163",
+        "236164",
+        "236166",
+        "236168",
+        "236169",
+        "236171",
+        "236172",
+        "236173",
+        "236174",
+        "236177",
+        "236178",
+        "236180",
+        "236181",
+        "236182",
+        "236183",
+        "236184",
+        "236185",
+        "236186",
+        "236206",
+        "236210",
+        "236214"
+      ]
+    }
+  ]
+}

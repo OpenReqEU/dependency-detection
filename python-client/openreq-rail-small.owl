@@ -1,0 +1,610 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http:/openreq.eu/ontologies/2018/8/rail#"
+     xml:base="http:/openreq.eu/ontologies/2018/8/rail"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http:/openreq.eu/ontologies/2018/8/rail">
+        <owl:versionIRI rdf:resource="http:/openreq.eu/ontologies/2018/8/rail"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http:/openreq.eu/ontologies/2018/8/rail#conflicts -->
+
+    <owl:ObjectProperty rdf:about="http:/openreq.eu/ontologies/2018/8/rail#conflicts">
+        <rdfs:comment>conflicts</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http:/openreq.eu/ontologies/2018/8/rail#refines -->
+
+    <owl:ObjectProperty rdf:about="http:/openreq.eu/ontologies/2018/8/rail#refines">
+        <rdfs:comment>refines</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http:/openreq.eu/ontologies/2018/8/rail#requires -->
+
+    <owl:ObjectProperty rdf:about="http:/openreq.eu/ontologies/2018/8/rail#requires">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:comment>requires</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http:/openreq.eu/ontologies/2018/8/rail#id -->
+
+    <owl:DatatypeProperty rdf:about="http:/openreq.eu/ontologies/2018/8/rail#id">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#AxleCounter"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#Balise"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#CountingPoint"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#Crossing"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#Derailer"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#DoubleSlip"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#ETCS"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#ETCSLevel1"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#ETCSLevel2"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#ETCSLevel3"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#ElectronicInterlocking"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#FieldElement"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#InterlockingSystem"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#LEU"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#LZB"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#LightSignal"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#MechanicalInterlocking"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#MechanicalSignal"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#OBU"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#RBC"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#RailwaySignal"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#RailwayStation"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#RailwaySwitch"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#RailwayTrack"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#SingleSlip"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#TrackCircuit"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#TrackClearDetection"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#TrainProtectionSystem"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http:/openreq.eu/ontologies/2018/8/rail#requirement -->
+
+    <owl:DatatypeProperty rdf:about="http:/openreq.eu/ontologies/2018/8/rail#requirement">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#AxleCounter"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#Balise"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#CountingPoint"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#Crossing"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#Derailer"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#DoubleSlip"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#ETCS"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#ETCSLevel1"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#ETCSLevel2"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#ETCSLevel3"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#ElectronicInterlocking"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#FieldElement"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#InterlockingSystem"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#LEU"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#LZB"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#LightSignal"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#MechanicalInterlocking"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#MechanicalSignal"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#OBU"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#RBC"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#RailwaySignal"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#RailwayStation"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#RailwaySwitch"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#RailwayTrack"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#SingleSlip"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#TrackCircuit"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#TrackClearDetection"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#TrainProtectionSystem"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http:/openreq.eu/ontologies/2018/8/rail#class">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#AxleCounter"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#Balise"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#CountingPoint"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#Crossing"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#Derailer"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#DoubleSlip"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#ETCS"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#ETCSLevel1"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#ETCSLevel2"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#ETCSLevel3"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#ElectronicInterlocking"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#FieldElement"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#InterlockingSystem"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#LEU"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#LZB"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#LightSignal"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#MechanicalInterlocking"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#MechanicalSignal"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#OBU"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#RBC"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#RailwaySignal"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#RailwayStation"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#RailwaySwitch"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#RailwayTrack"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#SingleSlip"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#TrackCircuit"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#TrackClearDetection"/>
+                    <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#TrainProtectionSystem"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http:/openreq.eu/ontologies/2018/8/rail#AxleCounter -->
+
+    <owl:Class rdf:about="http:/openreq.eu/ontologies/2018/8/rail#AxleCounter">
+        <rdfs:subClassOf rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#TrackClearDetection"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#refines"/>
+                <owl:someValuesFrom rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#TrackClearDetection"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#requires"/>
+                <owl:someValuesFrom rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#CountingPoint"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http:/openreq.eu/ontologies/2018/8/rail#Balise -->
+
+    <owl:Class rdf:about="http:/openreq.eu/ontologies/2018/8/rail#Balise">
+        <rdfs:subClassOf rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#FieldElement"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#refines"/>
+                <owl:someValuesFrom rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#FieldElement"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#requires"/>
+                <owl:someValuesFrom rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#ETCS"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http:/openreq.eu/ontologies/2018/8/rail#CountingPoint -->
+
+    <owl:Class rdf:about="http:/openreq.eu/ontologies/2018/8/rail#CountingPoint">
+        <rdfs:subClassOf rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#FieldElement"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#refines"/>
+                <owl:someValuesFrom rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#FieldElement"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http:/openreq.eu/ontologies/2018/8/rail#Crossing -->
+
+    <owl:Class rdf:about="http:/openreq.eu/ontologies/2018/8/rail#Crossing">
+        <rdfs:subClassOf rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#FieldElement"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#refines"/>
+                <owl:someValuesFrom rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#FieldElement"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http:/openreq.eu/ontologies/2018/8/rail#Derailer -->
+
+    <owl:Class rdf:about="http:/openreq.eu/ontologies/2018/8/rail#Derailer">
+        <rdfs:subClassOf rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#FieldElement"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#refines"/>
+                <owl:someValuesFrom rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#FieldElement"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http:/openreq.eu/ontologies/2018/8/rail#DoubleSlip -->
+
+    <owl:Class rdf:about="http:/openreq.eu/ontologies/2018/8/rail#DoubleSlip">
+        <rdfs:subClassOf rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#Crossing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#refines"/>
+                <owl:someValuesFrom rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#Crossing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http:/openreq.eu/ontologies/2018/8/rail#ETCS -->
+
+    <owl:Class rdf:about="http:/openreq.eu/ontologies/2018/8/rail#ETCS">
+        <rdfs:subClassOf rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#TrainProtectionSystem"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#refines"/>
+                <owl:someValuesFrom rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#TrainProtectionSystem"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>European Train Control System
+TODO: should we link concepts to Wikidata Entries (if available)? 
+e.g.
+http://www.wikidata.org/entity/Q604804</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http:/openreq.eu/ontologies/2018/8/rail#ETCSLevel1 -->
+
+    <owl:Class rdf:about="http:/openreq.eu/ontologies/2018/8/rail#ETCSLevel1">
+        <rdfs:subClassOf rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#ETCS"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#refines"/>
+                <owl:someValuesFrom rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#ETCS"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#requires"/>
+                <owl:someValuesFrom rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#TrackClearDetection"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http:/openreq.eu/ontologies/2018/8/rail#ETCSLevel2 -->
+
+    <owl:Class rdf:about="http:/openreq.eu/ontologies/2018/8/rail#ETCSLevel2">
+        <rdfs:subClassOf rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#ETCS"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#refines"/>
+                <owl:someValuesFrom rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#ETCS"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#requires"/>
+                <owl:someValuesFrom rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#RBC"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#requires"/>
+                <owl:someValuesFrom rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#TrackClearDetection"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http:/openreq.eu/ontologies/2018/8/rail#ETCSLevel3 -->
+
+    <owl:Class rdf:about="http:/openreq.eu/ontologies/2018/8/rail#ETCSLevel3">
+        <rdfs:subClassOf rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#ETCS"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#refines"/>
+                <owl:someValuesFrom rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#ETCS"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#requires"/>
+                <owl:someValuesFrom rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#RBC"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http:/openreq.eu/ontologies/2018/8/rail#ElectronicInterlocking -->
+
+    <owl:Class rdf:about="http:/openreq.eu/ontologies/2018/8/rail#ElectronicInterlocking">
+        <rdfs:subClassOf rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#InterlockingSystem"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#refines"/>
+                <owl:someValuesFrom rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#InterlockingSystem"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http:/openreq.eu/ontologies/2018/8/rail#FieldElement -->
+
+    <owl:Class rdf:about="http:/openreq.eu/ontologies/2018/8/rail#FieldElement">
+        <rdfs:comment>Something that is part of the railway topology</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http:/openreq.eu/ontologies/2018/8/rail#InterlockingSystem -->
+
+    <owl:Class rdf:about="http:/openreq.eu/ontologies/2018/8/rail#InterlockingSystem"/>
+    
+
+
+    <!-- http:/openreq.eu/ontologies/2018/8/rail#LEU -->
+
+    <owl:Class rdf:about="http:/openreq.eu/ontologies/2018/8/rail#LEU">
+        <rdfs:subClassOf rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#FieldElement"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#refines"/>
+                <owl:someValuesFrom rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#FieldElement"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#requires"/>
+                <owl:someValuesFrom rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#ETCSLevel1"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http:/openreq.eu/ontologies/2018/8/rail#LZB -->
+
+    <owl:Class rdf:about="http:/openreq.eu/ontologies/2018/8/rail#LZB">
+        <rdfs:subClassOf rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#TrainProtectionSystem"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#refines"/>
+                <owl:someValuesFrom rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#ETCS"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http:/openreq.eu/ontologies/2018/8/rail#LightSignal -->
+
+    <owl:Class rdf:about="http:/openreq.eu/ontologies/2018/8/rail#LightSignal">
+        <rdfs:subClassOf rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#RailwaySignal"/>
+    </owl:Class>
+    
+
+
+    <!-- http:/openreq.eu/ontologies/2018/8/rail#MechanicalInterlocking -->
+
+    <owl:Class rdf:about="http:/openreq.eu/ontologies/2018/8/rail#MechanicalInterlocking">
+        <rdfs:subClassOf rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#InterlockingSystem"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#refines"/>
+                <owl:someValuesFrom rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#InterlockingSystem"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http:/openreq.eu/ontologies/2018/8/rail#MechanicalSignal -->
+
+    <owl:Class rdf:about="http:/openreq.eu/ontologies/2018/8/rail#MechanicalSignal">
+        <rdfs:subClassOf rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#RailwaySignal"/>
+    </owl:Class>
+    
+
+
+    <!-- http:/openreq.eu/ontologies/2018/8/rail#OBU -->
+
+    <owl:Class rdf:about="http:/openreq.eu/ontologies/2018/8/rail#OBU">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#requires"/>
+                <owl:someValuesFrom rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#ETCS"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http:/openreq.eu/ontologies/2018/8/rail#RBC -->
+
+    <owl:Class rdf:about="http:/openreq.eu/ontologies/2018/8/rail#RBC">
+        <rdfs:comment>Radio Block Centre (used for ETCS Level 2 and 3)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http:/openreq.eu/ontologies/2018/8/rail#RailwaySignal -->
+
+    <owl:Class rdf:about="http:/openreq.eu/ontologies/2018/8/rail#RailwaySignal">
+        <rdfs:subClassOf rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#FieldElement"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#refines"/>
+                <owl:someValuesFrom rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#FieldElement"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http:/openreq.eu/ontologies/2018/8/rail#RailwayStation -->
+
+    <owl:Class rdf:about="http:/openreq.eu/ontologies/2018/8/rail#RailwayStation">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#requires"/>
+                <owl:someValuesFrom rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#RailwaySwitch"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http:/openreq.eu/ontologies/2018/8/rail#RailwaySwitch -->
+
+    <owl:Class rdf:about="http:/openreq.eu/ontologies/2018/8/rail#RailwaySwitch">
+        <rdfs:subClassOf rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#FieldElement"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#refines"/>
+                <owl:someValuesFrom rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#FieldElement"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http:/openreq.eu/ontologies/2018/8/rail#RailwayTrack -->
+
+    <owl:Class rdf:about="http:/openreq.eu/ontologies/2018/8/rail#RailwayTrack">
+        <rdfs:subClassOf rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#FieldElement"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#refines"/>
+                <owl:someValuesFrom rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#FieldElement"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http:/openreq.eu/ontologies/2018/8/rail#SingleSlip -->
+
+    <owl:Class rdf:about="http:/openreq.eu/ontologies/2018/8/rail#SingleSlip">
+        <rdfs:subClassOf rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#Crossing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#refines"/>
+                <owl:someValuesFrom rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#Crossing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http:/openreq.eu/ontologies/2018/8/rail#TrackCircuit -->
+
+    <owl:Class rdf:about="http:/openreq.eu/ontologies/2018/8/rail#TrackCircuit">
+        <rdfs:subClassOf rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#TrackClearDetection"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#conflicts"/>
+                <owl:someValuesFrom rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#CountingPoint"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#refines"/>
+                <owl:someValuesFrom rdf:resource="http:/openreq.eu/ontologies/2018/8/rail#TrackClearDetection"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http:/openreq.eu/ontologies/2018/8/rail#TrackClearDetection -->
+
+    <owl:Class rdf:about="http:/openreq.eu/ontologies/2018/8/rail#TrackClearDetection"/>
+    
+
+
+    <!-- http:/openreq.eu/ontologies/2018/8/rail#TrainProtectionSystem -->
+
+    <owl:Class rdf:about="http:/openreq.eu/ontologies/2018/8/rail#TrainProtectionSystem"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#ETCSLevel1"/>
+            <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#ETCSLevel2"/>
+            <rdf:Description rdf:about="http:/openreq.eu/ontologies/2018/8/rail#ETCSLevel3"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

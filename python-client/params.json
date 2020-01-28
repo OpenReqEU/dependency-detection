@@ -1,0 +1,8 @@
+{
+	"requirementsFile": "./confidential_Apata-Cata_RBC.json",
+	"ontologyFile": "./openreq-rail-small.owl",
+	"project": "Siemens",
+	"keywordTool": "TFIDF_BASED",
+	"synonymy": "Y",
+	"threshold": 0.9
+}
