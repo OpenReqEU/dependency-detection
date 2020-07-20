@@ -108,7 +108,7 @@ First of all it is necessary to download the following external files and depend
 
 Seconf of all it is necessary to download the following file and extract its content into gloveModel/ folder (at the root of the service)
 
-- [GloveModel](https://drive.google.com/file/d/1E-jkanZQSjXAuwx3EXyGKAyMQ8QBWobA/view?usp=sharing)
+- [GloveModel](https://github.com/OpenReqEU/stakeholders-recommender/releases/download/2.1/gloveModel.tar.xz)
 
 Then is necessary to configure the DKPRO_HOME variable with the resources directory path:
 
